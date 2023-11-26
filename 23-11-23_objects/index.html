@@ -4,9 +4,56 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Objects {} in Javascripts</title>
+    <link rel="stylesheet" href="./index.css" />
   </head>
   <body>
     <h1>Objects {} in Javascripts</h1>
-    <script src="./objects.js"></script>
+
+    <div class="profile d-none">
+      <div>
+        <h2 class="profile-name">khaja Sharif</h2>
+        <span class="profile-age"> 21</span>
+        <h3 class="profile-skill">Skills</h3>
+        <ol class="profile-skills"></ol>
+
+        <button type="button" class="profile-editor">Edit Details</button>
+      </div>
+    </div>
+    <div class="form-container">
+      <form>
+        <div class="fullname">
+          <label for="fullname">Enter Your Full Name</label>
+          <input type="text" id="fullname" name="fullname" />
+          <small></small>
+        </div>
+        <div>
+          <label for="gender">Select Gender</label>
+          <select name="gender" id="gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Others">Others</option>
+          </select>
+        </div>
+
+        <div class="born-in">
+          <label for="born-in">Year of Birth</label>
+          <input type="number" name="born-in" id="born-in" />
+          <small></small>
+        </div>
+
+        <div class="skills">
+          <label for="skills">Enter your skills </label>
+          <input
+            type="text"
+            id="skills"
+            placeholder="Sperate them with space "
+          />
+        </div>
+
+        <button type="submit" id="submit">Save</button>
+      </form>
+    </div>
+    <!-- <script src="./objects.js"></script> -->
+    <script src="./constructor-obj.js"></script>
   </body>
 </html>

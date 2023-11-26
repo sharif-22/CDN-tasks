@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;600;700;800&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+  font-family: "Roboto Condensed", sans-serif;
+}
+/* removing input number increase/decrease arrow chrome   */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* removing input number increase/decrease arrow firefox  */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+}
+li {
+  list-style: none;
+}
+h1 {
+  padding-block: 16px;
+  text-align: center;
+  background-color: cornflowerblue;
+}
+.profile,
+.form-container {
+  height: 80dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 350px;
+  height: fit-content;
+  margin-inline: auto;
+}
+div.fullname,
+div.born-in,
+div.skills {
+  display: flex;
+  flex-direction: column;
+}
+button {
+  background-color: rgb(84, 205, 50);
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+}
+button:hover {
+  background-color: rgb(33, 174, 50);
+  cursor: pointer;
+}
+input {
+  height: 30px;
+  margin-block: 6px;
+  background-color: rgb(255, 153, 0);
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  padding: 8px;
+}
+
+.text-area {
+  background-color: cornflowerblue;
+  padding: 5px;
+}
+
+#skills {
+  height: 50px;
+  padding: 8px;
+  font-size: 16px;
+  color: black;
+}
+
+form {
+  background-color: rgb(255, 214, 51);
+  padding: 25px;
+  border-radius: 8px;
+}
+
+.profile div {
+  padding: 50px;
+  border-radius: 8px;
+  background-color: cornflowerblue;
+}
+.profile-name,
+.profile-age,
+.profile-skill,
+.profile-skills {
+  margin-block: 10px;
+}
+.profile-skills {
+  display: grid;
+  grid-column: auto;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.skill-btn {
+  padding: 8px;
+  border-radius: 2px;
+  margin: 3px;
+  text-align: center;
+  background-color: lightcoral;
+}
+
+.d-none {
+  display: none !important;
+}

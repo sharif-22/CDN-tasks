@@ -26,10 +26,9 @@ console.log(profile);
 console.log(profile.dob()); //21
 
 // -- Add new property
-console.log("Before Adding a property", profile);
 Object.assign(profile, { workAt: "CyberdudeNetworks" });
 console.log(profile);
-console.log("After Adding a property", profile);
+console.log(`After Adding a property workAt`, profile);
 
 //Update
 console.log("Before Update", profile.skills[0]);
