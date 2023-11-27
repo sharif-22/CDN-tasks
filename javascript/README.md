@@ -16,8 +16,8 @@ This internship is provided by [CyberDude Networks Pvt. Ltd.](https://youtube.co
 
 ## Topics Used and Learned
 
-| s.no | Topics Used && learned                                     |                            YT review and explanation                            |
-| :--- | :--------------------------------------------------------- | :-----------------------------------------------------------------------------: |
-| 01   | [if else && switch](./01-conditional-statements/README.md) | [You Tube](https://www.youtube.com/live/-_8fbcy-TKY?si=ZY-jZbZqaVxHfEK6&t=421)  |
-| 02   | [objects](./02-objects-crud/README.md)                     | [You Tube](https://www.youtube.com/live/4SAETZ1ojbQ?si=t5A_cEn-sf5QJUu8&t=2891) |
-| 03   | [arrays](./03-array-crud/README.md)                        |                                                                                 |
+| s.no | Topics Used && learned                            |                            YT review and explanation                            |
+| :--- | :------------------------------------------------ | :-----------------------------------------------------------------------------: |
+| 01   | [if else && switch](./01-conditional-statements/) | [You Tube](https://www.youtube.com/live/-_8fbcy-TKY?si=ZY-jZbZqaVxHfEK6&t=421)  |
+| 02   | [objects](./02-objects-crud/)                     | [You Tube](https://www.youtube.com/live/4SAETZ1ojbQ?si=t5A_cEn-sf5QJUu8&t=2891) |
+| 03   | [arrays](./03-array-crud/)                        |                                                                                 |
