@@ -24,3 +24,4 @@ Paste the `YOUTUBE_VIDEO_ID_HERE` with the video id.
 md -->
 
 [![IMAGE ALT TEXT](http://img.youtube.com/vi/WebG_D9-U80/0.jpg)](http://www.youtube.com/watch?v=WebG_D9-U80 "#27 - JavaScript If-Else (With Examples) - (தமிழில்) (Tamil) | JavaScript Course")
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/xG5IUyZvbDk/0.jpg)](http://www.youtube.com/watch?v=xG5IUyZvbDk "#28 - JavaScript Switch-case (With Examples) - (தமிழில்) (Tamil) | JavaScript Course")
