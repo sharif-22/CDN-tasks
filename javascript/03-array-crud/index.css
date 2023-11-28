@@ -1,0 +1,112 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+:root {
+  --success: #6bcb77;
+  --success-hover: #36ae7c;
+  --danger: #ff6b6b;
+  --danger-hover: #eb5353;
+  --primary: #4d96ff;
+  --primary-hover: #187498;
+  --secondary: #ffd93d;
+  --secondary-hover: #f9d923;
+}
+
+body {
+  width: 1000px;
+  margin-inline: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100dvh;
+}
+
+/* home page  */
+.home button.add-member,
+.home button.view-list {
+  margin-inline: 16px;
+  width: 200px;
+  height: 100px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.home button.add-member {
+  background-color: var(--success);
+}
+.home button.add-member:hover {
+  background-color: var(--success-hover);
+}
+.home button.view-list {
+  background-color: var(--primary);
+}
+.home button.view-list:hover {
+  background-color: var(--primary-hover);
+}
+
+/* form page  */
+
+form {
+  width: 350px;
+  padding-block: 24px;
+  background-color: var(--primary);
+  border-radius: 8px;
+}
+form div {
+  margin-block: 10px;
+  margin-inline: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+form div button,
+form div input {
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  height: 35px;
+  background-color: white;
+}
+
+.main-action-btn {
+  display: flex;
+  flex-direction: row;
+}
+.main-action-btn button {
+  width: 100%;
+}
+
+/* list page */
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+/* utility class */
+.d-none {
+  display: none;
+}
+button {
+  cursor: pointer;
+}

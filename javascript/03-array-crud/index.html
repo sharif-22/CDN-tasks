@@ -4,9 +4,72 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Arrays [] is Javascripts</title>
+    <link rel="stylesheet" href="./index.css" />
   </head>
   <body>
-    <h1>Arrays [] is Javascripts</h1>
-    <script src="./array.js"></script>
+    <div class="home">
+      <button type="button" class="add-member">Add Member</button>
+      <button type="button" class="view-list">View list</button>
+    </div>
+
+    <div class="input-el d-none">
+      <form>
+        <div class="fullname">
+          <input type="text" placeholder="Enter Full Name" id="fullname" />
+          <small></small>
+        </div>
+        <div class="mail">
+          <input type="email" placeholder="Enter your Mail id " id="mail" />
+          <small></small>
+        </div>
+        <div class="main-action-btn">
+          <button id="viewMember" class="d-none view-list" type="button">
+            View
+          </button>
+          <button id="addMember" type="submit">Add</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="update-input-el d-none">
+      <form>
+        <div class="fullname">
+          <input
+            type="text"
+            placeholder="Enter Full Name"
+            id="update-fullname"
+          />
+          <small></small>
+        </div>
+        <div class="mail">
+          <input
+            type="email"
+            placeholder="Enter your Mail id "
+            id="update-mail"
+          />
+          <small></small>
+        </div>
+        <div class="main-action-btn">
+          <button id="add-updated-Member" type="submit">Update</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="members-list d-none">
+      <table>
+        <thead>
+          <tr>
+            <th>S.no</th>
+            <th>FullName</th>
+            <th>Mail id</th>
+            <th>Edit</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <button type="button" class="add-member">Add Member</button>
+    </div>
+    <!-- <script src="./javascripts/array.js"></script> -->
+    <script src="./javascripts/index.js"></script>
   </body>
 </html>

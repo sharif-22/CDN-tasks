@@ -4,9 +4,11 @@
 let primitive = [8, "Sharif"];
 // read
 console.log(primitive); //[ 8, 'Sharif' ]
+
 // added new value
 primitive[primitive.length] = true;
 // console.log(primitive); //[ 8, 'Sharif', true ]
+
 // delete the last added element
 delete primitive[primitive.length - 1];
 // console.log(primitive); //[ 8, 'Sharif',<empty item> ]
@@ -37,9 +39,9 @@ console.log(vegetables);
 
 // Delete
 delete vegetables[vegetables.length - 1];
-// we delete the beatrot
+// we delete the beatroot
 console.log(vegetables);
 
-// again we added the beatrot
-vegetables.push({ id: vegetables.length + 1, vegetable: "Beatrot" });
+// again we added the beatroot
+vegetables.push({ id: vegetables.length + 1, vegetable: "Beatroot" });
 console.log(vegetables);
