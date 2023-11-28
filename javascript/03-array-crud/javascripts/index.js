@@ -22,6 +22,7 @@ const updatedMemberEl = document.querySelector("#add-updated-Member");
 let membersList = [];
 let index;
 
+console.log(membersList);
 //pushing members to list
 saveMemberBtnEl.addEventListener("click", (e) => {
   e.preventDefault();
@@ -57,6 +58,7 @@ saveMemberBtnEl.addEventListener("click", (e) => {
       </td>
     </tr> `;
   });
+  console.log(membersList);
 });
 
 // printing the members based on user input like update || delete
@@ -78,7 +80,7 @@ membersListTableEL.addEventListener(
       membersList[index].fullname = updateFullNameEl.value;
       membersList[index].mail = updateMailEl.value;
 
-      console.log(currentObj);
+      console.log(`membersList updated index : ${index}`);
       // ui swaping list -> form
       updateFormEl.classList.remove("d-none");
       formEl.classList.add("d-none");
@@ -97,6 +99,7 @@ membersListTableEL.addEventListener(
 
       membersList.splice(index, 1);
 
+      console.log(membersList);
       // console.log(newList);
       //   // update the list
       // working
@@ -144,6 +147,7 @@ updatedMemberEl.addEventListener("click", (e) => {
          </div>
        </td>
      </tr> `;
+    console.log(membersList);
   });
 
   // swaping the ui update to list
