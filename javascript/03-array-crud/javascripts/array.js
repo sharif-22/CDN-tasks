@@ -1,7 +1,7 @@
 // Today's task: Create a primitive & reference array with all the CRUD operations. (Manipulations)
 
 // create
-let primitive = [undefined, 8, null, "Sharif"];
+let primitive = [undefined, 3, null, "Sharif"];
 // read
 // console.log(primitive); //[undefined, 8, null, 'Sharif']
 
@@ -42,6 +42,17 @@ delete vegetables[vegetables.length - 1];
 // we delete the beatroot
 // console.log(vegetables);
 
-// again we added the beatroot
-vegetables.push({ id: vegetables.length + 1, vegetable: "Beatroot" });
-// console.log(vegetables);
+// // // primitive
+// let personAge = 22;
+// let personAge2 = personAge;
+// console.log(personAge, personAge2);
+// personAge = 27;
+// console.log(personAge, personAge2);
+
+// // reference
+// let arr = [22, 22];
+// let arr1 = arr;
+
+// arr1[0] = 1;
+
+// console.log(arr, arr1);

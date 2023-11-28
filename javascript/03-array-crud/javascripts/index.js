@@ -98,6 +98,7 @@ membersListTableEL.addEventListener(
       index = parseInt(currentObj.id);
 
       membersList.splice(index, 1);
+      // delete membersList[index];
 
       console.log(membersList);
       // console.log(newList);
