@@ -64,3 +64,32 @@ pre {
   color: inherit; /* or any other color you prefer */
   font-weight: inherit; /* or any other font-weight you prefer */
 }
+
+/* responsive  */
+
+/* mini mobile   */
+@media all and (max-width: 480px) {
+  h1 {
+    font-size: 22px;
+  }
+
+  .warning,
+  .success {
+    width: 350px;
+  }
+
+  .btn {
+    text-align: center;
+    font-size: 16px;
+    margin: 8px;
+    padding: 12px;
+    border-radius: 8px;
+  }
+  .btn li {
+    text-transform: lowercase;
+  }
+
+  pre {
+    width: 350px;
+  }
+}
