@@ -4,18 +4,96 @@ This challenge is part of free internship (Fullstack Engineer) offered by [Cyber
 
 > Task #1: Create a if-else condition with all possible conditions
 
-<!-- js
-// Paste your code here
-const example = "Awesome"
+```js
+// if condition
+// syntax
+if (condition) {
+  //code that you need to run
+}
 
-### Live link ->
+let isRaining = true;
+if (isRaining) {
+  // above condition is true then it execute this block
+  console.log("heavy rain Alert !!");
+}
+```
 
-Deploy it and put the link here.
+```js
+// if{} else condition
+let percentage = 80;
+if (percentage > 30) {
+  // if the condition true this block will executed
+  console.log(`You Scored ${percentage}%`);
+} else {
+  // if the condition fail this block will executed
+  console.log(`You Failed `);
+}
+```
 
-## Acknowledgement:
+```js
+// if{} elseif{} else
+// syntax
+if (condition) {
+  //code that you need to run
+}elseif (condition){
+    //code that you need to run
+}else{
+  // default execution block
+}
 
-- Any person who have helped you achieve this challenge. Mention them here. For example, look below.
-- Rajini [@rajini](https://github.com/rajini) -->
+
+
+let percentage = 80;
+if (percentage >= 90) {
+  // above condition is true then it execute this block
+  console.log(`You Scored A - Grade`);
+} else if (percentage >= 75) {
+  // above condition is true then it execute this block
+  console.log(`You Scored B - Grade`);
+} else if (percentage >= 50) {
+  // above condition is true then it execute this block
+  console.log(`You Scored C - Grade`);
+} else if (percentage < 35) {
+  // above condition is true then it execute this block
+  console.log(`You Scored U - Grade`);
+}
+```
+
+```js
+// switch case
+
+let budget = 75;
+
+switch (true) {
+  case budget > 60:
+    // budget > 60 -> true now this block executed and stoping this block using break keyword
+    console.log("Buy iphone ");
+    break;
+  case budget > 15:
+    // budget > 15 -> true now this block executed and stoping this block execution using break keyword
+    console.log("Buy Android ");
+    break;
+  case budget > 5 && budget <= 15:
+    // budget > 15 -> true now this block executed and stoping this block execution using break keyword
+    console.log("buy basic mobile ");
+    break;
+  default:
+    // if above cases failed in all condition or comparision this default will executed
+    console.log("default");
+}
+```
+
+switch case compares the condition and execute that particular block
+
+```js
+// ternary operator
+const score = 80;
+// condition ? trueExpression : falseExpression
+const scoreRating = score > 70 ? "Excellent" : "Do better";
+console.log(scoreRating); // Excellent
+```
+
+### [Live link](https://sharif-22.github.io/cyberdude-challenges/javascript/01-conditional-statements/)
 
 ## References:
 
