@@ -31,7 +31,7 @@ console.log(profile);
 console.log(`After Adding a property workAt`, profile);
 
 //Update
-console.log("Before Update", profile.skills[0]);
+console.log("Before Update", profile.skills);
 profile.skills = [
   {
     itSkills: [...profile.skills],
@@ -42,5 +42,5 @@ console.log("After Update", profile.skills[0]);
 
 // -- Delete
 console.log("Before Delete", profile.skills[0]);
-delete profile.skills[0].languages;
+// delete profile.skills[0].languages;
 console.log("After Delete", profile.skills[0]);
