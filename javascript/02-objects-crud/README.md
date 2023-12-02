@@ -57,4 +57,4 @@ delete profile.skills[0].languages;
 ## References:
 
 [![IMAGE ALT TEXT](http://img.youtube.com/vi/y_dx6GO3gjY/0.jpg)](http://www.youtube.com/watch?v=y_dx6GO3gjY "#14 - JavaScript Objects - (தமிழில்) (Tamil) | JavaScript Course")
-[![IMAGE ALT TEXT](http://img.youtube.com/vi/-IWA5e9CNis&t/0.jpg)](http://www.youtube.com/watch?v=-IWA5e9CNis&t=16s "#02 - ES6+ JavaScript Objects (Properties & Methods) - (தமிழில்) | Modern JavaScript in Tamil")
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/-IWA5e9CNis/0.jpg)](http://www.youtube.com/watch?v=-IWA5e9CNis "#02 - ES6+ JavaScript Objects (Properties & Methods) - (தமிழில்) | Modern JavaScript in Tamil")
