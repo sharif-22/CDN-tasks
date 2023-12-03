@@ -40,64 +40,58 @@ const cartoonsArr = [
 ];
 
 let i = 0;
-
-// // while loop
-// while (i < cartoonsArr.length) {
-//   let currentName = cartoonsArr[i].name;
-//   console.log(currentName);
-//   //   currentName = "sharif";
-//   //   console.log(currentName);
-//   i++;
-// }
+// while loop
+while (i < cartoonsArr.length) {
+  let currentName = cartoonsArr[i].name;
+  console.log(`im ${currentName}`);
+  i++;
+}
 
 // do while
-// do {
-//   let currentName = cartoonsArr[i].name;
-//   console.log(currentName);
-//   i++;
-// } while (i < cartoonsArr.length);
+do {
+  let currentName = cartoonsArr[i].name;
+  console.log(`im ${currentName}`);
+  i++;
+} while (i < cartoonsArr.length);
 
-// //  iterates  objects
-// for (key in cartoonsArr[0]) {
-//   //   console.log(key);
-//   console.log(char, ":", cartoonsArr[0][char]);
-// }
+//  iterates  objects
+for (key in cartoonsArr[0]) {
+  //   console.log(key);
+  console.log(key, ":", cartoonsArr[0][key]);
+}
 
-// //  iterates in arrays
-// for (char of cartoonsArr) {
-//   console.log(char);
-// }
+//  iterates in arrays
+for (char of cartoonsArr) {
+  console.log(char);
+}
 
-// // for loop and for each both are same
-// for (let index = 0; index < cartoonsArr.length; index++) {
-//   let hero = cartoonsArr[index];
-//   //   return hero;
-//   //   console.log("%cSay my name !", "color:red");
-//   //   console.log(`${(hero.name = "sharif")} You Dam Right `);
-//   //   console.log(`${hero.name} You Dam Right `);
-// }
-// console.log(`original :`, cartoonsArr);
+// for loop and for each both are same
+for (let index = 0; index < cartoonsArr.length; index++) {
+  let hero = cartoonsArr[index];
+  console.log("%cSay my name !", "color:red");
+  console.log(`${hero.name} You Dam Right `);
+  // console.log(`${(hero.name = "sharif")} You Dam Right `);
+  return hero;
+}
+console.log(`original :`, cartoonsArr);
 
-const foreachLoop = cartoonsArr.forEach((hero) => {
-  let charName = `https://github.com/${hero.name}/cyberdude-challenges`;
-  //   console.log(charName);
-  return charName;
+cartoonsArr.forEach((hero) => {
+  console.log(`${hero.name} You Dam Right `);
 });
-// console.log("forEach function :", foreachLoop); // undefine
 
 const mapedArr = cartoonsArr.map((hero) => {
-  let charName = `https://github.com/${hero.name}/cyberdude-challenges`;
-  return charName;
+  let gitUrl = `https://github.com/${hero.name}/cyberdude-challenges`;
+  return gitUrl;
 });
-// console.log("map function :", mapedArr);
+console.log("map function :", mapedArr);
 
-// console.log(`original :`, cartoonsArr);
+console.log(`original :`, cartoonsArr);
 
 // map function without using map method
 let forMapArr = [];
 for (let index = 0; index < cartoonsArr.length; index++) {
   let hero = cartoonsArr[index];
-  let charName = `https://github.com/${hero.name}/cyberdude-challenges`;
-  forMapArr.push(charName);
+  let gitUrl = `https://github.com/${hero.name}/cyberdude-challenges`;
+  forMapArr.push(gitUrl);
 }
 console.log(forMapArr);
