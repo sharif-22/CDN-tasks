@@ -28,8 +28,14 @@ submitEl.addEventListener("click", (e) => {
 
   // ui style
   paragraphEls[0].classList.remove("d-none");
-  paragraphEls[0].style.display = "block";
-  // paragraphEls[0].classList.add("d-block");
+  paragraphEls[0].classList.add("d-block");
+  // paragraphEls[0].style.display = "block";
+
+  setTimeout(() => {
+    // ui style
+    paragraphEls[0].classList.remove("d-block");
+    paragraphEls[0].classList.add("d-none");
+  }, 2000);
 });
 
 skillInputEl.addEventListener("keypress", (e) => {
