@@ -6,10 +6,107 @@
     <title>Railway Ticket App</title>
     <link rel="stylesheet" href="./assets/css/main.css" />
   </head>
-  <body class="bg-slate-400">
-    <h1 class="text-center text-2xl bg-slate-300">
+  <body class="bg-slate-200">
+    <h1 class="text-center text-2xl bg-blue-600 py-3">
       Book ticket with 0% commission
     </h1>
+    <form
+      class="mx-auto w-[350px] p-7 bg-slate-300 mt-[10%] flex flex-col gap-5"
+    >
+      <!-- Add passengers  -->
+      <div id="addPassengers" class="flex flex-col gap-3">
+        <!-- passengers list   -->
+        <div id="passengerList">
+          <!-- passengers  -->
+          <div>
+            <!-- name field -->
+            <div class="flex flex-col gap-3">
+              <label for="passenger1">Enter Passenger 1 Name </label>
+              <input
+                class="p-2"
+                type="text"
+                name="passenger"
+                id="passenger1"
+                placeholder="Enter Passenger Name "
+              />
+            </div>
+            <!-- gender radio  -->
+            <div class="flex justify-between p-3">
+              <div>
+                <input type="radio" name="gender" id="male" value="male" />
+                <label for="male">Male </label>
+              </div>
+
+              <div>
+                <input type="radio" name="gender" id="female" value="female" />
+                <label for="male">Female </label>
+              </div>
+
+              <div>
+                <input type="radio" name="gender" id="others" value="others" />
+                <label for="others">Others </label>
+              </div>
+            </div>
+            <!-- age field -->
+            <div class="flex flex-col gap-3">
+              <label for="age">Enter your Age </label>
+              <input
+                class="p-2"
+                type="number"
+                name="age"
+                id="age"
+                placeholder="Enter your Age "
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- add passenger btn  -->
+        <button class="bg-blue-600 p-3 rounded-md text-white w-full">
+          Add
+        </button>
+      </div>
+      <!-- formStation -->
+      <div class="flex flex-col gap-2">
+        <label for="formStation">From Station </label>
+        <input
+          class="p-2"
+          type="text"
+          name="formStation"
+          id="fromStation"
+          placeholder="Enter Station Name "
+        />
+      </div>
+      <!-- toStation -->
+      <div class="flex flex-col gap-2">
+        <label for="toStation">To Station </label>
+        <input
+          class="p-2"
+          type="text"
+          name="toStation"
+          id="toStation"
+          placeholder="Enter Station Name "
+        />
+      </div>
+      <!-- date of journey -->
+      <div class="flex flex-col gap-2">
+        <label for="dateOfJourney">Date Of Journey</label>
+        <input
+          class="p-2"
+          type="date"
+          name="dateOfJourney"
+          id="dateOfJourney"
+        />
+      </div>
+
+      <!-- search  -->
+      <button
+        class="bg-blue-600 p-3 rounded-md text-white w-full"
+        type="submit"
+      >
+        Search
+      </button>
+    </form>
     <script type="module" src="./assets/js/index.js"></script>
   </body>
 </html>
