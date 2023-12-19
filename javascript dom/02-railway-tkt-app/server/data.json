@@ -1,0 +1,18 @@
+{
+  "tickets": [
+    {
+      "trainNum": "8312",
+      "toStation": "Ipsam do quia in pra",
+      "fromStation": "Labore exercitatione",
+      "dateOfJourney": "2009-03-16",
+      "totalPassengers": [
+        {
+          "passengerAge": "15",
+          "passengerGender": "female",
+          "passengerName": "Gregory Harmon"
+        }
+      ],
+      "id": 1
+    }
+  ]
+}

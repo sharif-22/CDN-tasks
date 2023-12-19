@@ -8,7 +8,7 @@
   </head>
   <body class="bg-slate-200">
     <h1 class="text-center text-2xl bg-blue-600 py-3 text-white">
-      Book ticket with 0% commission
+      Book Train ticket with 0% commission
     </h1>
     <form
       name="ticketForm"
@@ -25,6 +25,7 @@
               <div class="flex flex-col gap-3">
                 <label for="passenger1Name">Enter Passenger 1 Name </label>
                 <input
+                  required
                   class="passenger p-2"
                   type="text"
                   name="passenger1Name"
@@ -36,6 +37,7 @@
               <div class="flex justify-between p-3">
                 <div>
                   <input
+                    required
                     type="radio"
                     name="passenger1Gender"
                     id="male1"
@@ -46,16 +48,18 @@
 
                 <div>
                   <input
+                    required
                     type="radio"
                     name="passenger1Gender"
                     id="female1"
-                    value="female1"
+                    value="female"
                   />
                   <label for="female1">Female </label>
                 </div>
 
                 <div>
                   <input
+                    required
                     type="radio"
                     name="passenger1Gender"
                     id="others1"
@@ -68,8 +72,11 @@
               <div class="flex flex-col gap-3">
                 <label for="passenger1Age">Enter your Age </label>
                 <input
+                  required
                   class="p-2"
                   type="number"
+                  min="0"
+                  max="110"
                   name="passenger1Age"
                   id="passenger1Age"
                   placeholder="Enter your Age "
@@ -82,6 +89,8 @@
 
         <!-- add passenger btn  -->
         <button
+          onclick="(e)=>{e.preventDefault()}"
+          type="button"
           id="addMember"
           class="bg-blue-600 hover:bg-blue-700 p-3 rounded-md text-white w-full"
         >
@@ -92,8 +101,11 @@
       <div class="flex flex-col gap-2">
         <label for="trainNum">Enter Train no </label>
         <input
+          required
           class="p-2"
           type="number"
+          min="0"
+          max="9999"
           name="trainNum"
           id="trainNum"
           placeholder="Enter Train no "
@@ -103,6 +115,7 @@
       <div class="flex flex-col gap-2">
         <label for="fromStation">From Station </label>
         <input
+          required
           class="p-2"
           type="text"
           name="fromStation"
@@ -114,6 +127,7 @@
       <div class="flex flex-col gap-2">
         <label for="toStation">To Station </label>
         <input
+          required
           class="p-2"
           type="text"
           name="toStation"
@@ -125,6 +139,7 @@
       <div class="flex flex-col gap-2">
         <label for="dateOfJourney">Date Of Journey</label>
         <input
+          required
           class="p-2"
           type="date"
           name="dateOfJourney"
@@ -141,5 +156,6 @@
       </button>
     </form>
     <script type="module" src="./assets/js/index.js"></script>
+    <script type="module" src="./assets/js/Untitled-1.js"></script>
   </body>
 </html>

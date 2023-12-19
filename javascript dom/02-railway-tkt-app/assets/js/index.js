@@ -84,57 +84,50 @@ addMemberEl.addEventListener("click", (e) => {
 formEl.addEventListener("submit", (event) => {
   event.preventDefault();
   const formData = new FormData(formEl);
-  console.log(Object.fromEntries(formData));
 
-  // const { passenger1Age, passenger1Gender, passenger1Name } =
-  //   Object.fromEntries(formData);
+  // console.log(Object.fromEntries(formData)); // return all data in unstructure way
+  const formDataObj = Object.fromEntries(formData);
 
-  // const { passenger2Age, passenger2Gender, passenger2Name } =
-  //   Object.fromEntries(formData);
-  // const { passenger3Age, passenger3Gender, passenger3Name } =
-  //   Object.fromEntries(formData);
-  // const { passenger4Age, passenger4Gender, passenger4Name } =
-  //   Object.fromEntries(formData);
-  // const { passenger5Age, passenger5Gender, passenger5Name } =
-  //   Object.fromEntries(formData);
-
-  // const dbObj = {
-  //   passengerList: [
-  //     {
-  //       passenger1Name: passenger1Name,
-  //       passenger1Age: passenger1Age,
-  //       passenger1Gender: passenger1Gender,
-  //     },
-  //     {
-  //       passenger2Name: passenger2Name,
-  //       passenger2Age: passenger2Age,
-  //       passenger2Gender: passenger2Gender,
-  //     },
-  //     {
-  //       passenger3Name: passenger3Name,
-  //       passenger3Age: passenger3Age,
-  //       passenger3Gender: passenger3Gender,
-  //     },
-  //     {
-  //       passenger4Name: passenger4Name,
-  //       passenger4Age: passenger4Age,
-  //       passenger4Gender: passenger4Gender,
-  //     },
-  //     {
-  //       passenger5Name: passenger5Name,
-  //       passenger5Age: passenger5Age,
-  //       passenger5Gender: passenger5Gender,
-  //     },
-
-  //     ...Object.fromEntries(formData),
-  //   ],
-  // };
-
-  // console.log(dbObj);
-
-  // console.log({ arr: [...formData.entries()] });
-  // JSON
-  // const jsonData = JSON.stringify(Object.fromEntries(formData));
-  // Send to Backend
+  const passengersObjsArr = [];
+  // loop to push individual passengers to arr
+  for (let index = 0; index < 6; index++) {
+    if (
+      formDataObj[`passenger${index}Age`] &&
+      formDataObj[`passenger${index}Gender`] &&
+      formDataObj[`passenger${index}Name`]
+    ) {
+      passengersObjsArr.push({
+        passengerAge: formDataObj[`passenger${index}Age`],
+        passengerGender: formDataObj[`passenger${index}Gender`],
+        passengerName: formDataObj[`passenger${index}Name`],
+      });
+    }
+  }
+  const journeyData = {
+    trainNum: formDataObj["trainNum"],
+    toStation: formDataObj["toStation"],
+    fromStation: formDataObj["fromStation"],
+    dateOfJourney: formDataObj["dateOfJourney"],
+    totalPassengers: passengersObjsArr,
+  };
+  // console.log(journeyData); // structured data for appending to  server
+  // converting journeyDate -> JSON
+  const jsonData = JSON.stringify(journeyData);
   // console.log("JSON BODY", jsonData);
+
+  // Send to Backend
+  const url = "http://localhost:3000/tickets";
+
+  const postMethod = async (json, url) => {
+    await fetch(url, {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: json,
+    });
+  };
+  postMethod(jsonData, url);
+  // removing existing inputs
+  formEl.reset();
 });
