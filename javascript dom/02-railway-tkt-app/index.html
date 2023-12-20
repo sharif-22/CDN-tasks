@@ -8,14 +8,14 @@
   </head>
   <body class="bg-slate-200">
     <h1 class="text-center text-2xl bg-blue-600 py-3 text-white">
-      Book Train ticket with 0% commission
+      Book Train ticket with 0% Extra Chargers
     </h1>
     <form
       name="ticketForm"
       class="mx-auto w-[330px] p-7 bg-slate-300 my-4 flex flex-col gap-5 lg:my-10 lg:w-1/3 lg:rounded-md"
     >
       <!-- Add passengers  -->
-      <div id="addPassengers" class="flex flex-col gap-3">
+      <div class="flex flex-col gap-3">
         <!-- passengers list   -->
         <div id="passengerList">
           <!-- passengers  -->
@@ -25,13 +25,13 @@
               <div class="flex flex-col gap-3">
                 <label for="passenger1Name">Enter Passenger 1 Name </label>
                 <input
-                  required
                   class="passenger p-2"
                   type="text"
                   name="passenger1Name"
                   id="passenger1Name"
                   placeholder="Enter Passenger Name "
                 />
+                <small></small>
               </div>
               <!-- gender radio  -->
               <div class="flex justify-between p-3">
@@ -82,6 +82,7 @@
                   placeholder="Enter your Age "
                 />
               </div>
+              <small></small>
             </div>
             <hr class="my-3" />
           </div>
@@ -89,9 +90,8 @@
 
         <!-- add passenger btn  -->
         <button
-          onclick="(e)=>{e.preventDefault()}"
           type="button"
-          id="addMember"
+          id="addPassengers"
           class="bg-blue-600 hover:bg-blue-700 p-3 rounded-md text-white w-full"
         >
           Add
@@ -110,6 +110,7 @@
           id="trainNum"
           placeholder="Enter Train no "
         />
+        <small></small>
       </div>
       <!-- formStation -->
       <div class="flex flex-col gap-2">
@@ -156,6 +157,6 @@
       </button>
     </form>
     <script type="module" src="./assets/js/index.js"></script>
-    <script type="module" src="./assets/js/Untitled-1.js"></script>
+    <!-- <script type="module" src="./assets/js/appendEl.js"></script> -->
   </body>
 </html>
