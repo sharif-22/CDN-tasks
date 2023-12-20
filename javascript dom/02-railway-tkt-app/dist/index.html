@@ -4,12 +4,161 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Railway Ticket App</title>
-    <script type="module" crossorigin src="./assets/index-4494fbde.js"></script>
-    <link rel="stylesheet" href="./assets/index-e6a90126.css" />
+    
+    <script type="module" crossorigin src="./assets/index-e64a3801.js"></script>
+    <link rel="stylesheet" href="./assets/index-97cf1bfa.css">
   </head>
-  <body class="bg-slate-400">
-    <h1 class="text-center text-2xl bg-slate-300">
-      Book tickets with 0% commission
+  <body class="bg-slate-200">
+    <h1 class="text-center text-2xl bg-blue-600 py-3 text-white">
+      Book Train ticket with 0% Extra Chargers
     </h1>
+    <form
+      name="ticketForm"
+      class="mx-auto w-[330px] p-7 bg-slate-300 my-4 flex flex-col gap-5 lg:my-10 lg:w-1/3 lg:rounded-md"
+    >
+      <!-- Add passengers  -->
+      <div class="flex flex-col gap-3">
+        <!-- passengers list   -->
+        <div id="passengerList">
+          <!-- passengers  -->
+          <div>
+            <div class="passenger">
+              <!-- name field -->
+              <div class="flex flex-col gap-3">
+                <label for="passenger1Name">Enter Passenger 1 Name </label>
+                <input
+                  class="passenger p-2"
+                  type="text"
+                  name="passenger1Name"
+                  id="passenger1Name"
+                  placeholder="Enter Passenger Name "
+                />
+                <small></small>
+              </div>
+              <!-- gender radio  -->
+              <div class="flex justify-between p-3">
+                <div>
+                  <input
+                    required
+                    type="radio"
+                    name="passenger1Gender"
+                    id="male1"
+                    value="male"
+                  />
+                  <label for="male1">Male </label>
+                </div>
+
+                <div>
+                  <input
+                    required
+                    type="radio"
+                    name="passenger1Gender"
+                    id="female1"
+                    value="female"
+                  />
+                  <label for="female1">Female </label>
+                </div>
+
+                <div>
+                  <input
+                    required
+                    type="radio"
+                    name="passenger1Gender"
+                    id="others1"
+                    value="others"
+                  />
+                  <label for="others1">Others </label>
+                </div>
+              </div>
+              <!-- age field -->
+              <div class="flex flex-col gap-3">
+                <label for="passenger1Age">Enter your Age </label>
+                <input
+                  required
+                  class="p-2"
+                  type="number"
+                  min="0"
+                  max="110"
+                  name="passenger1Age"
+                  id="passenger1Age"
+                  placeholder="Enter your Age "
+                />
+              </div>
+              <small></small>
+            </div>
+            <hr class="my-3" />
+          </div>
+        </div>
+
+        <!-- add passenger btn  -->
+        <button
+          type="button"
+          id="addPassengers"
+          class="bg-blue-600 hover:bg-blue-700 p-3 rounded-md text-white w-full"
+        >
+          Add
+        </button>
+      </div>
+      <!-- Train no -->
+      <div class="flex flex-col gap-2">
+        <label for="trainNum">Enter Train no </label>
+        <input
+          required
+          class="p-2"
+          type="number"
+          min="0"
+          max="9999"
+          name="trainNum"
+          id="trainNum"
+          placeholder="Enter Train no "
+        />
+        <small></small>
+      </div>
+      <!-- formStation -->
+      <div class="flex flex-col gap-2">
+        <label for="fromStation">From Station </label>
+        <input
+          required
+          class="p-2"
+          type="text"
+          name="fromStation"
+          id="fromStation"
+          placeholder="Enter Station Name "
+        />
+      </div>
+      <!-- toStation -->
+      <div class="flex flex-col gap-2">
+        <label for="toStation">To Station </label>
+        <input
+          required
+          class="p-2"
+          type="text"
+          name="toStation"
+          id="toStation"
+          placeholder="Enter Station Name "
+        />
+      </div>
+      <!-- date of journey -->
+      <div class="flex flex-col gap-2">
+        <label for="dateOfJourney">Date Of Journey</label>
+        <input
+          required
+          class="p-2"
+          type="date"
+          name="dateOfJourney"
+          id="dateOfJourney"
+        />
+      </div>
+
+      <!-- search  -->
+      <button
+        class="bg-blue-600 hover:bg-blue-700 p-3 rounded-md text-white w-full"
+        type="submit"
+      >
+        Search
+      </button>
+    </form>
+    
+    <!-- <script type="module" src="./assets/js/appendEl.js"></script> -->
   </body>
 </html>
