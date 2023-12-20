@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Railway Ticket App</title>
     <link rel="stylesheet" href="./assets/css/main.css" />
+    <style>
+      input {
+        outline: none;
+      }
+    </style>
   </head>
   <body class="bg-slate-200">
     <h1 class="text-center text-2xl bg-blue-600 py-3 text-white">
@@ -25,6 +30,7 @@
               <div class="flex flex-col gap-3">
                 <label for="passenger1Name">Enter Passenger 1 Name </label>
                 <input
+                  required
                   class="passenger p-2"
                   type="text"
                   name="passenger1Name"
@@ -67,6 +73,7 @@
                   />
                   <label for="others1">Others </label>
                 </div>
+                <small></small>
               </div>
               <!-- age field -->
               <div class="flex flex-col gap-3">
