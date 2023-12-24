@@ -9,33 +9,29 @@ addPassengersBtnEl.addEventListener("click", (e) => {
   let checkedRadioState = [];
   let checkedRadioEl = [];
 
-  [...formEl].forEach((ele) => {
-    if (ele.type === "radio") {
-      if (ele.checked) {
-        checkedRadioState.push(ele.checked);
-        checkedRadioEl.push(ele);
-        console.log(checkedRadioEl);
+  [...formEl].forEach((element) => {
+    if (element.type === "radio") {
+      if (element.checked) {
+        checkedRadioState.push(element.checked);
+        checkedRadioEl.push(element);
+        element.closest(".gender-div").children[1].innerText = "";
       } else {
-        errStyle("red", ele.parentElement.parentElement);
+        element.closest(".gender-div").children[1].innerText =
+          "Please Select Gender";
+        errStyle("red", element.parentElement.parentElement);
       }
     }
   });
 
   checkedRadioEl.forEach((genderElement) => {
-    // errStyle("green", genderElement.parentElement.parentElement);
-    genderElement.parentElement.parentElement.style.borderColor = "none";
-    genderElement.parentElement.parentElement.style.borderWidth = "0px";
-
-    console.log(genderElement.checked);
     if (genderElement.checked) {
-      errStyle("green", genderElement.parentElement.parentElement);
-    }
-
-    if (checkedRadioEl.length < 1) {
-      genderElement.parentElement.parentElement.style.borderColor = "none";
-      genderElement.parentElement.parentElement.style.borderWidth = "0px";
+      defaultErrState(
+        genderElement.closest(".gender-div").children[1],
+        genderElement.parentElement.parentElement
+      );
     }
   });
+
   let childLength = passengersListEl.children.length + 1;
 
   // check the use enters his details
@@ -47,6 +43,8 @@ addPassengersBtnEl.addEventListener("click", (e) => {
 
     // appending html el
     const divEl = document.createElement("div");
+    const hrEl = document.createElement("hr");
+    hrEl.classList.add("my-3");
 
     const nameEl = createInput(
       childLength,
@@ -65,10 +63,11 @@ addPassengersBtnEl.addEventListener("click", (e) => {
     );
 
     if (childLength < 6) {
-      divEl.append(nameEl, radioCollection(gender, childLength), ageEl);
+      divEl.append(nameEl, radioCollection(gender, childLength), ageEl, hrEl);
       passengersListEl.append(divEl);
     } else {
-      console.log("tickes solds upto 5 members only ");
+      addPassengersBtnEl.nextElementSibling.textContent =
+        "You can add upto 5 Passenegrs only ";
     }
   }
 
@@ -80,12 +79,12 @@ addPassengersBtnEl.addEventListener("click", (e) => {
     const smallEl = document.createElement("small");
 
     // add classes
-    divEl.classList.add("flex", "flex-col", "gap-3");
+    divEl.classList.add("flex", "flex-col", "gap-3", "mt-2");
     inputEl.classList.add("passenger", "p-2");
 
     // setting attributes
     if (inputType == "number" && passengerData == `passenger${count}Age`) {
-      inputEl.setAttribute("min", 0);
+      inputEl.setAttribute("min", 1);
       inputEl.setAttribute("max", 110);
     }
 
@@ -110,7 +109,9 @@ addPassengersBtnEl.addEventListener("click", (e) => {
     const divEl = document.createElement("div");
     const smallEl = document.createElement("small");
 
-    divEl.classList.add("flex", "justify-between", "p-3");
+    parentDiv.classList.add("gender-div", "space-y-2", "mt-2");
+
+    divEl.classList.add("radio-collection", "flex", "justify-between", "p-3");
 
     for (let index = 0; index < arr.length; index++) {
       divEl.appendChild(
@@ -118,6 +119,7 @@ addPassengersBtnEl.addEventListener("click", (e) => {
       );
     }
     parentDiv.append(divEl, smallEl);
+
     return parentDiv;
   }
 
@@ -201,24 +203,20 @@ formEl.addEventListener("submit", (event) => {
 });
 formEl.addEventListener("change", (e) => {
   const target = e.target;
-
   const parentEl = target.parentElement;
   const smallEl = parentEl.querySelector("small");
 
   if (target.type == "text") {
     // balnk input check
     if (Emptystring(target.value)) {
-      smallEl.innerText = "";
-      errStyle("green", target);
+      defaultErrState(smallEl, target);
       // string leng > 3 check
       if (validName(target.value)) {
-        // console.log(target.id, target.value, "string > 3");
-        errStyle("green", target);
-        smallEl.innerText = "";
+        defaultErrState(smallEl, target);
       } else {
         // console.log(target.value, "string < 3");
         errStyle("red", target);
-        smallEl.innerText = "Enter Value is  not Valid!";
+        smallEl.innerText = "Entered Value is  not Valid!";
       }
     } else {
       errStyle("red", target);
@@ -228,21 +226,22 @@ formEl.addEventListener("change", (e) => {
     }
   } else if (target.type == "number") {
     // check train number
-    if (target.id == "trainNum" && Between(target.value, 1000, 99999)) {
-      console.log(target.id);
-      errStyle("green", target);
-    }
+    if (target.id == "trainNum" && Between(target.value, 1000, 99999))
+      defaultErrState(smallEl, target);
     // check age
-    else if (target.id != "trainNum" && Between(target.value, 1, 110)) {
-      errStyle("green", target);
+    else if (target.id != "trainNum" && Between(target.value, 5, 110)) {
+      defaultErrState(smallEl, target);
+      // false in train no , age
     } else {
       errStyle("red", target);
+      smallEl.innerText = "Entered Value is  not Valid!";
     }
   } else if (target.type == "date") {
     if (Emptystring(target.value)) {
       errStyle("green", target);
     } else {
       errStyle("red", target);
+      smallEl.innerText = "Entered data is  not Valid!";
     }
   } else if (target.type == "radio") {
     let checkedRadioState = [];
@@ -251,18 +250,18 @@ formEl.addEventListener("change", (e) => {
     if (target.checked) {
       checkedRadioState.push(target.checked);
       checkedRadioEl.push(target);
-      // console.log(checkedRadioEl);
-    } else {
-      errStyle("red", target.parentElement.parentElement);
+      // console.log(checkedRadioEl)smallEl
     }
     checkedRadioEl.forEach((genderElement) => {
       if (genderElement.checked) {
+        genderElement.closest(".gender-div").children[1].innerText = "";
         errStyle("green", genderElement.parentElement.parentElement);
       }
     });
   }
 });
 
+// utility functions
 const Emptystring = (value) => (value.trim() === "" ? false : true);
 const validName = (name) => (name.length < 3 ? false : true);
 
@@ -283,4 +282,9 @@ function resetStyles() {
     element.style.borderColor = "none";
     element.style.borderWidth = "0px";
   });
+}
+
+function defaultErrState(element, target) {
+  errStyle("green", target);
+  element.innerText = "";
 }
