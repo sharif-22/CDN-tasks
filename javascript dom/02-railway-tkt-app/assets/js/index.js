@@ -5,34 +5,74 @@ const passengersEls = document.querySelectorAll(".passenger");
 
 addPassengersBtnEl.addEventListener("click", (e) => {
   e.preventDefault();
+
+  let checkedRadioState = [];
+  let checkedRadioEl = [];
+
+  [...formEl].forEach((ele) => {
+    if (ele.type === "radio") {
+      if (ele.checked) {
+        checkedRadioState.push(ele.checked);
+        checkedRadioEl.push(ele);
+        console.log(checkedRadioEl);
+      } else {
+        errStyle("red", ele.parentElement.parentElement);
+      }
+    }
+  });
+
+  checkedRadioEl.forEach((genderElement) => {
+    // errStyle("green", genderElement.parentElement.parentElement);
+    genderElement.parentElement.parentElement.style.borderColor = "none";
+    genderElement.parentElement.parentElement.style.borderWidth = "0px";
+
+    console.log(genderElement.checked);
+    if (genderElement.checked) {
+      errStyle("green", genderElement.parentElement.parentElement);
+    }
+
+    if (checkedRadioEl.length < 1) {
+      genderElement.parentElement.parentElement.style.borderColor = "none";
+      genderElement.parentElement.parentElement.style.borderWidth = "0px";
+    }
+  });
   let childLength = passengersListEl.children.length + 1;
 
-  // appending html el
-  const divEl = document.createElement("div");
+  // check the use enters his details
+  if (
+    checkedRadioState[childLength] == true ||
+    checkedRadioState[childLength - 2] == true
+  ) {
+    // members upto 5 only
 
-  const nameEl = createInput(
-    childLength,
-    `passenger${childLength}Name`,
-    "text",
-    `Enter passenger ${childLength} Name`
-  );
-  const gender = ["Male", "Female", "Others"];
-  const ageEl = createInput(
-    childLength,
-    `passenger${childLength}Age`,
-    "number",
-    `Enter passenger ${childLength} Age`
-  );
+    // appending html el
+    const divEl = document.createElement("div");
 
-  // members upto 5 only
-  if (childLength < 6) {
-    divEl.append(nameEl, radioCollection(gender, childLength), ageEl);
-  } else {
-    console.log("tickes solds upto 5 members only ");
+    const nameEl = createInput(
+      childLength,
+      `passenger${childLength}Name`,
+      "text",
+      `Enter passenger ${childLength} Name`,
+      `Enter passenger ${childLength} Name`
+    );
+    const gender = ["Male", "Female", "Others"];
+    const ageEl = createInput(
+      childLength,
+      `passenger${childLength}Age`,
+      "number",
+      `Enter passenger ${childLength} Age`,
+      `Enter passenger ${childLength} Age`
+    );
+
+    if (childLength < 6) {
+      divEl.append(nameEl, radioCollection(gender, childLength), ageEl);
+      passengersListEl.append(divEl);
+    } else {
+      console.log("tickes solds upto 5 members only ");
+    }
   }
-  passengersListEl.append(divEl);
 
-  function createInput(count, passengerData, inputType, labelTxt) {
+  function createInput(count, passengerData, inputType, labelTxt, placeholder) {
     // create el
     const divEl = document.createElement("div");
     const labelEl = document.createElement("label");
@@ -54,7 +94,7 @@ addPassengersBtnEl.addEventListener("click", (e) => {
     inputEl.setAttribute("type", inputType);
     inputEl.setAttribute("id", passengerData);
     inputEl.setAttribute("name", passengerData);
-    inputEl.setAttribute("placeholder", `Enter Passenger ${count} Age `);
+    inputEl.setAttribute("placeholder", placeholder);
     inputEl.setAttribute("required", "required");
 
     labelEl.innerText = labelTxt;
@@ -66,6 +106,7 @@ addPassengersBtnEl.addEventListener("click", (e) => {
   }
 
   function radioCollection(arr, count) {
+    const parentDiv = document.createElement("div");
     const divEl = document.createElement("div");
     const smallEl = document.createElement("small");
 
@@ -76,8 +117,8 @@ addPassengersBtnEl.addEventListener("click", (e) => {
         createRadioButton(count, arr[index], arr[index], arr[index])
       );
     }
-    divEl.append(smallEl);
-    return divEl;
+    parentDiv.append(divEl, smallEl);
+    return parentDiv;
   }
 
   function createRadioButton(count, id, value, labelText) {
@@ -155,9 +196,9 @@ formEl.addEventListener("submit", (event) => {
   postMethod(jsonData, url);
 
   // removing existing inputs
-  // formEl.reset();
+  formEl.reset();
+  resetStyles();
 });
-
 formEl.addEventListener("change", (e) => {
   const target = e.target;
 
@@ -186,10 +227,13 @@ formEl.addEventListener("change", (e) => {
       smallEl.innerText = "input cannot be blank.";
     }
   } else if (target.type == "number") {
-    // check number
-    if (Between(target.value, 1, 110)) {
+    // check train number
+    if (target.id == "trainNum" && Between(target.value, 1000, 99999)) {
+      console.log(target.id);
       errStyle("green", target);
-    } else if (target.name == "trainNum" && Between(target.value, 1, 9999)) {
+    }
+    // check age
+    else if (target.id != "trainNum" && Between(target.value, 1, 110)) {
       errStyle("green", target);
     } else {
       errStyle("red", target);
@@ -200,6 +244,22 @@ formEl.addEventListener("change", (e) => {
     } else {
       errStyle("red", target);
     }
+  } else if (target.type == "radio") {
+    let checkedRadioState = [];
+    let checkedRadioEl = [];
+
+    if (target.checked) {
+      checkedRadioState.push(target.checked);
+      checkedRadioEl.push(target);
+      // console.log(checkedRadioEl);
+    } else {
+      errStyle("red", target.parentElement.parentElement);
+    }
+    checkedRadioEl.forEach((genderElement) => {
+      if (genderElement.checked) {
+        errStyle("green", genderElement.parentElement.parentElement);
+      }
+    });
   }
 });
 
@@ -214,4 +274,13 @@ function errStyle(color, element) {
   element.style.borderWidth = "2px";
 }
 
-const radios = document.querySelectorAll("input[type='radio']");
+function resetStyles() {
+  [...formEl].forEach((element) => {
+    if (element.type == "radio") {
+      element.parentElement.parentElement.style.borderColor = "none";
+      element.parentElement.parentElement.style.borderWidth = "0px";
+    }
+    element.style.borderColor = "none";
+    element.style.borderWidth = "0px";
+  });
+}

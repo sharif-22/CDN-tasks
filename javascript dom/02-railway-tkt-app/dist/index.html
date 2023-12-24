@@ -10,8 +10,8 @@
         outline: none;
       }
     </style>
-    <script type="module" crossorigin src="./assets/index-fe8dce21.js"></script>
-    <link rel="stylesheet" href="./assets/index-666880dc.css">
+    <script type="module" crossorigin src="./assets/index-df4f0cf4.js"></script>
+    <link rel="stylesheet" href="./assets/index-1936480e.css">
   </head>
   <body class="bg-slate-200">
     <h1 class="text-center text-2xl bg-blue-600 py-3 text-white">
@@ -42,38 +42,40 @@
                 <small></small>
               </div>
               <!-- gender radio  -->
-              <div class="flex justify-between p-3">
-                <div>
-                  <input
-                    required
-                    type="radio"
-                    name="passenger1Gender"
-                    id="male1"
-                    value="male"
-                  />
-                  <label for="male1">Male </label>
-                </div>
+              <div>
+                <div class="flex justify-between p-3">
+                  <div>
+                    <input
+                      required
+                      type="radio"
+                      name="passenger1Gender"
+                      id="male1"
+                      value="male"
+                    />
+                    <label for="male1">Male </label>
+                  </div>
 
-                <div>
-                  <input
-                    required
-                    type="radio"
-                    name="passenger1Gender"
-                    id="female1"
-                    value="female"
-                  />
-                  <label for="female1">Female </label>
-                </div>
+                  <div>
+                    <input
+                      required
+                      type="radio"
+                      name="passenger1Gender"
+                      id="female1"
+                      value="female"
+                    />
+                    <label for="female1">Female </label>
+                  </div>
 
-                <div>
-                  <input
-                    required
-                    type="radio"
-                    name="passenger1Gender"
-                    id="others1"
-                    value="others"
-                  />
-                  <label for="others1">Others </label>
+                  <div>
+                    <input
+                      required
+                      type="radio"
+                      name="passenger1Gender"
+                      id="others1"
+                      value="others"
+                    />
+                    <label for="others1">Others </label>
+                  </div>
                 </div>
                 <small></small>
               </div>
@@ -114,7 +116,7 @@
           class="p-2"
           type="number"
           min="0"
-          max="9999"
+          max="99999"
           name="trainNum"
           id="trainNum"
           placeholder="Enter Train no "
@@ -168,6 +170,19 @@
         Book
       </button>
     </form>
+    <div style="display: none" class="bg-gray-300 lg:w-1/2 w-[80%] mx-auto">
+      <!-- notification header -->
+      <div class="bg-green-500 p-6 text-2xl text-white font-semibold">
+        <p>Ticket Booked Success!</p>
+      </div>
+      <!-- notification body  -->
+      <div class="bg-slate-300 p-8 text-center text-xl">
+        <p>
+          You can close the tab by Clicking ->
+          <a id="close">X</a>
+        </p>
+      </div>
+    </div>
     
     <!-- <script type="module" src="./assets/js/appendEl.js"></script> -->
   </body>
