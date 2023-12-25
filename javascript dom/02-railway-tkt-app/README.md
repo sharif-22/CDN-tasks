@@ -9,13 +9,11 @@ This challenge is part of free internship (Fullstack Engineer) offered by [Cyber
 ![screenshot](./public/Screenshot-of-railway-ticket-app.png)
 
 
-<video width="320" height="240" controls>
-  <source src="./public/form-data-server.mp4" type="video/mp4">
-</video>
-[![Video](./public/Screenshot-of-railway-ticket-app.png)](./public/form-data-server.mp4)
+Click the below img to view the video
+
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/Tnypi1nh0-s/0.jpg)](http://www.youtube.com/watch?v=Tnypi1nh0-s "#27 - JavaScript If-Else (With Examples) - (தமிழில்) (Tamil) | JavaScript Course")
 
 
-![screenshot](./public/form-data-server.mp4)
 
 [live preview ](https://sharif-22.github.io/cyberdude-challenges/javascript%20dom/02-railway-tkt-app/dist/)
 
