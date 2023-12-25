@@ -6,9 +6,9 @@ This challenge is part of free internship (Fullstack Engineer) offered by [Cyber
 
 #### Screen shots
 
-![screenshot](./02-railway-tkt-app/public/Screenshot-of-railway-ticket-app.png)
+![screenshot](./public/Screenshot-of-railway-ticket-app.png)
 
-![screenshot](./02-railway-tkt-app/public/form-data-in-dom-task-cdn.mp4)
+![screenshot](./public/form-data-server.mp4)
 
 [live preview ](https://sharif-22.github.io/cyberdude-challenges/javascript%20dom/02-railway-tkt-app/dist/)
 
