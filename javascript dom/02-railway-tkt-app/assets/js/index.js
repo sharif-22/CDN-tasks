@@ -200,6 +200,14 @@ formEl.addEventListener("submit", (event) => {
   // removing existing inputs
   formEl.reset();
   resetStyles();
+
+  // removing empty extra passengers input elements
+  if (passengersListEl.children.length > 1) {
+    for (let i = passengersListEl.children.length; i > 1; i--) {
+      // console.log(i);
+      passengersListEl.children[i - 1].remove();
+    }
+  }
 });
 formEl.addEventListener("change", (e) => {
   const target = e.target;
