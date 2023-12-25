@@ -10,7 +10,7 @@ This challenge is part of free internship (Fullstack Engineer) offered by [Cyber
 
 
 <video width="320" height="240" controls>
-  <source src="./public/form-data-server.mp" type="video/mp4">
+  <source src="./public/form-data-server.mp4" type="video/mp4">
 </video>
 
 
