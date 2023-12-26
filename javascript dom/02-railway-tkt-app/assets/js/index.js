@@ -1,14 +1,18 @@
 const formEl = document.forms.ticketForm;
 const addPassengersBtnEl = document.querySelector("#addPassengers");
+const bookTicketBtnEl = document.querySelector("#bookTicket");
 const passengersListEl = document.querySelector("#passengerList");
 const passengersEls = document.querySelectorAll(".passenger");
 
 addPassengersBtnEl.addEventListener("click", (e) => {
   e.preventDefault();
 
+  validateForm(formEl);
+
   let checkedRadioState = [];
   let checkedRadioEl = [];
 
+  // validate gender
   [...formEl].forEach((element) => {
     if (element.type === "radio") {
       if (element.checked) {
@@ -22,7 +26,6 @@ addPassengersBtnEl.addEventListener("click", (e) => {
       }
     }
   });
-
   checkedRadioEl.forEach((genderElement) => {
     if (genderElement.checked) {
       defaultErrState(
@@ -68,6 +71,9 @@ addPassengersBtnEl.addEventListener("click", (e) => {
     } else {
       addPassengersBtnEl.nextElementSibling.textContent =
         "You can add upto 5 Passenegrs only ";
+      setTimeout(() => {
+        addPassengersBtnEl.nextElementSibling.textContent = "";
+      }, 3000);
     }
   }
 
@@ -145,6 +151,36 @@ addPassengersBtnEl.addEventListener("click", (e) => {
 
     return radioDiv;
   }
+});
+
+bookTicketBtnEl.addEventListener("click", (e) => {
+  validateForm(formEl);
+
+  let checkedRadioState = [];
+  let checkedRadioEl = [];
+
+  [...formEl].forEach((element) => {
+    if (element.type === "radio") {
+      if (element.checked) {
+        checkedRadioState.push(element.checked);
+        checkedRadioEl.push(element);
+        element.closest(".gender-div").children[1].innerText = "";
+      } else {
+        element.closest(".gender-div").children[1].innerText =
+          "Please Select Gender";
+        errStyle("red", element.parentElement.parentElement);
+      }
+    }
+  });
+
+  checkedRadioEl.forEach((genderElement) => {
+    if (genderElement.checked) {
+      defaultErrState(
+        genderElement.closest(".gender-div").children[1],
+        genderElement.parentElement.parentElement
+      );
+    }
+  });
 });
 
 formEl.addEventListener("submit", (event) => {
@@ -247,6 +283,7 @@ formEl.addEventListener("change", (e) => {
   } else if (target.type == "date") {
     if (Emptystring(target.value)) {
       errStyle("green", target);
+      defaultErrState(smallEl, target);
     } else {
       errStyle("red", target);
       smallEl.innerText = "Entered data is  not Valid!";
@@ -293,6 +330,51 @@ function resetStyles() {
 }
 
 function defaultErrState(element, target) {
-  errStyle("green", target);
   element.innerText = "";
+  errStyle("green", target);
+}
+
+function validateForm(formEl) {
+  [...formEl].forEach((element) => {
+    const parentEl = element.parentElement;
+    const smallEl = parentEl.querySelector("small");
+    if (element.type == "text") {
+      // balnk input check
+      if (Emptystring(element.value)) {
+        defaultErrState(smallEl, element);
+        // string leng > 3 check
+        if (validName(element.value)) {
+          defaultErrState(smallEl, element);
+        } else {
+          // console.log(target.value, "string < 3");
+          errStyle("red", element);
+          smallEl.innerText = "Entered Value is  not Valid!";
+        }
+      } else {
+        errStyle("red", element);
+        element.value = "";
+        element.placeholder = "input cannot be blank.";
+        smallEl.innerText = "input cannot be blank.";
+      }
+    } else if (element.type == "number") {
+      // check train number
+      if (element.id == "trainNum" && Between(element.value, 1000, 99999))
+        defaultErrState(smallEl, element);
+      // check age
+      else if (element.id != "trainNum" && Between(element.value, 5, 110)) {
+        defaultErrState(smallEl, element);
+        // false in train no , age
+      } else {
+        errStyle("red", element);
+        smallEl.innerText = "Entered Value is  not Valid!";
+      }
+    } else if (element.type == "date") {
+      if (Emptystring(element.value)) {
+        errStyle("green", element);
+      } else {
+        errStyle("red", element);
+        smallEl.innerText = "Entered data is  not Valid!";
+      }
+    }
+  });
 }
