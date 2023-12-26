@@ -13,12 +13,12 @@
         color: red;
       }
     </style>
-    <script type="module" crossorigin src="./assets/index-704e2b68.js"></script>
-    <link rel="stylesheet" href="./assets/index-e39fca99.css">
+    <script type="module" crossorigin src="./assets/index-d84ee78d.js"></script>
+    <link rel="stylesheet" href="./assets/index-96d52f30.css">
   </head>
   <body class="bg-slate-200">
     <h1
-      class="text-center text-2xl bg-blue-600 py-3 text-white flex items-center justify-center gap-x-1 h-auto"
+      class="text-center text-lg lg:text-2xl bg-blue-600 py-3 text-white lg:flex lg:items-center justify-center gap-x-1 h-auto"
     >
       Book
       <svg
@@ -26,6 +26,7 @@
         width="24"
         height="24"
         viewBox="0 0 24 24"
+        class="inline text-lg lg:text-2xl"
       >
         <path
           fill="currentColor"
@@ -35,6 +36,7 @@
       Train ticket with 0% Extra Chargers
     </h1>
     <form
+      id="form"
       name="ticketForm"
       class="mx-auto w-[330px] p-7 bg-slate-300 my-4 flex flex-col gap-5 lg:my-10 lg:w-1/3 lg:rounded-md"
     >
@@ -198,6 +200,7 @@
 
       <!-- search  -->
       <button
+        id="bookTicket"
         class="bg-blue-600 hover:bg-blue-700 p-3 rounded-md text-white w-full flex justify-center gap-x-3"
         type="submit"
       >
@@ -218,17 +221,21 @@
         </svg>
       </button>
     </form>
-    <div style="display: none" class="bg-gray-300 lg:w-1/2 w-[80%] mx-auto">
-      <!-- notification header -->
-      <div class="bg-green-500 p-6 text-2xl text-white font-semibold">
+    <div
+      id="popUp"
+      style="display: none"
+      class="bg-gray-300 lg:w-1/2 w-[80%] mx-auto my-8 rounded-md"
+    >
+      <!-- popup  -->
+      <div
+        class="bg-green-500 p-6 text-2xl text-white font-semibold rounded-md flex justify-between items-center"
+      >
         <p>Ticket Booked Success!</p>
-      </div>
-      <!-- notification body  -->
-      <div class="bg-slate-300 p-8 text-center text-xl">
-        <p>
-          You can close the tab by Clicking ->
-          <a id="close">X</a>
-        </p>
+        <a
+          class="hover:bg-green-400 hover:text-red-500 rounded-md p-2 cursor-pointer"
+          id="close"
+          >X</a
+        >
       </div>
     </div>
     

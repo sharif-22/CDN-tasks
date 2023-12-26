@@ -2,6 +2,9 @@ const formEl = document.forms.ticketForm;
 const addPassengersBtnEl = document.querySelector("#addPassengers");
 const bookTicketBtnEl = document.querySelector("#bookTicket");
 const passengersListEl = document.querySelector("#passengerList");
+const popUpEl = document.querySelector("#popUp");
+const closeEl = document.querySelector("#close");
+const formIDEl = document.querySelector("#form");
 const passengersEls = document.querySelectorAll(".passenger");
 
 addPassengersBtnEl.addEventListener("click", (e) => {
@@ -244,6 +247,9 @@ formEl.addEventListener("submit", (event) => {
       passengersListEl.children[i - 1].remove();
     }
   }
+  // swaping ui
+  formIDEl.style.display = "none";
+  popUpEl.style.display = "block";
 });
 formEl.addEventListener("change", (e) => {
   const target = e.target;
@@ -304,6 +310,11 @@ formEl.addEventListener("change", (e) => {
       }
     });
   }
+});
+
+closeEl.addEventListener("click", () => {
+  formIDEl.style.display = "block";
+  popUpEl.style.display = "none";
 });
 
 // utility functions
