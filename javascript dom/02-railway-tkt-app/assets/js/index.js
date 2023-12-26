@@ -6,6 +6,17 @@ const popUpEl = document.querySelector("#popUp");
 const closeEl = document.querySelector("#close");
 const formIDEl = document.querySelector("#form");
 const passengersEls = document.querySelectorAll(".passenger");
+const dateOfJourneySubmitedEl = document.querySelector(
+  "#dateOfJourneySubmited"
+);
+const fromStationSubmitedEl = document.querySelector("#fromStationSubmited");
+const toStationSubmitedEl = document.querySelector("#toStationSubmited");
+const trainNumSubmitedEl = document.querySelector("#trainNumSubmited");
+
+const olEl = document.querySelector("ol");
+
+const passengersObjsArr = [];
+let finalObj = null;
 
 addPassengersBtnEl.addEventListener("click", (e) => {
   e.preventDefault();
@@ -79,81 +90,6 @@ addPassengersBtnEl.addEventListener("click", (e) => {
       }, 3000);
     }
   }
-
-  function createInput(count, passengerData, inputType, labelTxt, placeholder) {
-    // create el
-    const divEl = document.createElement("div");
-    const labelEl = document.createElement("label");
-    const inputEl = document.createElement("input");
-    const smallEl = document.createElement("small");
-
-    // add classes
-    divEl.classList.add("flex", "flex-col", "gap-3", "mt-2");
-    inputEl.classList.add("passenger", "p-2");
-
-    // setting attributes
-    if (inputType == "number" && passengerData == `passenger${count}Age`) {
-      inputEl.setAttribute("min", 1);
-      inputEl.setAttribute("max", 110);
-    }
-
-    labelEl.setAttribute("for", passengerData);
-
-    inputEl.setAttribute("type", inputType);
-    inputEl.setAttribute("id", passengerData);
-    inputEl.setAttribute("name", passengerData);
-    inputEl.setAttribute("placeholder", placeholder);
-    inputEl.setAttribute("required", "required");
-
-    labelEl.innerText = labelTxt;
-
-    //   appending
-    divEl.append(labelEl, inputEl, smallEl);
-
-    return divEl;
-  }
-
-  function radioCollection(arr, count) {
-    const parentDiv = document.createElement("div");
-    const divEl = document.createElement("div");
-    const smallEl = document.createElement("small");
-
-    parentDiv.classList.add("gender-div", "space-y-2", "mt-2");
-
-    divEl.classList.add("radio-collection", "flex", "justify-between", "p-3");
-
-    for (let index = 0; index < arr.length; index++) {
-      divEl.appendChild(
-        createRadioButton(count, arr[index], arr[index], arr[index])
-      );
-    }
-    parentDiv.append(divEl, smallEl);
-
-    return parentDiv;
-  }
-
-  function createRadioButton(count, id, value, labelText) {
-    let name = `passenger${count}Gender`;
-
-    var radioDiv = document.createElement("div");
-
-    var input = document.createElement("input");
-    input.setAttribute("type", "radio");
-    input.setAttribute("name", name);
-    input.setAttribute("id", `${id.toLowerCase()}${count}`);
-    input.setAttribute("value", value.toLowerCase());
-    input.setAttribute("required", "required");
-
-    input.style.margin = "6px";
-
-    var label = document.createElement("label");
-    label.setAttribute("for", `${id.toLowerCase()}${count}`);
-    label.textContent = labelText;
-
-    radioDiv.append(input, label);
-
-    return radioDiv;
-  }
 });
 
 bookTicketBtnEl.addEventListener("click", (e) => {
@@ -194,7 +130,6 @@ formEl.addEventListener("submit", (event) => {
   // console.log(Object.fromEntries(formData)); // return all data in unstructure way
   const formDataObj = Object.fromEntries(formData);
 
-  const passengersObjsArr = [];
   // loop to push individual passengers to arr
   for (let index = 0; index <= 5; index++) {
     if (
@@ -217,6 +152,8 @@ formEl.addEventListener("submit", (event) => {
     passengersDetails: passengersObjsArr,
   };
 
+  finalObj = journeyData;
+
   // console.log(journeyData); // structured data for appending to  server
   // converting journeyDate -> JSON
   const jsonData = JSON.stringify(journeyData);
@@ -235,6 +172,22 @@ formEl.addEventListener("submit", (event) => {
     });
   };
   postMethod(jsonData, url);
+  if (finalObj != null) {
+    // console.log(dateOfJourney, fromStation, toStation, trainNum);
+
+    olEl.innerHTML = ``;
+
+    dateOfJourneySubmitedEl.innerText = `Date of Journey : ${finalObj.dateOfJourney}`;
+    fromStationSubmitedEl.innerText = `From : ${finalObj.fromStation}`;
+    toStationSubmitedEl.innerText = `To : ${finalObj.toStation}`;
+    trainNumSubmitedEl.innerText = `Train no : ${finalObj.trainNum}`;
+
+    finalObj.passengersDetails.forEach((passenger, index) => {
+      olEl.innerHTML += `<li class="p-4 my-2 bg-blue-400 rounded-md"> ${
+        index + 1
+      } .  ${passenger.passengerName}</li>`;
+    });
+  }
 
   // removing existing inputs
   formEl.reset();
@@ -318,6 +271,82 @@ closeEl.addEventListener("click", () => {
 });
 
 // utility functions
+
+function createInput(count, passengerData, inputType, labelTxt, placeholder) {
+  // create el
+  const divEl = document.createElement("div");
+  const labelEl = document.createElement("label");
+  const inputEl = document.createElement("input");
+  const smallEl = document.createElement("small");
+
+  // add classes
+  divEl.classList.add("flex", "flex-col", "gap-3", "mt-2");
+  inputEl.classList.add("passenger", "p-2");
+
+  // setting attributes
+  if (inputType == "number" && passengerData == `passenger${count}Age`) {
+    inputEl.setAttribute("min", 1);
+    inputEl.setAttribute("max", 110);
+  }
+
+  labelEl.setAttribute("for", passengerData);
+
+  inputEl.setAttribute("type", inputType);
+  inputEl.setAttribute("id", passengerData);
+  inputEl.setAttribute("name", passengerData);
+  inputEl.setAttribute("placeholder", placeholder);
+  inputEl.setAttribute("required", "required");
+
+  labelEl.innerText = labelTxt;
+
+  //   appending
+  divEl.append(labelEl, inputEl, smallEl);
+
+  return divEl;
+}
+
+function radioCollection(arr, count) {
+  const parentDiv = document.createElement("div");
+  const divEl = document.createElement("div");
+  const smallEl = document.createElement("small");
+
+  parentDiv.classList.add("gender-div", "space-y-2", "mt-2");
+
+  divEl.classList.add("radio-collection", "flex", "justify-between", "p-3");
+
+  for (let index = 0; index < arr.length; index++) {
+    divEl.appendChild(
+      createRadioButton(count, arr[index], arr[index], arr[index])
+    );
+  }
+  parentDiv.append(divEl, smallEl);
+
+  return parentDiv;
+}
+
+function createRadioButton(count, id, value, labelText) {
+  let name = `passenger${count}Gender`;
+
+  var radioDiv = document.createElement("div");
+
+  var input = document.createElement("input");
+  input.setAttribute("type", "radio");
+  input.setAttribute("name", name);
+  input.setAttribute("id", `${id.toLowerCase()}${count}`);
+  input.setAttribute("value", value.toLowerCase());
+  input.setAttribute("required", "required");
+
+  input.style.margin = "6px";
+
+  var label = document.createElement("label");
+  label.setAttribute("for", `${id.toLowerCase()}${count}`);
+  label.textContent = labelText;
+
+  radioDiv.append(input, label);
+
+  return radioDiv;
+}
+
 const Emptystring = (value) => (value.trim() === "" ? false : true);
 const validName = (name) => (name.length < 3 ? false : true);
 

@@ -225,15 +225,43 @@
       class="bg-gray-300 lg:w-1/2 w-[80%] mx-auto my-8 rounded-md"
     >
       <!-- popup  -->
-      <div
-        class="bg-green-500 p-6 text-2xl text-white font-semibold rounded-md flex justify-between items-center"
-      >
-        <p>Ticket Booked Success!</p>
-        <a
-          class="hover:bg-green-400 hover:text-red-500 rounded-md p-2 cursor-pointer"
-          id="close"
-          >X</a
+      <div>
+        <div
+          class="bg-green-500 p-6 text-2xl text-white font-semibold rounded-t-md flex justify-between items-center"
         >
+          <p>Ticket Booked Success!</p>
+          <a
+            class="hover:bg-green-400 hover:text-red-500 rounded-md p-2 cursor-pointer"
+            id="close"
+            >X</a
+          >
+        </div>
+        <div class="bg-slate-400 w-full p-4 rounded-b-md">
+          <!-- date of journey -->
+          <p
+            class="bg-red-400 hover:bg-red-500 cursor-pointer p-2 text-white rounded-md"
+            id="dateOfJourneySubmited"
+          ></p>
+
+          <!-- passenger names -->
+          <ol id="olEl" class="bg-slate-400 flex-1"></ol>
+
+          <!-- trip  details  -->
+          <div class="flex gap-4">
+            <p
+              class="text-white bg-blue-500 hover:bg-blue-600 cursor-pointer p-2 rounded-md"
+              id="fromStationSubmited"
+            ></p>
+            <p
+              class="text-white bg-blue-500 hover:bg-blue-600 cursor-pointer p-2 rounded-md"
+              id="toStationSubmited"
+            ></p>
+            <p
+              class="text-white bg-blue-500 hover:bg-blue-600 cursor-pointer p-2 rounded-md"
+              id="trainNumSubmited"
+            ></p>
+          </div>
+        </div>
       </div>
     </div>
     <script type="module" src="./assets/js/index.js"></script>
