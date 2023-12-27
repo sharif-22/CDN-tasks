@@ -15,8 +15,92 @@ const trainNumSubmitedEl = document.querySelector("#trainNumSubmited");
 
 const olEl = document.querySelector("ol");
 
-const passengersObjsArr = [];
+let passengersObjsArr = [];
 let finalObj = null;
+
+formEl.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const formData = new FormData(formEl);
+
+  // console.log(Object.fromEntries(formData)); // return all data in unstructure way
+  const formDataObj = Object.fromEntries(formData);
+
+  // loop to push individual passengers to arr
+  for (let index = 0; index <= 5; index++) {
+    if (
+      formDataObj[`passenger${index}Age`] &&
+      formDataObj[`passenger${index}Gender`] &&
+      formDataObj[`passenger${index}Name`]
+    ) {
+      passengersObjsArr.push({
+        passengerAge: formDataObj[`passenger${index}Age`],
+        passengerGender: formDataObj[`passenger${index}Gender`],
+        passengerName: formDataObj[`passenger${index}Name`],
+      });
+    }
+  }
+  const journeyData = {
+    trainNum: formDataObj["trainNum"],
+    toStation: formDataObj["toStation"],
+    fromStation: formDataObj["fromStation"],
+    dateOfJourney: formDataObj["dateOfJourney"],
+    passengersDetails: passengersObjsArr,
+  };
+
+  finalObj = journeyData;
+
+  // console.log(journeyData); // structured data for appending to  server
+  // converting journeyDate -> JSON
+  const jsonData = JSON.stringify(journeyData);
+  // const jsonData = journeyData;
+  console.log(jsonData);
+  console.log(finalObj);
+  // Send to Backend
+  const url = "http://localhost:3000/tickets";
+
+  const postMethod = async (json, url) => {
+    await fetch(url, {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: json,
+    });
+  };
+  postMethod(jsonData, url);
+
+  if (finalObj != null) {
+    dateOfJourneySubmitedEl.innerText = `Date of Journey : ${finalObj.dateOfJourney}`;
+    fromStationSubmitedEl.innerText = `From : ${finalObj.fromStation}`;
+    toStationSubmitedEl.innerText = `To : ${finalObj.toStation}`;
+    trainNumSubmitedEl.innerText = `Train no : ${finalObj.trainNum}`;
+
+    olEl.innerHTML = ``;
+
+    finalObj.passengersDetails.forEach((passenger, index) => {
+      olEl.innerHTML += `<li class="p-4 my-2 bg-blue-500 hover:bg-blue-600 cursor-pointer text-white rounded-md"> ${
+        index + 1
+      } .  ${passenger.passengerName}</li>`;
+    });
+  }
+
+  // removing existing inputs
+  formEl.reset();
+  resetStyles();
+  passengersObjsArr = [];
+
+  // removing empty extra passengers input elements
+  if (passengersListEl.children.length > 1) {
+    for (let i = passengersListEl.children.length; i > 1; i--) {
+      // console.log(i);
+      passengersListEl.children[i - 1].remove();
+    }
+  }
+  // swaping ui
+  formIDEl.style.display = "none";
+  popUpEl.style.display = "block";
+});
 
 addPassengersBtnEl.addEventListener("click", (e) => {
   e.preventDefault();
@@ -122,88 +206,6 @@ bookTicketBtnEl.addEventListener("click", (e) => {
   });
 });
 
-formEl.addEventListener("submit", (event) => {
-  event.preventDefault();
-
-  const formData = new FormData(formEl);
-
-  // console.log(Object.fromEntries(formData)); // return all data in unstructure way
-  const formDataObj = Object.fromEntries(formData);
-
-  // loop to push individual passengers to arr
-  for (let index = 0; index <= 5; index++) {
-    if (
-      formDataObj[`passenger${index}Age`] &&
-      formDataObj[`passenger${index}Gender`] &&
-      formDataObj[`passenger${index}Name`]
-    ) {
-      passengersObjsArr.push({
-        passengerAge: formDataObj[`passenger${index}Age`],
-        passengerGender: formDataObj[`passenger${index}Gender`],
-        passengerName: formDataObj[`passenger${index}Name`],
-      });
-    }
-  }
-  const journeyData = {
-    trainNum: formDataObj["trainNum"],
-    toStation: formDataObj["toStation"],
-    fromStation: formDataObj["fromStation"],
-    dateOfJourney: formDataObj["dateOfJourney"],
-    passengersDetails: passengersObjsArr,
-  };
-
-  finalObj = journeyData;
-
-  // console.log(journeyData); // structured data for appending to  server
-  // converting journeyDate -> JSON
-  const jsonData = JSON.stringify(journeyData);
-  // const jsonData = journeyData;
-  console.log(jsonData, finalObj);
-  // Send to Backend
-  const url = "http://localhost:3000/tickets";
-
-  const postMethod = async (json, url) => {
-    await fetch(url, {
-      method: "post",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: json,
-    });
-  };
-  postMethod(jsonData, url);
-  if (finalObj != null) {
-    // console.log(dateOfJourney, fromStation, toStation, trainNum);
-
-    olEl.innerHTML = ``;
-
-    dateOfJourneySubmitedEl.innerText = `Date of Journey : ${finalObj.dateOfJourney}`;
-    fromStationSubmitedEl.innerText = `From : ${finalObj.fromStation}`;
-    toStationSubmitedEl.innerText = `To : ${finalObj.toStation}`;
-    trainNumSubmitedEl.innerText = `Train no : ${finalObj.trainNum}`;
-
-    finalObj.passengersDetails.forEach((passenger, index) => {
-      olEl.innerHTML += `<li class="p-4 my-2 bg-blue-400 rounded-md"> ${
-        index + 1
-      } .  ${passenger.passengerName}</li>`;
-    });
-  }
-
-  // removing existing inputs
-  formEl.reset();
-  resetStyles();
-
-  // removing empty extra passengers input elements
-  if (passengersListEl.children.length > 1) {
-    for (let i = passengersListEl.children.length; i > 1; i--) {
-      // console.log(i);
-      passengersListEl.children[i - 1].remove();
-    }
-  }
-  // swaping ui
-  formIDEl.style.display = "none";
-  popUpEl.style.display = "block";
-});
 formEl.addEventListener("change", (e) => {
   const target = e.target;
   const parentEl = target.parentElement;
