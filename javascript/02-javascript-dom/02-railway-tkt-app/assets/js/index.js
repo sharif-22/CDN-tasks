@@ -158,7 +158,7 @@ formEl.addEventListener("submit", (event) => {
   // converting journeyDate -> JSON
   const jsonData = JSON.stringify(journeyData);
   // const jsonData = journeyData;
-  console.log(jsonData);
+  console.log(jsonData, finalObj);
   // Send to Backend
   const url = "http://localhost:3000/tickets";
 
