@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- !!!!! pending  favicon   !!!!  -->
+    <!-- !!!!! pending  ogs   !!!! -->
+
+    <!-- css -->
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <title>Wire FI Complaints register</title>
+  </head>
+  <body class="bg-zinc-200 flex justify-center items-center w-full h-[100dvh]">
+    <main>
+      <div
+        class="bg-white p-5 rounded-xl text-xl text-center font-semibold my-6"
+      >
+        Wire FI Complaints Register
+      </div>
+      <form name="complaints" class="bg-white p-6 rounded-xl space-y-4">
+        <!-- Name -->
+        <div class="flex flex-col gap-2">
+          <label class="px-3" for="fullName">Enter Fullname </label>
+          <input
+            class="bg-slate-200 rounded-md p-3"
+            type="text"
+            id="fullName"
+            required
+            placeholder="Enter Fullname "
+          />
+        </div>
+        <!-- contact -->
+        <div class="flex flex-col gap-2">
+          <label class="px-3" for="contactNum"
+            >Enter Your Contact Number
+          </label>
+          <input
+            class="bg-slate-200 rounded-md p-3"
+            type="number"
+            id="contactNum"
+            placeholder="Enter your Contact Number"
+            required
+          />
+        </div>
+        <!-- selct and wifi detailes -->
+        <div class="flex gap-3">
+          <!-- select -->
+          <div class="flex flex-col gap-2">
+            <label for="issue" class="px-3"> Select Issue Type</label>
+            <select
+              class="text-center bg-slate-200 rounded-md p-3"
+              required
+              name="issue"
+              id="issue"
+            >
+              <option value="">Select Issue Type</option>
+              <option value="Internet issuse">Internet issue</option>
+              <option value="Billing & Payments">Billing & Payments</option>
+              <option value="Shift Wifi Conneciton">
+                Shift Wifi Connection
+              </option>
+              <option value="Active / Deactive connection">
+                Active / Deactive connection
+              </option>
+            </select>
+          </div>
+          <!-- wifi -->
+          <div class="flex flex-col gap-2">
+            <label class="px-3" for="wifiNum">Enter Your wifi Number </label>
+            <input
+              class="bg-slate-200 rounded-md p-3"
+              type="number"
+              id="wifiNum"
+              placeholder="Enter Your Wifi Number "
+              required
+            />
+          </div>
+        </div>
+
+        <!-- text area -->
+        <div class="flex flex-col gap-2">
+          <label class="px-3" for="description"
+            >Explain Your Issue In Detail</label
+          >
+          <textarea
+            placeholder="Explain Your Issue In Detail"
+            class="bg-slate-200 rounded-md p-3"
+            name="description"
+            id="description"
+            cols="40"
+            rows="5"
+          ></textarea>
+        </div>
+        <button
+          type="submit"
+          class="w-full p-3 text-center bg-indigo-500 rounded-md text-white font-medium text-lg"
+        >
+          Rise Ticket
+        </button>
+      </form>
+    </main>
+  </body>
+</html>
