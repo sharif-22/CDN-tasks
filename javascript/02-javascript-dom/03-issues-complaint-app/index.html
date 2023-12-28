@@ -9,10 +9,11 @@
 
     <!-- css -->
     <link rel="stylesheet" href="./assets/css/main.css" />
+
     <title>Wire FI Complaints register</title>
   </head>
   <body
-    class="bg-zinc-200 flex flex-col justify-center items-center w-full h-[100dvh]"
+    class="bg-zinc-200 flex-dir-col justify-center items-center w-full h-[100dvh]"
   >
     <main>
       <div
@@ -23,44 +24,41 @@
       <!-- filling complaints  -->
       <form
         name="complaints"
-        class="bg-white p-6 rounded-xl space-y-4 form hidden"
+        id="complaints"
+        class="bg-white p-6 rounded-xl space-y-4 form"
       >
         <!-- Name -->
-        <div class="flex flex-col gap-2">
-          <label class="px-3" for="fullName">Enter Fullname </label>
+        <div class="flex-dir-col gap-2">
+          <label for="fullName">Enter Fullname </label>
           <input
-            class="bg-slate-200 rounded-md p-3"
             type="text"
             id="fullName"
             required
-            placeholder="Enter Fullname "
+            placeholder="Enter Fullname * "
           />
         </div>
         <!-- contact -->
-        <div class="flex flex-col gap-2">
-          <label class="px-3" for="contactNum"
-            >Enter Your Contact Number
-          </label>
+        <div class="flex-dir-col gap-2">
+          <label for="contactNum">Enter Your Contact Number </label>
           <input
-            class="bg-slate-200 rounded-md p-3"
             type="number"
             id="contactNum"
-            placeholder="Enter your Contact Number"
+            placeholder="Enter your Contact Number *"
             required
           />
         </div>
         <!-- selct and wifi detailes -->
         <div class="flex lg:flex-row flex-col gap-3">
           <!-- select -->
-          <div class="flex flex-col gap-2">
-            <label for="issue" class="px-3"> Select Issue Type</label>
+          <div class="flex-dir-col gap-2">
+            <label for="issue"> Select Issue Type</label>
             <select
-              class="text-center bg-slate-200 rounded-md p-3"
+              class="bg-slate-200 rounded-md p-3"
               required
               name="issue"
               id="issue"
             >
-              <option value="">Select Issue Type</option>
+              <option value="">Select Issue Type *</option>
               <option value="Internet issuse">Internet issue</option>
               <option value="Billing & Payments">Billing & Payments</option>
               <option value="Shift Wifi Conneciton">
@@ -72,23 +70,20 @@
             </select>
           </div>
           <!-- wifi -->
-          <div class="flex flex-col gap-2">
-            <label class="px-3" for="wifiNum">Enter Your wifi Number </label>
+          <div class="flex-dir-col gap-2">
+            <label for="wifiNum">Enter Your wifi Number </label>
             <input
-              class="bg-slate-200 rounded-md p-3"
               type="number"
               id="wifiNum"
-              placeholder="Enter Your Wifi Number "
+              placeholder="Enter Your Wifi Number * "
               required
             />
           </div>
         </div>
 
         <!-- text area -->
-        <div class="flex flex-col gap-2">
-          <label class="px-3" for="description"
-            >Explain Your Issue In Detail</label
-          >
+        <div class="flex-dir-col gap-2">
+          <label for="description">Explain Your Issue In Detail</label>
           <textarea
             placeholder="Explain Your Issue In Detail"
             class="bg-slate-200 rounded-md p-3 min-h-24"
@@ -98,16 +93,13 @@
             rows="5"
           ></textarea>
         </div>
-        <button
-          type="submit"
-          class="rise-ticket w-full p-3 text-center bg-indigo-500 hover:bg-indigo-700 rounded-md text-white font-medium text-lg"
-        >
+        <button type="submit" class="rise-ticket btn-indigo">
           Raise Ticket
         </button>
       </form>
 
       <!-- ticket viewer -->
-      <section class="ticket-view p-4 space-y-3 bg-white rounded-lg">
+      <section class="ticket-view p-4 space-y-3 bg-white rounded-lg hidden">
         <h1 class="font-semibold text-xl my-2">
           Ticket ID: <span>1324567895210</span>
         </h1>
@@ -124,19 +116,16 @@
         </div>
 
         <!-- raise new ticket  -->
-        <button
-          class="rise-ticket w-full p-3 text-center bg-indigo-500 hover:bg-indigo-700 rounded-md text-white font-medium text-lg"
-        >
+        <button type="button" class="rise-new-ticket btn-indigo">
           Raise Ticket
         </button>
 
         <!-- view  existing  ticket  -->
-        <button
-          class="rise-ticket w-full p-3 text-center bg-gray-600 hover:bg-slate-500 rounded-md text-white font-medium text-lg"
-        >
-          View Existing Ticket
-        </button>
+        <button class="view-ticket btn-gray">View Existing Ticket</button>
       </section>
     </main>
+
+    <!-- scripts  -->
+    <script type="module" src="./assets/js/main.js"></script>
   </body>
 </html>
