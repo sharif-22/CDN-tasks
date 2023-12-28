@@ -11,14 +11,20 @@
     <link rel="stylesheet" href="./assets/css/main.css" />
     <title>Wire FI Complaints register</title>
   </head>
-  <body class="bg-zinc-200 flex justify-center items-center w-full h-[100dvh]">
+  <body
+    class="bg-zinc-200 flex flex-col justify-center items-center w-full h-[100dvh]"
+  >
     <main>
       <div
-        class="bg-white p-5 rounded-xl text-xl text-center font-semibold my-6"
+        class="bg-white p-5 rounded-xl text-xl text-center font-semibold my-6 lg:px-32"
       >
-        Wire FI Complaints Register
+        <p>Wire FI Complaints Register</p>
       </div>
-      <form name="complaints" class="bg-white p-6 rounded-xl space-y-4">
+      <!-- filling complaints  -->
+      <form
+        name="complaints"
+        class="bg-white p-6 rounded-xl space-y-4 form hidden"
+      >
         <!-- Name -->
         <div class="flex flex-col gap-2">
           <label class="px-3" for="fullName">Enter Fullname </label>
@@ -44,7 +50,7 @@
           />
         </div>
         <!-- selct and wifi detailes -->
-        <div class="flex gap-3">
+        <div class="flex lg:flex-row flex-col gap-3">
           <!-- select -->
           <div class="flex flex-col gap-2">
             <label for="issue" class="px-3"> Select Issue Type</label>
@@ -94,11 +100,43 @@
         </div>
         <button
           type="submit"
-          class="w-full p-3 text-center bg-indigo-500 rounded-md text-white font-medium text-lg"
+          class="rise-ticket w-full p-3 text-center bg-indigo-500 hover:bg-indigo-700 rounded-md text-white font-medium text-lg"
         >
-          Rise Ticket
+          Raise Ticket
         </button>
       </form>
+
+      <!-- ticket viewer -->
+      <section class="ticket-view p-4 space-y-3 bg-white rounded-lg">
+        <h1 class="font-semibold text-xl my-2">
+          Ticket ID: <span>1324567895210</span>
+        </h1>
+        <div class="space-y-3 p-3 bg-slate-200 rounded-md font-medium">
+          <p class="wifi-number">Wifi Number : <span>123456789</span></p>
+          <p class="issue-type">Issue Type : <span>Network issue</span></p>
+          <p class="resolved-in">Issue Resolved in : <span>29/12/23</span></p>
+          <p class="allocated-engineer">
+            Allocated Engineer: <span>sharif</span>
+          </p>
+          <p class="contact-engineer">
+            Contact Engineer: <a href="tel:+9876543210">9876543210</a>
+          </p>
+        </div>
+
+        <!-- raise new ticket  -->
+        <button
+          class="rise-ticket w-full p-3 text-center bg-indigo-500 hover:bg-indigo-700 rounded-md text-white font-medium text-lg"
+        >
+          Raise Ticket
+        </button>
+
+        <!-- view  existing  ticket  -->
+        <button
+          class="rise-ticket w-full p-3 text-center bg-gray-600 hover:bg-slate-500 rounded-md text-white font-medium text-lg"
+        >
+          View Existing Ticket
+        </button>
+      </section>
     </main>
   </body>
 </html>
