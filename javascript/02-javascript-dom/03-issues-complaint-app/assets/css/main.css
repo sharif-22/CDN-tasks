@@ -15,7 +15,7 @@ input[type="number"] {
 }
 
 input {
-  @apply bg-slate-200 rounded-md p-3;
+  @apply bg-slate-200 rounded-md p-3 outline-none;
 }
 
 .form-error {

@@ -34,6 +34,7 @@
             type="text"
             id="fullName"
             required
+            name="fullName"
             placeholder="Enter Fullname * "
           />
         </div>
@@ -43,6 +44,7 @@
           <input
             type="number"
             id="contactNum"
+            name="contactNum"
             placeholder="Enter your Contact Number *"
             required
           />
@@ -73,6 +75,7 @@
           <div class="flex-dir-col gap-2">
             <label for="wifiNum">Enter Your wifi Number </label>
             <input
+              name="wifiNum"
               type="number"
               id="wifiNum"
               placeholder="Enter Your Wifi Number * "
@@ -103,16 +106,16 @@
         <h1 class="font-semibold text-xl my-2">
           Ticket ID: <span>1324567895210</span>
         </h1>
-        <div class="space-y-3 p-3 bg-slate-200 rounded-md font-medium">
-          <p class="wifi-number">Wifi Number : <span>123456789</span></p>
-          <p class="issue-type">Issue Type : <span>Network issue</span></p>
-          <p class="resolved-in">Issue Resolved in : <span>29/12/23</span></p>
-          <p class="allocated-engineer">
+        <div
+          class="ticket-card space-y-3 p-3 bg-slate-200 rounded-md font-medium"
+        >
+          <p class="wifiNum">Wifi Number : <span>123456789</span></p>
+          <p class="issue">Issue Type : <span>Network issue</span></p>
+          <p class="resolvedIn">Issue Resolved in : <span>29/12/23</span></p>
+          <p class="allocatedEngineer">
             Allocated Engineer: <span>sharif</span>
           </p>
-          <p class="contact-engineer">
-            Contact Engineer: <a href="tel:+9876543210">9876543210</a>
-          </p>
+          <p class="contactEngineer">Contact Engineer: <a>9876543210</a></p>
         </div>
 
         <!-- raise new ticket  -->
@@ -121,7 +124,9 @@
         </button>
 
         <!-- view  existing  ticket  -->
-        <button class="view-ticket btn-gray">View Existing Ticket</button>
+        <button class="view-existing-ticket btn-gray">
+          View Existing Ticket
+        </button>
       </section>
     </main>
 
