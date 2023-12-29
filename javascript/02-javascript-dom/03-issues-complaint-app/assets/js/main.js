@@ -140,8 +140,7 @@ function createTr(data, i) {
   const engineerCellTd = document.createElement("td");
   const resolvedAtTd = document.createElement("td");
   const tdBtns = document.createElement("td");
-  tdBtns.innerHTML = `
-  <button type="button" class="td-btn-red">delete</button>`;
+
   const deleteBtnEl = document.createElement("button");
 
   deleteBtnEl.className =
@@ -213,7 +212,9 @@ function displayIssueList() {
   if (tBodyEl.children.length == 0) {
     tBodyEl.parentElement.classList.add("hidden");
     tBodyEl.parentElement.nextElementSibling.classList.remove("hidden");
+    viewCurrentTkt.classList.add("hidden");
   } else {
+    viewCurrentTkt.classList.remove("hidden");
     tBodyEl.parentElement.classList.remove("hidden");
     tBodyEl.parentElement.nextElementSibling.classList.add("hidden");
   }
