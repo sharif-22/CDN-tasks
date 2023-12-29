@@ -1,3 +1,13 @@
+import dayjs from "dayjs";
+
+function currentDate(format = "DD - MMM - YYYY") {
+  return dayjs().format(format);
+}
+
+function issueResolvedDate(resolvedIn = 1) {
+  return dayjs().add(resolvedIn, "days").format("DD - MMM - YYYY");
+}
+
 // validate form with help of just validate library
 function validate(Form) {
   Form.addField(
@@ -110,4 +120,4 @@ const Engineers = {
   },
 };
 
-export { validate, swapUi, Engineers };
+export { validate, currentDate, issueResolvedDate, swapUi, Engineers };
