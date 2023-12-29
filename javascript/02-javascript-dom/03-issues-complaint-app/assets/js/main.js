@@ -110,6 +110,7 @@ viewExistingTkt.addEventListener("click", () => {
     tBodyEl.append(createTr(obj, i + 1));
   });
 
+  displayIssueList();
   viewTktCard();
 });
 
@@ -129,6 +130,9 @@ function viewTktCard() {
 
 function createTr(data, i) {
   const tr = document.createElement("tr");
+
+  tr.classList.add("tr");
+
   const snoTd = document.createElement("td");
   const issueTd = document.createElement("td");
   const createdAtTd = document.createElement("td");
@@ -138,6 +142,17 @@ function createTr(data, i) {
   const tdBtns = document.createElement("td");
   tdBtns.innerHTML = `
   <button type="button" class="td-btn-red">delete</button>`;
+  const deleteBtnEl = document.createElement("button");
+
+  deleteBtnEl.className =
+    "px-2 py-1 rounded bg-red-500 hover:bg-red-600 text-white text-sm";
+  deleteBtnEl.textContent = "Delete";
+
+  deleteBtnEl.addEventListener("click", (e) => {
+    deletePastIssues(data);
+  });
+
+  tdBtns.append(deleteBtnEl);
 
   snoTd.classList.add("td");
   snoTd.innerText = i;
@@ -170,4 +185,36 @@ function createTr(data, i) {
   );
 
   return tr;
+}
+
+function deletePastIssues(issueObj) {
+  console.log(issueObj);
+  const existingData = localStorage.getItem(localStorageKey);
+
+  const DataObj = JSON.parse(existingData);
+
+  const otherRecords = DataObj.filter((issue) => issue.id != issueObj.id);
+  // Push it to localstorage again, this time, i'm deleting that record (courierRequestId)
+  localStorage.setItem(localStorageKey, JSON.stringify(otherRecords));
+
+  displayIssueList();
+}
+
+function displayIssueList() {
+  // dispaying from local
+  const existingIssueData = localStorage.getItem("issueData");
+  // Parse that string into Javascript value
+  existingIssueArray = JSON.parse(existingIssueData);
+  tBodyEl.innerHTML = "";
+  existingIssueArray.map((obj, i) => {
+    tBodyEl.append(createTr(obj, i + 1));
+  });
+
+  if (tBodyEl.children.length == 0) {
+    tBodyEl.parentElement.classList.add("hidden");
+    tBodyEl.parentElement.nextElementSibling.classList.remove("hidden");
+  } else {
+    tBodyEl.parentElement.classList.remove("hidden");
+    tBodyEl.parentElement.nextElementSibling.classList.add("hidden");
+  }
 }

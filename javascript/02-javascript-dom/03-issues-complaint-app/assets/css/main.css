@@ -27,11 +27,26 @@ input {
 }
 
 .btn-indigo {
-  @apply w-full p-3 text-center bg-indigo-500 hover:bg-indigo-700 rounded-md text-white font-medium text-lg;
+  @apply w-full  p-3 text-center bg-indigo-500 hover:bg-indigo-700 rounded-md text-white font-medium text-lg;
 }
 
 .btn-gray {
-  @apply w-full p-3 text-center bg-gray-600 hover:bg-slate-500 rounded-md text-white font-medium text-lg;
+  @apply w-full  p-3 text-center bg-gray-600 hover:bg-slate-500 rounded-md text-white font-medium text-lg;
+}
+.btn-blue {
+  @apply w-full p-3 text-center bg-blue-500 hover:bg-blue-700 rounded-md text-white font-medium text-lg;
+}
+
+.tr {
+  @apply hover:bg-zinc-100 cursor-pointer;
+}
+
+.td {
+  @apply px-6 border-gray-400 border-2 py-4;
+}
+
+.td-btn-red {
+  @apply bg-red-500 hover:bg-red-600 text-white p-1 text-sm rounded-md;
 }
 .btn-blue {
   @apply w-full p-3 text-center bg-blue-500 hover:bg-blue-700 rounded-md text-white font-medium text-lg;
