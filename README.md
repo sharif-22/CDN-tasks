@@ -20,7 +20,7 @@ This internship is provided by [CyberDude Networks Pvt. Ltd.](https://youtube.co
 
 ## Technologies Used and Learned
 
-| s.no | Technologies Used                     |
-| :--- | ------------------------------------- |
-| 01   | [Javascript](./javascript/)           |
-| 02   | [javascript dom](./javascript%20dom/) |
+| s.no | Technologies Used                      |
+| :--- | -------------------------------------- |
+| 0    | [UI - challenges ](./UI-challenges.md) |
+| 01   | [Javascript](./javascript/)            |
