@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HEX code converter</title>
+    <link rel="stylesheet" href="./assets/css/main.css" />
+  </head>
+  <body class="w-full bg-slate-500 h-screen flex justify-center items-center">
+    <main>
+      <div class="flex flex-col gap-2 font-medium bg-slate-100 p-5 rounded">
+        <label for="colorInput">Enter HEX Code </label>
+        <input
+          class="p-3 rounded bg-slate-300"
+          type="text"
+          id="colorInput"
+          placeholder="#ffffff"
+        />
+        <button class="p-3 bg-slate-400 hover:bg-slate-500 rounded">
+          Get Other Color Codes
+        </button>
+      </div>
+      <div
+        class="flex flex-col gap-2 font-medium bg-slate-100 p-5 rounded my-3"
+      >
+        <p class="bg-slate-200 my-1 p-2 rounded">
+          HEX:<span class="hex"></span>
+        </p>
+        <p class="bg-slate-200 my-1 p-2 rounded">
+          RGB:<span class="rgb"></span>
+        </p>
+        <p class="bg-slate-200 my-1 p-2 rounded">
+          HSL:<span class="hsl"></span>
+        </p>
+      </div>
+    </main>
+    <script type="module" src="./assets/js/main.js"></script>
+  </body>
+</html>
