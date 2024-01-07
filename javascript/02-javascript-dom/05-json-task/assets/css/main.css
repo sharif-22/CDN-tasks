@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.btn {
+  @apply w-[96%] absolute hover:bg-blue-400 hover:text-white p-2 rounded-md text-blue-500 my-1 border-blue-500 border-2 bottom-3 left-2;
+}
