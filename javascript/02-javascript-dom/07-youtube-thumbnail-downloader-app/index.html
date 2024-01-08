@@ -6,7 +6,34 @@
     <title>YT thumbnail downloader</title>
     <link rel="stylesheet" href="./assets/css/main.css" />
   </head>
-  <body>
+  <body class="flex justify-center items-center w-full h-screen">
+    <main
+      class="mx-auto bg-slate-300 p-5 rounded max-w-xs min-w-80 lg:max-w-5xl lg:min-w-[50rem]"
+    >
+      <div class="flex flex-col gap-2">
+        <label for="youtubeLink">Enter youtube link</label>
+        <input
+          placeholder="Enter youtube link"
+          class="outline-none rounded p-2"
+          type="text"
+          name="youtubeLink"
+          id="youtubeLink"
+        />
+      </div>
+      <img
+        class="m-4"
+        src="./yt-thumbnail-placeholder.svg"
+        alt="youtube Thumbnail "
+      />
+
+      <button
+        id="getThumbnail"
+        class="p-2 w-full bg-blue-500 hover:bg-blue-600 my-2 rounded text-white font-semibold"
+      >
+        Get Thumbnail
+      </button>
+    </main>
+
     <script type="module" src="./assets/js/main.js"></script>
   </body>
 </html>
