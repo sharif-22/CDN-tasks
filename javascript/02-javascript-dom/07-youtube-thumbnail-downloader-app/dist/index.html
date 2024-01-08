@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YT thumbnail downloader</title>
+    
+    <script type="module" crossorigin src="./assets/index-e8e99c01.js"></script>
+    <link rel="stylesheet" href="./assets/index-6fc26b05.css">
+  </head>
+  <body class="flex justify-center items-center w-full h-screen">
+    <main
+      class="mx-auto bg-slate-300 p-5 rounded max-w-xs min-w-80 lg:max-w-5xl lg:min-w-[50rem]"
+    >
+      <form class="flex flex-col gap-2">
+        <label for="youtubeLink">Enter youtube link</label>
+        <input
+          placeholder="Enter youtube link"
+          class="outline-none rounded p-2"
+          type="text"
+          id="youtubeLink"
+        />
+        <small class="text-red-500"></small>
+        <img
+          class="my-2"
+          src="./yt-thumbnail-placeholder.svg"
+          alt="youtube Thumbnail "
+        />
+
+        <button
+          id="getThumbnail"
+          class="p-2 w-full bg-blue-500 hover:bg-blue-600 my-2 rounded text-white font-semibold"
+        >
+          Get Thumbnail
+        </button>
+      </form>
+    </main>
+
+    
+  </body>
+</html>
