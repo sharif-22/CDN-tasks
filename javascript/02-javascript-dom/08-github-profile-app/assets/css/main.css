@@ -1,3 +1,70 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/*
+avatar_url
+name
+bio
+html_url
+followers
+following
+created_at 
+public_repos
+login
+*/
+
+img {
+  display: inline-block;
+}
+
+.card {
+  @apply bg-slate-300 rounded flex flex-col w-80 md:w-11/12 md:m-2 m-2 p-4 space-y-3;
+}
+
+.card:hover {
+  transition: ease-out 200ms;
+  box-shadow: 4px 4px 3px #a8bde1;
+
+  @apply cursor-grab bg-slate-400;
+}
+
+.card:hover > img {
+  @apply border-slate-600 shadow-2xl;
+}
+
+.avatar_url {
+  @apply rounded-full border-4 border-gray-400;
+}
+
+.name {
+  @apply font-semibold text-xl text-slate-600;
+}
+
+.card:hover .name {
+  @apply text-white duration-150;
+}
+
+.followers,
+.following {
+  @apply flex gap-2 text-lg text-gray-600;
+}
+
+.followers img,
+.following img {
+  width: 20px;
+}
+
+.html_url,
+.public_repos {
+  @apply bg-slate-500 p-2 rounded text-gray-100 font-semibold;
+}
+
+.public_repos:hover,
+.html_url:hover {
+  @apply bg-slate-600;
+}
+
+.created_at {
+  @apply font-medium text-slate-700;
+}
