@@ -1,3 +1,5 @@
+import dayjs from "dayjs";
+
 const githubProfiles = [
   "esakki2104prsnl",
   "vk2401",
@@ -71,7 +73,7 @@ function cardUi(
   const followingSpan = document.createElement("span");
   followElement.appendChild(followingSpan);
   followingSpan.classList.add("following");
-  followingSpan.innerHTML = `<img src="https://api.iconify.design/fluent:people-checkmark-24-regular.svg?color=%23000000"/>: <span class="font-medium text-slate-700">${following}</span> Following`;
+  followingSpan.innerHTML = `<img src="https://api.iconify.design/fluent:people-checkmark-24-filled.svg?color=%23000000"/>: <span class="font-medium text-slate-700">${following}</span> Following`;
 
   const createdAtElement = document.createElement("p");
   createdAtElement.classList.add("created_at");
@@ -91,4 +93,13 @@ function cardUi(
   appendTo.appendChild(divElement);
 }
 
-export { githubProfiles, cardUi };
+function formatDate(unFormatDate) {
+  return dayjs(unFormatDate).format("DD/MMM/YYYY");
+}
+
+function swapUI(fromEl, toEl) {
+  fromEl.classList.add("hidden");
+  toEl.classList.remove("hidden");
+}
+
+export { githubProfiles, cardUi, swapUI, formatDate };

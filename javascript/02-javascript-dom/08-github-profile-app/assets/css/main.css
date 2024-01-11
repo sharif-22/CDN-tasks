@@ -62,9 +62,72 @@ img {
 
 .public_repos:hover,
 .html_url:hover {
-  @apply bg-slate-600;
+  @apply bg-slate-600 cursor-pointer;
 }
 
 .created_at {
   @apply font-medium text-slate-700;
+}
+
+/* repo card  */
+
+.repo-card {
+  @apply bg-slate-700 rounded w-11/12 lg:max-w-5xl m-auto border my-3  flex gap-5 items-center;
+}
+
+.repo-card__count {
+  @apply lg:w-32 text-center lg:text-2xl text-lg w-11 ml-2 text-white font-semibold;
+}
+
+.repo-card__info {
+  @apply space-y-2 w-[95%] bg-slate-300 p-3;
+}
+
+.repo-card__title {
+  @apply lg:text-3xl text-xl  font-semibold text-slate-800 block hover:underline my-1;
+}
+.repo-card__title img {
+  @apply w-8 inline;
+}
+
+.repo-card__owner {
+  @apply text-sm text-slate-600 font-medium;
+}
+
+.repo-card__description,
+.repo-card__language {
+  @apply font-medium text-slate-600;
+}
+.repo-card__language {
+  @apply text-sm lg:text-base text-slate-600 font-medium;
+}
+
+.repo-card__created_at,
+.repo-card__pushed_at {
+  @apply font-medium lg:text-sm text-xs text-slate-500;
+}
+
+/* backToCards */
+
+.d-none {
+  display: none !important;
+}
+
+.hide {
+  visibility: hidden;
+}
+
+.backToCards {
+  @apply bg-slate-300 cursor-pointer  rounded-full grid place-content-center sticky w-14 h-14 bottom-6 left-3 lg:left-2 xl:left-[10%] z-10;
+}
+.back-btn {
+  @apply text-slate-700;
+}
+
+footer {
+  @apply text-center font-medium text-sm;
+}
+
+footer a:hover {
+  @apply underline;
 }
