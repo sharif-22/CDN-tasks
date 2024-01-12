@@ -118,10 +118,11 @@ img {
 }
 
 .backToCards {
-  @apply bg-slate-300 cursor-pointer  rounded-full grid place-content-center sticky w-14 h-14 bottom-6 left-3 lg:left-2 xl:left-[10%] z-10;
+  @apply bg-slate-300 hover:bg-slate-400 cursor-pointer  rounded-full grid place-content-center sticky w-14 h-14 bottom-8 shadow-md shadow-slate-500 right-0  z-10;
 }
+
 .back-btn {
-  @apply text-slate-700;
+  @apply text-slate-700 hover:text-white;
 }
 
 footer {
