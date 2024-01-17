@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="bg-slate-200 text-primary-black">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,6 +7,120 @@
     <link rel="stylesheet" href="./assets/css/main.css" />
   </head>
   <body>
+    <main class="w-full h-screen grid place-items-center">
+      <form
+        method="post"
+        name="splitAmountForm"
+        class="card p-3 grid place-content-center calculatorForm space-y-6"
+      >
+        <div class="w-fit space-y-4">
+          <!-- amount  -->
+          <div class="flex flex-col space-y-2">
+            <label for="amount" class="text-sm">Enter Amount</label>
+            <input
+              required
+              name="amount"
+              class="p-3 rounded"
+              type="number"
+              min="1"
+              placeholder="Enter Amount"
+            />
+          </div>
+          <!-- currency  -->
+          <div>
+            <label for="currency" class="text-sm">Select Currency </label>
+
+            <select
+              name="currency"
+              id="currency"
+              class="mt-1.5 w-full p-3 border-gray-300 text-gray-700 rounded"
+            >
+              <optgroup label="INR : ₹">
+                <option value="INR">Indian Rupee</option>
+              </optgroup>
+            </select>
+          </div>
+          <!-- split by people  -->
+          <div class="flex gap-3">
+            <span class="text-primary-black flex items-center gap-1">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill=""
+                  d="M12 12q-1.65 0-2.825-1.175T8 8q0-1.65 1.175-2.825T12 4q1.65 0 2.825 1.175T16 8q0 1.65-1.175 2.825T12 12m-8 6v-.8q0-.85.438-1.562T5.6 14.55q1.55-.775 3.15-1.162T12 13q1.65 0 3.25.388t3.15 1.162q.725.375 1.163 1.088T20 17.2v.8q0 .825-.587 1.413T18 20H6q-.825 0-1.412-.587T4 18"
+                />
+              </svg>
+              <span> 1 </span>
+            </span>
+            <input
+              name="splitBy"
+              type="range"
+              min="1"
+              max="20"
+              value="2"
+              class="range range-md"
+            />
+            <span class="text-primary-black flex items-center gap-2">
+              <span> 20 </span>
+              <svg
+                class="rounded-full"
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill=""
+                  d="M12 12.75c1.63 0 3.07.39 4.24.9c1.08.48 1.76 1.56 1.76 2.73V18H6v-1.61c0-1.18.68-2.26 1.76-2.73c1.17-.52 2.61-.91 4.24-.91M4 13c1.1 0 2-.9 2-2s-.9-2-2-2s-2 .9-2 2s.9 2 2 2m1.13 1.1c-.37-.06-.74-.1-1.13-.1c-.99 0-1.93.21-2.78.58A2.01 2.01 0 0 0 0 16.43V18h4.5v-1.61c0-.83.23-1.61.63-2.29M20 13c1.1 0 2-.9 2-2s-.9-2-2-2s-2 .9-2 2s.9 2 2 2m4 3.43c0-.81-.48-1.53-1.22-1.85A6.95 6.95 0 0 0 20 14c-.39 0-.76.04-1.13.1c.4.68.63 1.46.63 2.29V18H24zM12 6c1.66 0 3 1.34 3 3s-1.34 3-3 3s-3-1.34-3-3s1.34-3 3-3"
+                />
+              </svg>
+            </span>
+          </div>
+          <p>
+            Split Amount With
+            <span class="splitNum font-semibold text-lg">2</span> People
+          </p>
+        </div>
+
+        <button class="btn bg-green-500 rounded text-lg" type="submit">
+          Calculate
+        </button>
+      </form>
+      <div class="card px-6 saveTransaction hidden">
+        <div class="flex justify-between items-center">
+          <h1 class="lg:text-xl">
+            Total Expence : <span class="total-expence"></span>
+          </h1>
+
+          <div
+            class="grid place-items-center relative text-primary-white bg-primary-100 hover:bg-primary-200 cursor-pointer w-14 h-14 rounded-full"
+          >
+            <svg
+              class="rounded-full absolute top-2"
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="#fff"
+                d="M12 12.75c1.63 0 3.07.39 4.24.9c1.08.48 1.76 1.56 1.76 2.73V18H6v-1.61c0-1.18.68-2.26 1.76-2.73c1.17-.52 2.61-.91 4.24-.91M4 13c1.1 0 2-.9 2-2s-.9-2-2-2s-2 .9-2 2s.9 2 2 2m1.13 1.1c-.37-.06-.74-.1-1.13-.1c-.99 0-1.93.21-2.78.58A2.01 2.01 0 0 0 0 16.43V18h4.5v-1.61c0-.83.23-1.61.63-2.29M20 13c1.1 0 2-.9 2-2s-.9-2-2-2s-2 .9-2 2s.9 2 2 2m4 3.43c0-.81-.48-1.53-1.22-1.85A6.95 6.95 0 0 0 20 14c-.39 0-.76.04-1.13.1c.4.68.63 1.46.63 2.29V18H24zM12 6c1.66 0 3 1.34 3 3s-1.34 3-3 3s-3-1.34-3-3s1.34-3 3-3"
+              />
+            </svg>
+            <span class="font-semibold text-lg absolute bottom-2 splitNum"
+              >2</span
+            >
+          </div>
+        </div>
+        <p class="text-lg lg:text-3xl">
+          Each need to pay : <span class="eachOnePays"></span>
+        </p>
+      </div>
+    </main>
     <script type="module" src="./assets/js/index.js"></script>
   </body>
 </html>

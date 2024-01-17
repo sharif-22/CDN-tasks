@@ -10,8 +10,12 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.16",
+    "daisyui": "^4.6.0",
     "postcss": "^8.4.33",
     "tailwindcss": "^3.4.1",
     "vite": "^5.0.8"
+  },
+  "dependencies": {
+    "number-formatter": "^1.2.0"
   }
 }
