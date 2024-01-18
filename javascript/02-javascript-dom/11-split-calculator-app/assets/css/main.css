@@ -13,7 +13,18 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+optgroup {
+  @apply p-2 m-1;
+}
+
+option {
+  @apply p-2;
+}
+
+option:hover {
+  @apply bg-primary-100 text-white rounded cursor-pointer;
+}
 
 .card {
-  @apply lg:max-w-lg w-11/12 sm:max-w-sm  rounded mx-auto bg-primary-white shadow-md  mt-16 py-6;
+  @apply lg:max-w-2xl w-11/12 sm:max-w-sm  rounded mx-auto bg-primary-white shadow-md  mt-16 p-8;
 }
