@@ -16,6 +16,7 @@
     "vite": "^5.0.8"
   },
   "dependencies": {
-    "number-formatter": "^1.2.0"
+    "number-formatter": "^1.2.0",
+    "uuid": "^9.0.1"
   }
 }

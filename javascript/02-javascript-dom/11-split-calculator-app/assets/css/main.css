@@ -28,3 +28,7 @@ option:hover {
 .card {
   @apply lg:max-w-2xl w-11/12 sm:max-w-sm  rounded mx-auto bg-primary-white shadow-md  mt-16 p-8;
 }
+
+.nav-hover {
+  @apply hover:bg-primary-200 hover:cursor-pointer;
+}

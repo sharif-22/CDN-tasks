@@ -7,7 +7,63 @@
     <link rel="stylesheet" href="./assets/css/main.css" />
   </head>
   <body>
-    <main class="w-full h-screen grid place-items-center">
+    <nav
+      class="sticky top-0 bg-primary-100 py-5 z-10 text-primary-white shadow-md"
+    >
+      <div
+        class="max-w-xs md:max-w-xl lg:max-w-2xl xl:max-w-6xl mx-auto flex justify-between items-center"
+      >
+        <h1 class="text-2xl font-semibold p-2 rounded nav-hover">
+          SPLIT BILLS
+        </h1>
+        <div class="hidden lg:block">
+          <ol class="flex justify-between gap-8 lg:text-lg">
+            <li class="nav-hover p-2 rounded">
+              <a href="./transaction.html">Previous Statements</a>
+            </li>
+            <li class="nav-hover p-2 rounded">
+              <a href="">Raise Issues</a>
+            </li>
+            <li class="nav-hover p-2 rounded"><a href="">Contribute</a></li>
+          </ol>
+        </div>
+
+        <!-- toogler -->
+        <label
+          class="btn btn-circle swap swap-rotate bg-primary-100 hover:bg-primary-200 text-primary-white border-none lg:hidden"
+        >
+          <!-- this hidden checkbox controls the state -->
+          <input type="checkbox" />
+
+          <!-- hamburger icon -->
+          <svg
+            class="swap-off fill-current"
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 512 512"
+          >
+            <path
+              d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z"
+            />
+          </svg>
+
+          <!-- close icon -->
+          <svg
+            class="swap-on fill-current"
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 512 512"
+          >
+            <polygon
+              points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49"
+            />
+          </svg>
+        </label>
+      </div>
+    </nav>
+    <main class="w-full h-[80dvh] grid place-items-center">
       <!-- amount form -->
       <form
         method="post"

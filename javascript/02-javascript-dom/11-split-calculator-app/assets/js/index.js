@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from "uuid";
 import numberFormatter from "number-formatter";
 import countryData from "../../data/country.json";
 import { swapUI, getLocalStorage, setLocalStorage } from "./utlis.js";
@@ -18,6 +19,10 @@ const eachOnePayEl = document.querySelector(".eachOnePays");
 
 let currentData = [];
 const expenceHistory = getLocalStorage();
+
+function splitAmount(amount, splitBy) {
+  return numberFormatter("#,##0.####", amount / splitBy);
+}
 
 // event listener
 splitAmountFormEl.addEventListener("submit", (e) => splitAmountHandler(e));
@@ -49,10 +54,6 @@ countryData.forEach((data) => {
   currencySelectEl.append(optgroupEl);
 });
 
-function splitAmount(amount, splitBy) {
-  return numberFormatter("#,##0.####", amount / splitBy);
-}
-
 // handlers
 
 function splitAmountHandler(e) {
@@ -63,6 +64,7 @@ function splitAmountHandler(e) {
 
   // get form data
   const formData = new FormData(splitAmountFormEl);
+  formData.append("id", uuidv4());
   const formObj = Object.fromEntries(formData.entries());
 
   // find currency code
@@ -84,11 +86,7 @@ function splitAmountHandler(e) {
 
   // push data to global
   currentData = [];
-  currentData.push({ symbol, ...formObj });
-
-  // reset form
-  // splitAmountFormEl.reset();
-  console.log(currentData);
+  currentData.unshift({ symbol, ...formObj });
 }
 
 function saveTransactionHandler(e) {
@@ -103,13 +101,14 @@ function saveTransactionHandler(e) {
   console.log(currentData);
 
   // push to local
-
-  expenceHistory.push(...currentData);
-  // console.log(expenceHistory);
+  expenceHistory.unshift(...currentData);
 
   setLocalStorage(expenceHistory);
   // change ui
 
   // reset forms
   allFormsArr.forEach((form) => form.reset());
+
+  // change
+  window.location.href = window.location.href.replace("index", "transaction");
 }
