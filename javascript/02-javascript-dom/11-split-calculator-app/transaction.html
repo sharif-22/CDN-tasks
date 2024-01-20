@@ -4,6 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bill Transaction History</title>
+
+    <link
+      rel="shortcut icon"
+      href="/loan-svgrepo-com.svg"
+      type="image/x-icon"
+    />
+
     <link rel="stylesheet" href="./assets/css/main.css" />
   </head>
   <body>
@@ -17,7 +24,7 @@
           <h1 class="text-2xl font-semibold p-2 rounded nav-hover">
             SPLIT BILLS
           </h1>
-          <div class="hidden lg:block">
+          <div class="hidden lg:block navmenu">
             <ol class="flex justify-between gap-8 lg:text-lg">
               <li class="nav-hover p-2 rounded font-semibold bg-primary-200">
                 <a href="">Previous Statements</a>
@@ -25,13 +32,19 @@
               <li class="nav-hover p-2 rounded">
                 <a href="./index.html">Add New Transaction</a>
               </li>
-              <li class="nav-hover p-2 rounded"><a href="">Contribute</a></li>
+              <li class="nav-hover p-2 rounded">
+                <a
+                  target="_blank"
+                  href="https://github.com/sharif-22/cyberdude-challenges/tree/main/javascript/02-javascript-dom/11-split-calculator-app"
+                  >Contribute</a
+                >
+              </li>
             </ol>
           </div>
 
           <!-- toogler -->
           <label
-            class="btn btn-circle swap swap-rotate bg-primary-100 hover:bg-primary-200 text-primary-white border-none lg:hidden"
+            class="btn btn-circle nav-toggler swap swap-rotate bg-primary-100 hover:bg-primary-200 text-primary-white border-none lg:hidden"
           >
             <!-- this hidden checkbox controls the state -->
             <input type="checkbox" />

@@ -32,3 +32,10 @@ option:hover {
 .nav-hover {
   @apply hover:bg-primary-200 hover:cursor-pointer;
 }
+.mobileNavParent {
+  @apply absolute top-20 bottom-0 right-0 left-0 h-[95dvh];
+}
+
+.mobileNav {
+  @apply absolute top-0 bottom-0 right-0 left-0 flex-col bg-primary-100  justify-center items-center;
+}

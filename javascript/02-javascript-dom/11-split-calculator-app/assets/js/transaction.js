@@ -195,3 +195,19 @@ function deleteDataFromStorage(id) {
   transactionsEl.innerHTML = "";
   displayTransaction();
 }
+
+const navMenuEl = document.querySelector(".navmenu");
+const navToggler = document.querySelector(".nav-toggler");
+
+navToggler.addEventListener("click", () => {
+  let isChecked = navToggler.children[0].checked;
+
+  if (isChecked) {
+    navMenuEl.classList.remove("hidden");
+    navMenuEl.classList.add("mobileNavParent");
+    navMenuEl.children[0].classList.add("mobileNav");
+  } else {
+    navMenuEl.children[0].classList.remove("mobileNav");
+    navMenuEl.classList.add("hidden");
+  }
+});
