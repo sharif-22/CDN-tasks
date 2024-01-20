@@ -20,24 +20,21 @@ const eachOnePayEl = document.querySelector(".eachOnePays");
 let currentData = [];
 const expenceHistory = getLocalStorage();
 
-function splitAmount(amount, splitBy) {
-  return numberFormatter("#,##0.####", amount / splitBy);
-}
-
 // event listener
 splitAmountFormEl.addEventListener("submit", (e) => splitAmountHandler(e));
 
 saveTransactionEl.addEventListener("submit", (e) => saveTransactionHandler(e));
 
-editBtnEl.addEventListener("click", (e) => {
-  e.preventDefault();
-  swapUI(saveTransactionEl, calculatorFormEl);
-});
+editBtnEl.addEventListener("click", () =>
+  swapUI(saveTransactionEl, calculatorFormEl)
+);
 
+// change split person count for all el
 rangeEl.addEventListener("change", (e) => {
   splitNumElArr.forEach((members) => (members.textContent = e.target.value));
 });
 
+// print country code and currency code
 countryData.forEach((data) => {
   const countryCurrency = data.currency;
   const optgroupEl = document.createElement("optgroup");
@@ -54,8 +51,12 @@ countryData.forEach((data) => {
   currencySelectEl.append(optgroupEl);
 });
 
-// handlers
+// each one pays
+function splitAmount(amount, splitBy) {
+  return numberFormatter("#,##0.####", amount / splitBy);
+}
 
+// calculator handlers
 function splitAmountHandler(e) {
   e.preventDefault();
 
@@ -89,6 +90,7 @@ function splitAmountHandler(e) {
   currentData.unshift({ symbol, ...formObj });
 }
 
+// save transaction handlers
 function saveTransactionHandler(e) {
   e.preventDefault();
 
@@ -98,17 +100,14 @@ function saveTransactionHandler(e) {
 
   // organise data
   currentData = [{ ...currentData[0], ...formObj }];
-  console.log(currentData);
 
   // push to local
   expenceHistory.unshift(...currentData);
-
   setLocalStorage(expenceHistory);
-  // change ui
 
   // reset forms
   allFormsArr.forEach((form) => form.reset());
 
-  // change
+  // changeUi
   window.location.href = window.location.href.replace("index", "transaction");
 }

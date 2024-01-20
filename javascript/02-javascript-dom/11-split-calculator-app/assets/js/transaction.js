@@ -7,43 +7,17 @@ const transactionsEl = document.querySelector(".transactions");
 const transactionNullEl = document.querySelector(".transactionNull");
 
 let oldTransactions = getLocalStorage();
-
-deleteEl.addEventListener("click", (e) => {
-  console.log(e);
-  alertCard();
-  deleteCardEl.classList.add("hidden");
-
-  displayTransaction();
-});
 let ID = "";
 
-function alertCard() {
-  deleteCardEl.classList.remove("hidden");
-  console.log(ID);
+// Delete
+deleteEl.addEventListener("click", () => {
+  deleteCardEl.classList.add("hidden");
   deleteDataFromStorage(ID);
-  return true;
-}
-function deleteHandler(e) {
-  e.preventDefault();
-  //add delete logics
-  alertCard();
-
-  //   let deletesate = alertCard();
-
-  //   if (e.target.innerText === "Delete") {
-  const cardEl = e.target.closest(".transactionCard");
-  //     console.log("click");
-  //     deleteCardEl.classList.add("hidden");
-  console.log(cardEl.id);
-
-  ID = cardEl.id;
-  //     deleteDataFromStorage(cardEl.id);
-  //     displayTransaction();
-  //   }
-}
-
+  displayTransaction();
+});
 cancelEl.addEventListener("click", () => deleteCardEl.classList.add("hidden"));
 
+// transaction cards html template
 function transactionCardTemplate(
   id,
   title,
@@ -136,7 +110,7 @@ function transactionCardTemplate(
     "hover:text-white"
   );
   transactionDeleteBtn.textContent = "Delete Transaction";
-  transactionDeleteBtn.addEventListener("click", deleteHandler);
+  transactionDeleteBtn.addEventListener("click", deleteAlertHandler);
   //   append
 
   //   transactionSplitBtn.append(iconSvg, transactionSplitSpan);
@@ -154,7 +128,15 @@ function transactionCardTemplate(
   return transactionCardEl;
 }
 
-// displaying from local
+// delete alert dialog
+function deleteAlertHandler(e) {
+  e.preventDefault();
+  deleteCardEl.classList.remove("hidden");
+  const cardEl = e.target.closest(".transactionCard");
+  ID = cardEl.id;
+}
+
+// displaying existing data from local storage
 function displayTransaction() {
   oldTransactions = getLocalStorage();
 
@@ -203,7 +185,9 @@ function displayTransaction() {
     });
   }
 }
+displayTransaction();
 
+// Delete logic
 function deleteDataFromStorage(id) {
   const localData = getLocalStorage();
   const otherRecords = localData.filter((issue) => issue.id != id);
@@ -211,4 +195,3 @@ function deleteDataFromStorage(id) {
   transactionsEl.innerHTML = "";
   displayTransaction();
 }
-displayTransaction();
