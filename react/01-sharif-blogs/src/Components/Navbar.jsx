@@ -1,24 +1,24 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 const Navbar = () => {
   return (
     <nav className="w-full bg-blue-500 p-5 sticky top-0 shadow-md">
-      <div className="lg:max-w-6xl mx-auto flex justify-between">
-        <Link to="/" className="text-2xl font-medium text-white">
+      <div className="lg:max-w-6xl mx-auto flex justify-between items-center">
+        <NavLink to="/" className="text-2xl font-medium text-white">
           Sharif's Blogs!
-        </Link>
-        <ol className="flex gap-5 text-white font-medium text-lg">
+        </NavLink>
+        <ol className="md:flex gap-5 text-white font-medium text-lg  hidden">
           <li>
-            <Link to="/Home">Home</Link>
+            <NavLink to="/home">Home</NavLink>
           </li>
           <li>
-            <Link to="/Blogs">Blogs</Link>
+            <NavLink to="/blogs">Blogs</NavLink>
           </li>
           <li>
-            <Link to="/About">About</Link>
+            <NavLink to="/about">About</NavLink>
           </li>
           <li>
-            <Link to="/Contact">Contact</Link>
+            <NavLink to="/contact">Contact</NavLink>
           </li>
         </ol>
       </div>

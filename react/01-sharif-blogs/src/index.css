@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+nav a {
+  @apply p-2 rounded;
+}
+
+nav a.active {
+  @apply bg-blue-600 rounded;
+}
