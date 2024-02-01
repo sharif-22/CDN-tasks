@@ -1,0 +1,75 @@
+{
+  "name": "Khaja sharif",
+  "profilePic": "/images/khaja-sharif-profile-pic.jpg",
+  "profession": "Full-Stack Engineer",
+  "social": {
+    "linkedIn": "https://linkedin.com/in/khaja-sharif",
+    "github": "https://github.com/sharif-22"
+  },
+  "skill": [
+    "bootstrap",
+    "Tailwind css",
+    "CSS3",
+    "Figma",
+    "Github",
+    "JavaScript",
+    "node",
+    "React",
+    "Sass"
+  ],
+  "projects": [
+    {
+      "name": "Blog",
+      "mobileView": "/images/projects/blog-mobile.png",
+      "mobileDesktop": "/images/projects/blog-desktop.png"
+    },
+    {
+      "name": "Github API",
+      "mobileView": "/images/projects/github-api-mobile.png",
+      "mobileDesktop": "/images/projects/github-api-desktop.png"
+    },
+    {
+      "name": "Split Calculator",
+      "mobileView": "/images/projects/split-calculator-mobile.png",
+      "mobileDesktop": "/images/projects/split-calculator-desktop.png"
+    }
+  ],
+  "icons": [
+    {
+      "icon": "bootstrap",
+      "icon_path": "/images/Logos/bootstrap.png"
+    },
+    {
+      "icon": "Tailwind css",
+      "icon_path": "/images/Logos/Tailwind_CSS.png"
+    },
+    {
+      "icon": "CSS3",
+      "icon_path": "/images/Logos/CSS3.png"
+    },
+    {
+      "icon": "Figma",
+      "icon_path": "/images/Logos/Figma.png"
+    },
+    {
+      "icon": "Github",
+      "icon_path": "/images/Logos/Github.png"
+    },
+    {
+      "icon": "JavaScript",
+      "icon_path": "/images/Logos/JavaScript.png"
+    },
+    {
+      "icon": "node",
+      "icon_path": "/images/Logos/node.png"
+    },
+    {
+      "icon": "React",
+      "icon_path": "/images/Logos/React.png"
+    },
+    {
+      "icon": "Sass",
+      "icon_path": "/images/Logos/Sass.png"
+    }
+  ]
+}

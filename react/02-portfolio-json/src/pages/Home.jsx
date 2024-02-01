@@ -1,7 +1,20 @@
 import React from "react";
+import Navbar from "../components/Navbar";
+import Hero from "./Hero";
+import About from "./About";
+import Projects from "./Projects";
+import Contact from "./Contact";
 
 const Home = () => {
-  return <div className="bg-blue-500 p-5">home</div>;
+  return (
+    <>
+      <Navbar />
+      <Hero />
+      <About />
+      <Projects />
+      <Contact />
+    </>
+  );
 };
 
 export default Home;
