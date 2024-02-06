@@ -1,0 +1,56 @@
+[
+  {
+    "alert": [
+      {
+        "id": 1,
+        "alertTitle": "Primary",
+        "alertMsg": "this is the Primary Alert Componet",
+        "bgColor": "bg-blue-200",
+        "bgHoverColor": "hover:bg-blue-300",
+        "bgColorClose": "bg-blue-400"
+      },
+      {
+        "id": 2,
+        "alertTitle": "Secondary",
+        "alertMsg": "this is the Secondary Alert Componet",
+        "bgColor": "bg-yellow-200",
+        "bgHoverColor": "hover:bg-yellow-300",
+        "bgColorClose": "bg-yellow-400"
+      },
+      {
+        "id": 3,
+        "alertTitle": "Sucess",
+        "alertMsg": "this is the Sucess Alert Componet",
+        "bgColor": "bg-green-200",
+        "bgHoverColor": "hover:bg-green-300",
+        "bgColorClose": "bg-green-400"
+      }
+    ],
+    "button": [
+      {
+        "id": 1,
+        "btnName": "Primary",
+        "bgColor": "bg-blue-400",
+        "bgColorHover": "hover:bg-blue-500",
+        "textColor": "text-black",
+        "textColorHover": "hover:text-white"
+      },
+      {
+        "id": 2,
+        "btnName": "Danger",
+        "bgColor": "bg-red-400",
+        "bgColorHover": "hover:bg-red-500",
+        "textColor": "text-black",
+        "textColorHover": "hover:text-white"
+      },
+      {
+        "id": 3,
+        "btnName": "Secondary",
+        "bgColor": "bg-slate-400",
+        "bgColorHover": "hover:bg-slate-500",
+        "textColor": "text-black",
+        "textColorHover": "hover:text-white"
+      }
+    ]
+  }
+]
