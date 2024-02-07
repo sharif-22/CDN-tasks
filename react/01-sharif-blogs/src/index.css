@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+p::selection {
+  @apply bg-blue-500 text-white;
+}
+
 nav a {
   @apply p-2 rounded;
 }

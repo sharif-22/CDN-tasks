@@ -11,7 +11,10 @@ const Footer = () => {
           </Link>
           <ol>
             <li>
-              <a href="http://github.com/sharif-22" target="_blank">
+              <a
+                href="https://github.com/sharif-22/cyberdude-challenges/tree/main/react/01-sharif-blogs"
+                target="_blank"
+              >
                 <FaGithub size={"28px"} />
               </a>
             </li>

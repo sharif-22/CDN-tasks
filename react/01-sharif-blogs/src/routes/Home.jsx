@@ -76,7 +76,7 @@ const BlogCard = (props) => {
 
         <Link to={`/blog/${props.index}`}>
           <button
-            className="bg-blue-500 hover:bg-blue-600 lg:text-base text-sm p-2 inline-block text-white rounded w-full"
+            className="bg-blue-400 hover:bg-blue-500 lg:text-base text-sm p-2 inline-block text-black hover:text-white duration-500 rounded w-full"
             type="button"
           >
             Read Blog
@@ -143,7 +143,7 @@ const Home = () => {
 
       <div className="lg:max-w-6xl mx-auto flex justify-center my-4">
         <Link to="/blogs">
-          <button className="mx-auto w-fit px-24 py-2 rounded text-white bg-blue-500 hover:bg-blue-600">
+          <button className="mx-auto w-fit px-24 py-2 rounded hover:underline">
             Read More Blogs
           </button>
         </Link>

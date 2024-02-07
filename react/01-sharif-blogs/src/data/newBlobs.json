@@ -89,13 +89,13 @@
       {
         "title": "Understanding React Components",
         "short_description": "Explore the concept of React components and how to create and use them in your applications.",
-        "image": "/blog-thumbnail.png",
+        "image": "https://i.ytimg.com/vi/cyU_4U1yHl4/maxresdefault.jpg",
         "src": "https://example.com/understanding-react-components"
       },
       {
         "title": "State Management in React",
         "short_description": "Learn different techniques for managing state in React applications and choose the best approach for your projects.",
-        "image": "/blog-thumbnail.png",
+        "image": "https://i.ytimg.com/vi/vrWcvySafv4/maxresdefault.jpg",
         "src": "https://example.com/state-management-react"
       },
       {
@@ -132,7 +132,7 @@
     "id": 3,
     "title": "Vite + React",
     "short_description": "Discover how to use Vite, the next-generation front-end build tool, with React for blazing-fast development.",
-    "image": "/blog-thumbnail.png",
+    "image": "https://media.dev.to/cdn-cgi/image/width=1600,height=900,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fg0evm74roi20cgsnlofv.png",
     "author": {
       "name": "Khaja Sharif",
       "social_media": {
@@ -154,13 +154,13 @@
       {
         "title": "Introduction to Vite",
         "short_description": "Learn the basics of Vite, a build tool that provides instant server start, hot module replacement, and optimized builds for modern JavaScript projects.",
-        "image": "/blog-thumbnail.png",
+        "image": "https://miro.medium.com/v2/resize:fit:1400/1*cpCZrcGIQ6HCGwdrdh5APw.png",
         "src": "https://example.com/introduction-to-vite"
       },
       {
         "title": "React State Management Comparison",
         "short_description": "Compare different state management libraries for React, including Redux, MobX, and Recoil, to choose the right one for your project.",
-        "image": "/blog-thumbnail.png",
+        "image": "https://bs-uploads.toptal.io/blackfish-uploads/components/seo/content/og_image_file/og_image/1297530/image_5-0059967eb5450c477b154760cd8c8525-b228bd4760b1e5e5a69ab124d1e5dc7d.png",
         "src": "https://example.com/react-state-management-comparison"
       },
       {
@@ -197,7 +197,7 @@
     "id": 4,
     "title": "React Routing",
     "short_description": "Learn how to implement client-side routing in React applications using React Router for seamless navigation.",
-    "image": "/blog-thumbnail.png",
+    "image": "https://res.cloudinary.com/practicaldev/image/fetch/s--CCN8jFeM--/c_imagga_scale,f_auto,fl_progressive,h_900,q_auto,w_1600/https://dev-to-uploads.s3.amazonaws.com/i/r5nog298592rqgj6yj8n.png",
     "author": {
       "name": "Khaja Sharif",
       "social_media": {
@@ -219,13 +219,13 @@
       {
         "title": "Vite + React",
         "short_description": "Discover how to use Vite, the next-generation front-end build tool, with React for blazing-fast development.",
-        "image": "/blog-thumbnail.png",
+        "image": "https://media.dev.to/cdn-cgi/image/width=1600,height=900,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fg0evm74roi20cgsnlofv.png",
         "src": "https://example.com/vite-react"
       },
       {
         "title": "React State Management Comparison",
         "short_description": "Compare different state management libraries for React, including Redux, MobX, and Recoil, to choose the right one for your project.",
-        "image": "/blog-thumbnail.png",
+        "image": "https://bs-uploads.toptal.io/blackfish-uploads/components/seo/content/og_image_file/og_image/1297530/image_5-0059967eb5450c477b154760cd8c8525-b228bd4760b1e5e5a69ab124d1e5dc7d.png",
         "src": "https://example.com/react-state-management-comparison"
       },
       {
@@ -266,9 +266,9 @@
     "id": 5,
     "title": "Introduction to Tailwind CSS",
     "short_description": "Discover the basics of Tailwind CSS, a utility-first CSS framework, and learn how to use it to rapidly build modern web interfaces.",
-    "image": "/blog-thumbnail.png",
+    "image": "https://i.ytimg.com/vi/ro8hFh1bnvY/maxresdefault.jpg",
     "author": {
-      "name": "Khaja Sharif",
+      "name": "Anbu Selvan",
       "social_media": {
         "linkedin": "https://www.linkedin.com/in/khaja-sharif",
         "instagram": "https://www.instagram.com/khajasharif",
@@ -288,13 +288,13 @@
       {
         "title": "React Routing",
         "short_description": "Learn how to implement client-side routing in React applications using React Router for seamless navigation.",
-        "image": "/blog-thumbnail.png",
+        "image": "https://i.ytimg.com/vi/vrWcvySafv4/maxresdefault.jpg",
         "src": "https://example.com/react-routing"
       },
       {
         "title": "Vite + React",
         "short_description": "Discover how to use Vite, the next-generation front-end build tool, with React for blazing-fast development.",
-        "image": "/blog-thumbnail.png",
+        "image": "https://media.dev.to/cdn-cgi/image/width=1600,height=900,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fg0evm74roi20cgsnlofv.png",
         "src": "https://example.com/vite-react"
       },
       {
@@ -329,74 +329,9 @@
   },
   {
     "id": 6,
-    "title": "React State Management",
-    "short_description": "Explore different techniques for managing state in React applications and choose the best approach for your projects.",
-    "image": "/blog-thumbnail.png",
-    "author": {
-      "name": "Khaja Sharif",
-      "social_media": {
-        "linkedin": "https://www.linkedin.com/in/khaja-sharif",
-        "instagram": "https://www.instagram.com/khajasharif",
-        "twitter": "https://twitter.com/khajasharif"
-      }
-    },
-    "publish_date": "2024-02-25",
-    "hashtags": ["React", "StateManagement", "Frontend", "WebDevelopment"],
-    "time_to_read": "10 minutes",
-    "reactions": {
-      "likes": 20,
-      "total_comments": 5,
-      "saves": 30,
-      "shares": 8
-    },
-    "related_blogs": [
-      {
-        "title": "Introduction to Redux",
-        "short_description": "Learn the basics of Redux, a predictable state container for JavaScript applications, and how to integrate it with React for efficient state management.",
-        "image": "/blog-thumbnail.png",
-        "src": "https://example.com/introduction-to-redux"
-      },
-      {
-        "title": "Context API in React",
-        "short_description": "Discover how to use the Context API in React to manage global state and avoid prop drilling in your component hierarchy.",
-        "image": "/blog-thumbnail.png",
-        "src": "https://example.com/context-api-in-react"
-      },
-      {
-        "title": "MobX State Management",
-        "short_description": "Explore MobX, a simple and scalable state management library for React applications, and learn how to use it to manage complex application state.",
-        "image": "/blog-thumbnail.png",
-        "src": "https://example.com/mobx-state-management"
-      }
-    ],
-    "content": [
-      {
-        "heading": "Introduction to State Management",
-        "details": "State management is a crucial aspect of building React applications, as it involves managing and updating the data that drives the UI. React provides various tools and libraries for state management, each with its own advantages and use cases. Understanding different state management techniques allows you to choose the best approach based on your project's requirements and complexity."
-      },
-      {
-        "heading": "Local Component State",
-        "details": "The simplest form of state management in React is local component state, where state is managed within individual components using the `useState` hook. Local component state is suitable for managing component-specific data that doesn't need to be shared with other components. It's lightweight, easy to implement, and ideal for simple UI interactions."
-      },
-      {
-        "heading": "Global State Management",
-        "details": "For managing state that needs to be shared across multiple components or persists between component unmounts, global state management solutions are preferred. Redux, the Context API, and MobX are popular choices for global state management in React applications. These solutions offer centralized state management, predictable data flow, and tools for debugging and optimizing state updates."
-      },
-      {
-        "heading": "Choosing the Right Approach",
-        "details": "When deciding on a state management approach for your React project, consider factors such as project size, complexity, team familiarity, and performance requirements. For smaller projects with simple state requirements, local component state may suffice. However, for larger projects with complex state interactions, global state management solutions like Redux or MobX provide better scalability and maintainability."
-      },
-      {
-        "heading": "Conclusion",
-        "details": "State management is a fundamental aspect of building React applications, and choosing the right approach can significantly impact the development experience and application performance. By understanding the principles of state management and evaluating different techniques and libraries available in the React ecosystem, you can build robust and maintainable applications that scale with your project's requirements."
-      }
-    ]
-  },
-  {
-    "id": 7,
     "title": "Introduction to Redux",
     "short_description": "Learn the basics of Redux, a predictable state container for JavaScript applications, and how to integrate it with React for efficient state management.",
-    "image": "/blog-thumbnail.png",
+    "image": "https://blog.openreplay.com/images/top-6-react-state-management-libraries-for-2022/images/img3.png",
     "author": {
       "name": "Khaja Sharif",
       "social_media": {
@@ -418,13 +353,13 @@
       {
         "title": "React State Management",
         "short_description": "Explore different techniques for managing state in React applications and choose the best approach for your projects.",
-        "image": "/blog-thumbnail.png",
+        "image": "https://bs-uploads.toptal.io/blackfish-uploads/components/seo/content/og_image_file/og_image/1297530/image_5-0059967eb5450c477b154760cd8c8525-b228bd4760b1e5e5a69ab124d1e5dc7d.png",
         "src": "https://example.com/react-state-management"
       },
       {
         "title": "Context API in React",
         "short_description": "Discover how to use the Context API in React to manage global state and avoid prop drilling in your component hierarchy.",
-        "image": "/blog-thumbnail.png",
+        "image": "https://res.cloudinary.com/practicaldev/image/fetch/s--6LDoPspg--/c_imagga_scale,f_auto,fl_progressive,h_900,q_auto,w_1600/https://dev-to-uploads.s3.amazonaws.com/i/506dxp55rss6bz8rr367.png",
         "src": "https://example.com/context-api-in-react"
       },
       {

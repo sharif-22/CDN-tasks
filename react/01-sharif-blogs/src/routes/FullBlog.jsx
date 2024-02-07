@@ -49,7 +49,7 @@ const FullBlog = () => {
           key={id}
         >
           <img
-            className="rounded-t"
+            className="rounded-t object-cover w-full h-96"
             src={currentBlog.image}
             alt={currentBlog.title}
           />
@@ -135,7 +135,9 @@ const FullBlog = () => {
                 src={currentBlog.related_blogs[0].image}
                 alt={currentBlog.related_blogs[0].title}
               />
-              <p>{currentBlog.related_blogs[0].short_description}</p>
+              <p className="text-sm">
+                {currentBlog.related_blogs[0].short_description}
+              </p>
             </div>
             <div className="flex flex-col gap-2 p-4 hover:bg-slate-100 border-y border-slate-300">
               <h1 className="font-medium">
@@ -146,7 +148,9 @@ const FullBlog = () => {
                 src={currentBlog.related_blogs[1].image}
                 alt={currentBlog.related_blogs[1].title}
               />
-              <p>{currentBlog.related_blogs[1].short_description}</p>
+              <p className="text-sm">
+                {currentBlog.related_blogs[1].short_description}
+              </p>
             </div>
           </div>
         </div>

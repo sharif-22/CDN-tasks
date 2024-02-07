@@ -76,7 +76,10 @@
             "details": "Gain insights into best practices for using the useState hook efficiently. Avoid common pitfalls and ensure a robust state management strategy in your React projects."
           }
         ],
-        "images": ["/blog-thumbnail.png", "/blog-thumbnail.png"]
+        "images": [
+          "https://daveceddia.com/images/useState-hook-twitter.png",
+          "https://www.devbabu.com/wp-content/uploads/react-js-usestate-hook.png"
+        ]
       },
       {
         "id": 4,
@@ -97,7 +100,10 @@
             "details": "Delve into advanced features of React Router, such as nested routes and implementing route guards for authentication. Secure and optimize your application's navigation flow."
           }
         ],
-        "images": ["/blog-thumbnail.png", "/blog-thumbnail.png"]
+        "images": [
+          "https://i.ytimg.com/vi/vrWcvySafv4/maxresdefault.jpg",
+          "https://i.ytimg.com/vi/vrWcvySafv4/maxresdefault.jpg"
+        ]
       },
       {
         "id": 5,
@@ -118,7 +124,10 @@
             "details": "Unravel the mysteries of the Context API in React and understand how to manage global state and provide data to nested components more efficiently."
           }
         ],
-        "images": ["/blog-thumbnail.png", "/blog-thumbnail.png"]
+        "images": [
+          "https://i.ytimg.com/vi/vrWcvySafv4/maxresdefault.jpg",
+          "https://i.ytimg.com/vi/vrWcvySafv4/maxresdefault.jpg"
+        ]
       },
       {
         "id": 6,
@@ -143,7 +152,10 @@
             "details": "Discover the power of Reselect in optimizing the performance of your React-Redux application by efficiently selecting and computing derived state."
           }
         ],
-        "images": ["/blog-thumbnail.png", "/blog-thumbnail.png"]
+        "images": [
+          "https://i.ytimg.com/vi/vrWcvySafv4/maxresdefault.jpg",
+          "https://i.ytimg.com/vi/vrWcvySafv4/maxresdefault.jpg"
+        ]
       },
       {
         "id": 7,
@@ -168,7 +180,10 @@
             "details": "Learn SEO best practices with server-side rendering. Discover how SSR can positively impact your website's search engine ranking and overall discoverability."
           }
         ],
-        "images": ["/blog-thumbnail.png", "/blog-thumbnail.png"]
+        "images": [
+          "https://i.ytimg.com/vi/vrWcvySafv4/maxresdefault.jpg",
+          "https://i.ytimg.com/vi/vrWcvySafv4/maxresdefault.jpg"
+        ]
       },
       {
         "id": 8,
@@ -193,7 +208,10 @@
             "details": "Discover effective strategies for managing authentication state in your React app, providing a seamless experience for users across sessions."
           }
         ],
-        "images": ["/blog-thumbnail.png", "/blog-thumbnail.png"]
+        "images": [
+          "https://i.ytimg.com/vi/vrWcvySafv4/maxresdefault.jpg",
+          "https://i.ytimg.com/vi/vrWcvySafv4/maxresdefault.jpg"
+        ]
       },
       {
         "id": 9,
@@ -218,7 +236,10 @@
             "details": "Explore strategies for handling errors and reconnections in WebSocket connections, ensuring the reliability of real-time data exchange in your app."
           }
         ],
-        "images": ["/blog-thumbnail.png", "/blog-thumbnail.png"]
+        "images": [
+          "https://i.ytimg.com/vi/vrWcvySafv4/maxresdefault.jpg",
+          "https://i.ytimg.com/vi/vrWcvySafv4/maxresdefault.jpg"
+        ]
       },
       {
         "id": 10,
@@ -243,7 +264,10 @@
             "details": "Integrate push notifications into your React PWA, enhancing user engagement and keeping users informed even when the app is not open."
           }
         ],
-        "images": ["/blog-thumbnail.png", "/blog-thumbnail.png"]
+        "images": [
+          "https://i.ytimg.com/vi/vrWcvySafv4/maxresdefault.jpg",
+          "https://i.ytimg.com/vi/vrWcvySafv4/maxresdefault.jpg"
+        ]
       }
     ]
   }

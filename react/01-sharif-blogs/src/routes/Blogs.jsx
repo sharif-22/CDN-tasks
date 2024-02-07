@@ -18,7 +18,7 @@ function formatDate(inputDateString = "2002-01-31") {
 }
 const Hastag = (props) => {
   return (
-    <li className="p-1 rounded text-xs lg:text-sm hover:bg-slate-200">
+    <li className="p-1 rounded text-xs cursor-pointer lg:text-sm duration-300 hover:bg-slate-200">
       #{props.hastag}
     </li>
   );
@@ -28,7 +28,7 @@ const BlogCard = (props) => {
     <div
       key={props.index}
       id={props.index}
-      className="lg:my-4 w-11/12 lg:max-w-5xl  mx-auto space-y-4 rounded-md bg-slate-200 hover:bg-slate-300 border hover:shadow-lg delay-75 ease-in"
+      className="lg:my-4 w-11/12 lg:max-w-6xl  mx-auto space-y-4 rounded-md bg-slate-200 hover:bg-slate-300 border hover:shadow-lg delay-75 ease-in"
     >
       <img
         className="rounded-t lg:h-80 lg:w-full lg:object-cover"
@@ -56,19 +56,19 @@ const BlogCard = (props) => {
         </ol>
 
         <div className="flex justify-around">
-          <div className="flex gap-2 hover:bg-slate-200 p-1 rounded items-center">
+          <div className="flex gap-2 cursor-pointer duration-300 hover:bg-slate-200 p-1 rounded items-center">
             <FaRegHeart size={24} />
             <p className="text-sm">{props.likes}</p>
           </div>
-          <div className="flex gap-2 hover:bg-slate-200 p-1 rounded items-center">
+          <div className="flex gap-2 cursor-pointer duration-300 hover:bg-slate-200 p-1 rounded items-center">
             <FaRegComment size={22} />
             <p className="text-sm">{props.total_comments}</p>
           </div>
-          <div className="flex gap-2 hover:bg-slate-200 p-1 rounded items-center">
+          <div className="flex gap-2 cursor-pointer duration-300 hover:bg-slate-200 p-1 rounded items-center">
             <IoShareSocialOutline size={24} />
             <p className="text-sm">{props.shares}</p>
           </div>
-          <div className="flex gap-2 hover:bg-slate-200 p-1 rounded items-center">
+          <div className="flex gap-2 cursor-pointer duration-300 hover:bg-slate-200 p-1 rounded items-center">
             <FaRegBookmark size={24} />
             <p className="text-sm">{props.saves}</p>
           </div>
@@ -76,7 +76,7 @@ const BlogCard = (props) => {
 
         <Link to={`/blog/${props.index}`}>
           <button
-            className="bg-blue-500 hover:bg-blue-600 lg:text-base text-sm p-2 inline-block text-white rounded w-full"
+            className="bg-blue-400 hover:bg-blue-500 lg:text-base text-sm p-2 inline-block hover:text-white duration-500 rounded w-full"
             type="button"
           >
             Read Blog
