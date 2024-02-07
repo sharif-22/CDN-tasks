@@ -29,7 +29,7 @@
     "button": [
       {
         "id": 1,
-        "btnName": "Primary",
+        "btnName": "Primary Button",
         "bgColor": "bg-blue-400",
         "bgColorHover": "hover:bg-blue-500",
         "textColor": "text-black",
@@ -37,7 +37,7 @@
       },
       {
         "id": 2,
-        "btnName": "Danger",
+        "btnName": "Danger Button",
         "bgColor": "bg-red-400",
         "bgColorHover": "hover:bg-red-500",
         "textColor": "text-black",
@@ -45,11 +45,33 @@
       },
       {
         "id": 3,
-        "btnName": "Secondary",
+        "btnName": "Secondary Button",
         "bgColor": "bg-slate-400",
         "bgColorHover": "hover:bg-slate-500",
         "textColor": "text-black",
         "textColorHover": "hover:text-white"
+      }
+    ],
+    "card": [
+      {
+        "id": 1,
+        "src": "https://img.freepik.com/free-vector/speech-bubble-with-emoji_24908-78068.jpg?w=826&t=st=1707246260~exp=1707246860~hmac=de9a2f7950ac22163b2b8d4c1d35f5baa91b542e43a0f638c03ee584422db812",
+        "title": "Simple Card",
+        "desc": "A simple card component created with TailwindCSS & React",
+        "button": "view Card"
+      },
+      {
+        "id": 2,
+        "src": null,
+        "title": "Simple Card without image",
+        "desc": "A simple card component created with TailwindCSS & React",
+        "button": "view Article"
+      },
+      {
+        "id": 3,
+        "src": "https://img.freepik.com/free-vector/speech-bubble-with-emoji_24908-78068.jpg?w=826&t=st=1707246260~exp=1707246860~hmac=de9a2f7950ac22163b2b8d4c1d35f5baa91b542e43a0f638c03ee584422db812",
+        "title": null,
+        "desc": null
       }
     ]
   }

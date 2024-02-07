@@ -1,11 +1,11 @@
 import React from "react";
-import Navbar from "./Componets/Navbar";
+import Navbar from "./Components/Navbar";
 import data from "./data/data.json";
-import Alert from "./Componets/UiKits/Alert";
-import Button from "./Componets/UiKits/Button";
+import Alert from "./Components/UiKits/Alert";
+import Button from "./Components/UiKits/Button";
 import { FaReact } from "react-icons/fa";
 import { GiPowerButton } from "react-icons/gi";
-import Card from "./Componets/UiKits/Card";
+import Card from "./Components/UiKits/Card";
 
 const App = () => {
   return (
@@ -90,7 +90,21 @@ const App = () => {
         {/* card */}
         <section className="text-3xl font-medium py-3">
           <h2 className="text-3xl font-medium py-3 ">Card's</h2>
-          <Card title="Hello React" />
+
+          <div className="flex">
+            {data[0].card.map((card) => {
+              const { title, src, desc, id, button } = card;
+              return (
+                <Card
+                  key={id}
+                  title={title}
+                  src={src}
+                  desc={desc}
+                  btnName={button}
+                />
+              );
+            })}
+          </div>
         </section>
         {/* card */}
       </main>
