@@ -9,3 +9,9 @@ nav a {
 nav a.active {
   @apply bg-blue-600 rounded;
 }
+.demo-1 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
