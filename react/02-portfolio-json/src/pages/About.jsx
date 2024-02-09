@@ -2,12 +2,9 @@ import React from "react";
 
 const About = () => {
   return (
-    <div className="w-full bg-slate-600 text-white">
+    <div id="about" className="w-full bg-slate-600 text-white">
       <div className="h-[91dvh]  max-w-6xl mx-auto flex items-center justify-between lg:flex-row flex-col">
-        <img
-          src="/images/full-stack-text-image.svg"
-          className="animate-ping duration-1000"
-        />
+        <img src="/images/full-stack-text-image.svg" className="animate-ping" />
         <div className="w-2/3 space-y-4">
           <h1 className="text-4xl text-blue-500 font-medium">About me</h1>
           <p className="text-2xl ">A dedicated Full stack Engineer</p>

@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+  @apply scroll-smooth scroll-p-24 bg-scroll;
+}
+.repeat-0 {
+  animation-iteration-count: 0;
+}
