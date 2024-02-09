@@ -43,39 +43,42 @@ const FullBlog = () => {
     <>
       <Navbar />
 
-      <div className="lg:max-w-6xl flex lg:gap-x-4 justify-between mx-3 lg:mx-auto">
-        <div
-          className="mx-auto w-9/12 bg-slate-100 pb-8 lg:px-0 px-5 mt-2"
-          key={id}
-        >
-          <img
-            className="rounded-t object-cover w-full h-96"
-            src={currentBlog.image}
-            alt={currentBlog.title}
-          />
-          <div className="mx-auto max-w-4xl space-y-4 px-3">
-            <div
-              className="text-3xl max-w-lg mt-8 font-medium"
-              key={currentBlog.id}
-            >
-              <h1>{currentBlog.title}</h1>
-            </div>
-            <div className="text-lg px-3">
-              <p>{currentBlog.description}</p>
-            </div>
+      <div className="lg:max-w-6xl flex lg:gap-x-4 justify-between mx-1 lg:mx-auto">
+        <section>
+          <div
+            className="w-full bg-slate-100 pb-8 rounded lg:px-0 md:px-5 mt-2"
+            key={id}
+          >
+            <img
+              className="rounded-t object-cover w-full md:h-96"
+              src={currentBlog.image}
+              alt={currentBlog.title}
+            />
+            <div className="mx-auto max-w-4xl space-y-4 md:px-3">
+              <div
+                className="text-3xl max-w-lg mt-8 font-medium"
+                key={currentBlog.id}
+              >
+                <h1>{currentBlog.title}</h1>
+              </div>
+              <div className="text-lg md:px-3">
+                <p>{currentBlog.description}</p>
+              </div>
 
-            {currentBlog.content.map((topic, index) => {
-              return (
-                <Content
-                  count={index}
-                  heading={topic.heading}
-                  details={topic.details}
-                />
-              );
-            })}
+              {currentBlog.content.map((topic, index) => {
+                return (
+                  <Content
+                    count={index}
+                    heading={topic.heading}
+                    details={topic.details}
+                  />
+                );
+              })}
+            </div>
+          </div>
 
-            <div className="px-3">
-              <hr />
+          <div className="bg-slate-200 my-2 p-6 rounded ">
+            <div>
               <p className="text-slate-700 font-medium text-2xl">
                 Author : {currentBlog.author.name}
               </p>
@@ -98,7 +101,7 @@ const FullBlog = () => {
               </p>
             </div>
 
-            <div className="flex flex-col gap-y-2 px-3">
+            <div className="flex flex-col gap-y-2 ">
               <label htmlFor="comment">
                 Leave your taughts about this blog
               </label>
@@ -119,7 +122,8 @@ const FullBlog = () => {
               </div>
             </div>
           </div>
-        </div>
+        </section>
+
         <div className="hidden w-1/4 lg:block bg-slate-200  rounded sticky top-20 h-1/2">
           <div>
             <h2 className="font-semibold p-4  border-b border-slate-300 text-lg">
