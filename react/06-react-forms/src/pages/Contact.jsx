@@ -13,9 +13,11 @@ const Contact = () => {
     mail: "",
     desc: "",
   });
+  const userName = [];
   const [alertHidden, setAlertHidden] = useState({
     statues: false,
     classes: "alert-pop-up",
+    msg: [],
   });
 
   const handleInputs = (e, clear) => {
@@ -30,35 +32,17 @@ const Contact = () => {
   const submitFormToServer = (e) => {
     e.preventDefault();
     console.log(formData);
-
-    //rubber animation
-    setTimeout(() => {
-      setAlertHidden((prevState) => ({
-        ...prevState,
-        classes: "alert-pop-up transition-all ease-in scale-x-150 duration-300",
-      }));
-    }, 100);
-    setInterval(() => {
-      setAlertHidden((prevState) => ({
-        ...prevState,
-        classes: "alert-pop-up transition-all ease-in scale-100 duration-300",
-      }));
-    }, 300);
+    userName.push();
 
     // alerting username
     setAlertHidden((prevState) => ({
       ...prevState,
+      classes: "alert-pop-up animate-rubberBand",
       statues: true,
-    }));
-  };
-
-  const handleAlert = () => {
-    setAlertHidden((prevState) => ({
-      ...prevState,
-      classes: "alert-pop-up",
-      statues: false,
+      msg: `${formData.fName} ${formData.lName}`,
     }));
 
+    console.log(alertHidden);
     // reset form
     setFormData({
       fName: "",
@@ -67,6 +51,14 @@ const Contact = () => {
       mail: "",
       desc: "",
     });
+  };
+
+  const handleAlert = () => {
+    setAlertHidden((prevState) => ({
+      ...prevState,
+      classes: "alert-pop-up",
+      statues: false,
+    }));
   };
 
   return (
@@ -138,10 +130,8 @@ const Contact = () => {
 
       <div className={alertHidden.statues ? alertHidden.classes : "hidden"}>
         <p className="text-lg text-center">
-          Thank's for your response{" "}
-          <span className="font-medium">
-            {formData.fName + " " + formData.lName}
-          </span>
+          Thank's for your response
+          <span className="font-medium mx-1">{alertHidden.msg}</span>
         </p>
         <SlClose
           onClick={handleAlert}
