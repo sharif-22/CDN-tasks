@@ -5,10 +5,10 @@ const Input = ({
   name,
   placeholder,
   required,
-  value,
+  register,
+  error,
   type = "text",
   width = "w-full",
-  handleOnChange,
   bgColor = "bg-slate-200",
 }) => {
   return (
@@ -28,11 +28,12 @@ const Input = ({
         type={type}
         name={name}
         id={name}
+        {...register}
         placeholder={placeholder}
-        required={required}
-        onChange={handleOnChange}
-        value={value}
       />
+      {error && (
+        <small className="text-sm text-red-500">{error?.message}</small>
+      )}
     </div>
   );
 };
