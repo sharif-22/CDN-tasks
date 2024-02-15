@@ -1,0 +1,70 @@
+[
+  {
+    "id": 1,
+    "name": "Apple MacBook Pro",
+    "price": 97735,
+    "image": "/macbook-pro.jpg",
+    "description": "The Apple MacBook Pro is a powerful laptop featuring a stunning Retina display, fast performance, and all-day battery life. It's perfect for professionals and creatives who need a reliable machine for demanding tasks.",
+    "specs": [
+      "Intel Core i5",
+      "8GB RAM",
+      "256GB SSD",
+      "Intel Iris Plus Graphics",
+      "13-inch Retina Display"
+    ],
+    "quantity": 1,
+    "maxQuantity": 4,
+    "stock": "I apologize, but orders are limited to a maximum of"
+  },
+
+  {
+    "id": 3,
+    "name": "Sony PlayStation 5",
+    "price": 37288,
+    "image": "/ps5.jpg",
+    "description": "The Sony PlayStation 5 is the next-generation gaming console that delivers immersive gaming experiences with lightning-fast loading times, stunning graphics, and innovative features. It's the ultimate gaming machine for gamers of all levels.",
+    "specs": [
+      "Custom AMD Zen 2",
+      "16GB GDDR6",
+      "825GB SSD",
+      "AMD Radeon RDNA 2",
+      "Up to 8K resolution"
+    ],
+    "quantity": 1,
+    "maxQuantity": 2,
+    "stock": "I apologize, but orders are limited to a maximum of"
+  },
+  {
+    "id": 4,
+    "name": "DJI Mavic Air 2",
+    "price": 59047,
+    "image": "/dji.jpg",
+    "description": "The DJI Mavic Air 2 is a compact and powerful drone with advanced features for capturing stunning aerial footage and photos. It offers intelligent shooting modes, impressive battery life, and enhanced safety features.",
+    "specs": [
+      "Up to 34 minutes flight time",
+      "4K/60fps video, 48MP photos",
+      "Up to 10km range",
+      "Obstacle sensors, APAS 3.0",
+      "570g weight"
+    ],
+    "quantity": 1,
+    "maxQuantity": 3,
+    "stock": "I apologize, but orders are limited to a maximum of"
+  },
+  {
+    "id": 5,
+    "name": "Amazon Echo Dot (4th Gen)",
+    "price": 3704,
+    "image": "/echo.jpg",
+    "description": "The Amazon Echo Dot (4th Gen) is a smart speaker with Alexa voice control that fits perfectly into any room. It offers crisp sound, hands-free voice commands, and compatibility with smart home devices for added convenience.",
+    "specs": [
+      "1.6-inch front-firing speaker",
+      "Wi-Fi, Bluetooth connectivity",
+      "Works with Alexa",
+      "Voice control, smart home integration"
+    ],
+    "quantity": 1,
+    "maxQuantity": 7,
+    "stock": "I apologize, but orders are limited to a maximum of"
+  }
+]
