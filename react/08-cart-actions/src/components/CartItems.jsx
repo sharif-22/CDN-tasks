@@ -65,7 +65,7 @@ const CartItems = ({
           src={image}
           alt={name}
         />
-        <div className="lg:py-4 p-4 flex flex-col gap-4">
+        <div className="lg:py-4 p-4 flex flex-col gap-3">
           <h2 className="text-2xl">{name}</h2>
           <p>{description}</p>
           <ol className="flex gap-2 flex-wrap text-xs">
@@ -80,11 +80,15 @@ const CartItems = ({
               );
             })}
           </ol>
-          <p className="flex items-center font-medium text-lg">
-            <LiaRupeeSignSolid size={20} /> {price}
+          <p className="flex items-center font-medium text-base">
+            {"price :"}
+            <LiaRupeeSignSolid size={16} /> {price}
           </p>
+          <span className="text-xs">
+            {quantity} X {price} = {toPay}
+          </span>
           <div>
-            <p className="mb-1 mx-0.5">Quantity</p>
+            <p className="mb-0.5 mx-0.5">Quantity</p>
             <div className="flex">
               <button
                 onClick={handleDecrement}
@@ -114,7 +118,6 @@ const CartItems = ({
             </div>
           </div>
           <p className="text-xs text-orange-400">
-            {toPay}
             {maxQuantity <= quantity ? (
               `${stock} ${maxQuantity} pieces per customer.`
             ) : (
