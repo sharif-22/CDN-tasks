@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { LiaRupeeSignSolid } from "react-icons/lia";
+import { Cart } from "../Context.jsx";
+
 const CartItems = ({
   image,
   name,
@@ -8,14 +10,18 @@ const CartItems = ({
   price,
   stock,
   maxQuantity,
+  id,
+  toPay,
 }) => {
   const [quantity, setQuantity] = useState(1);
+  const [cartItems, setCartItems] = useContext(Cart);
 
   const handleIncrement = () => {
     setQuantity((prevState) => {
       if (prevState < maxQuantity) {
         if (prevState >= 1) {
-          return prevState + 1;
+          let currentCount = prevState + 1;
+          return currentCount;
         }
       } else {
         return (prevState = maxQuantity);
@@ -33,9 +39,27 @@ const CartItems = ({
     });
   };
 
+  useEffect(() => {
+    setCartItems(
+      cartItems.map((item) => {
+        if (item.name == name) {
+          return {
+            ...item,
+            quantity: quantity,
+            toPay: price * quantity,
+          };
+        }
+        return item;
+      })
+    );
+  }, [quantity]);
+
   return (
     <>
-      <div className="max-w-4xl mx-auto bg-white my-4 rounded flex flex-col lg:flex-row shadow-sm hover:bg-slate-50 hover:shadow-lg duration-500">
+      <div
+        key={id}
+        className="max-w-4xl mx-auto bg-white my-4 rounded flex flex-col lg:flex-row shadow-sm hover:bg-slate-50 hover:shadow-lg duration-500"
+      >
         <img
           className="lg:w-72 w-full  mx-auto object-cover block rounded-l"
           src={image}
@@ -45,9 +69,12 @@ const CartItems = ({
           <h2 className="text-2xl">{name}</h2>
           <p>{description}</p>
           <ol className="flex gap-2 flex-wrap text-xs">
-            {specs.map((specs) => {
+            {specs.map((specs, index) => {
               return (
-                <li className="bg-slate-200 w-fit p-1.5 rounded hover:bg-slate-100 cursor-pointer duration-500">
+                <li
+                  key={index}
+                  className="bg-slate-200 w-fit p-1.5 rounded hover:bg-slate-100 cursor-pointer duration-500"
+                >
                   {specs}
                 </li>
               );
@@ -87,6 +114,7 @@ const CartItems = ({
             </div>
           </div>
           <p className="text-xs text-orange-400">
+            {toPay}
             {maxQuantity <= quantity ? (
               `${stock} ${maxQuantity} pieces per customer.`
             ) : (

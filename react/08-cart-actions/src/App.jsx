@@ -1,16 +1,17 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import Navbar from "./components/Navbar";
 import CartItems from "./components/CartItems";
-import data from "../data/data.json";
+import { Cart } from "./Context";
 
 const App = () => {
+  const [cartItems, setCartItems] = useContext(Cart);
   return (
     <>
       <Navbar />
       <main className="bg-slate-100 p-3">
         <section className="flex lg:flex-row flex-col mx-auto w-fit gap-6">
           <div>
-            {data.map((data) => {
+            {cartItems.map((data) => {
               const {
                 description,
                 id,
@@ -20,6 +21,7 @@ const App = () => {
                 specs,
                 maxQuantity,
                 stock,
+                toPay,
               } = data;
               return (
                 <CartItems
@@ -31,6 +33,7 @@ const App = () => {
                   specs={specs}
                   maxQuantity={maxQuantity}
                   stock={stock}
+                  toPay={toPay}
                 />
               );
             })}

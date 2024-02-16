@@ -14,6 +14,7 @@
     ],
     "quantity": 1,
     "maxQuantity": 4,
+    "toPay": 97735,
     "stock": "I apologize, but orders are limited to a maximum of"
   },
 
@@ -32,6 +33,7 @@
     ],
     "quantity": 1,
     "maxQuantity": 2,
+    "toPay": 37288,
     "stock": "I apologize, but orders are limited to a maximum of"
   },
   {
@@ -49,6 +51,7 @@
     ],
     "quantity": 1,
     "maxQuantity": 3,
+    "toPay": 59047,
     "stock": "I apologize, but orders are limited to a maximum of"
   },
   {
@@ -65,6 +68,7 @@
     ],
     "quantity": 1,
     "maxQuantity": 7,
+    "toPay": 3704,
     "stock": "I apologize, but orders are limited to a maximum of"
   }
 ]
