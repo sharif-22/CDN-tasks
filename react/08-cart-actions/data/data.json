@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "Apple MacBook Pro",
-    "price": 97735,
+    "price": 1000,
     "image": "/macbook-pro.jpg",
     "description": "The Apple MacBook Pro is a powerful laptop featuring a stunning Retina display, fast performance, and all-day battery life. It's perfect for professionals and creatives who need a reliable machine for demanding tasks.",
     "specs": [
@@ -14,14 +14,14 @@
     ],
     "quantity": 1,
     "maxQuantity": 4,
-    "toPay": 97735,
+    "toPay": 1000,
     "stock": "I apologize, but orders are limited to a maximum of"
   },
 
   {
     "id": 3,
     "name": "Sony PlayStation 5",
-    "price": 37288,
+    "price": 500,
     "image": "/ps5.jpg",
     "description": "The Sony PlayStation 5 is the next-generation gaming console that delivers immersive gaming experiences with lightning-fast loading times, stunning graphics, and innovative features. It's the ultimate gaming machine for gamers of all levels.",
     "specs": [
@@ -33,13 +33,13 @@
     ],
     "quantity": 1,
     "maxQuantity": 2,
-    "toPay": 37288,
+    "toPay": 500,
     "stock": "I apologize, but orders are limited to a maximum of"
   },
   {
     "id": 4,
     "name": "DJI Mavic Air 2",
-    "price": 59047,
+    "price": 750,
     "image": "/dji.jpg",
     "description": "The DJI Mavic Air 2 is a compact and powerful drone with advanced features for capturing stunning aerial footage and photos. It offers intelligent shooting modes, impressive battery life, and enhanced safety features.",
     "specs": [
@@ -51,13 +51,13 @@
     ],
     "quantity": 1,
     "maxQuantity": 3,
-    "toPay": 59047,
+    "toPay": 750,
     "stock": "I apologize, but orders are limited to a maximum of"
   },
   {
     "id": 5,
     "name": "Amazon Echo Dot (4th Gen)",
-    "price": 3704,
+    "price": 150,
     "image": "/echo.jpg",
     "description": "The Amazon Echo Dot (4th Gen) is a smart speaker with Alexa voice control that fits perfectly into any room. It offers crisp sound, hands-free voice commands, and compatibility with smart home devices for added convenience.",
     "specs": [
@@ -68,7 +68,7 @@
     ],
     "quantity": 1,
     "maxQuantity": 7,
-    "toPay": 3704,
+    "toPay": 150,
     "stock": "I apologize, but orders are limited to a maximum of"
   }
 ]

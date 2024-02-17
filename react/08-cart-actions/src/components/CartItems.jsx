@@ -15,7 +15,7 @@ const CartItems = ({
 }) => {
   const [quantity, setQuantity] = useState(1);
   const [cartItems, setCartItems] = useContext(Cart);
-
+  // console.log(specs);
   const handleIncrement = () => {
     setQuantity((prevState) => {
       if (prevState < maxQuantity) {
@@ -69,13 +69,13 @@ const CartItems = ({
           <h2 className="text-2xl">{name}</h2>
           <p>{description}</p>
           <ol className="flex gap-2 flex-wrap text-xs">
-            {specs.map((specs, index) => {
+            {specs.map((spec, index) => {
               return (
                 <li
                   key={index}
                   className="bg-slate-200 w-fit p-1.5 rounded hover:bg-slate-100 cursor-pointer duration-500"
                 >
-                  {specs}
+                  {spec}
                 </li>
               );
             })}

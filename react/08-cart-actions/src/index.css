@@ -5,3 +5,7 @@
 .quantity-btn {
   @apply mx-0.5 text-lg rounded bg-slate-300 hover:bg-slate-100 duration-500 w-8 h-8 grid place-content-center border border-slate-400;
 }
+
+html {
+  @apply scroll-smooth;
+}
