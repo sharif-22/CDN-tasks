@@ -1,0 +1,16 @@
+{
+  "name": "01-fs",
+  "version": "1.0.0",
+  "description": "playing with file operation in disk with the help of nodeJs fs module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./index.js"
+  },
+  "keywords": [
+    "nodeJS",
+    "fs"
+  ],
+  "author": "sharif-22",
+  "license": "MIT"
+}
