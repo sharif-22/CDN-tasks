@@ -14,4 +14,23 @@ touristDistricts.map((district) => {
       () => {}
     );
   });
+
+  fs.writeFile(
+    `./Districts/${district.district}/README.md`,
+    `# ${district.district} 
+
+    \n ### Agriculture in ${district.district}
+    
+    \n ${district.agricultureCrops.map((crop) => ` **${crop}** `)}
+    
+    \n ### Famous foods in ${district.district}
+    \n ${district.famousFood.map((food) => {
+      return `\n - ${food}`;
+    })}
+    
+    \n ### Business culture in ${district.district}
+    \n > ${district.businessCulture}
+    `,
+    () => {}
+  );
 });
