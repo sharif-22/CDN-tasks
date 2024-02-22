@@ -4,7 +4,7 @@ import { FaGithub } from "react-icons/fa6";
 
 const Navbar = () => {
   return (
-    <nav className="bg-white shadow-md px-5 py-3 w-full text-black sticky top-0">
+    <nav className="bg-white shadow-md px-5 py-3 w-full text-black sticky top-0 z-10">
       <div className="max-w-7xl mx-auto flex justify-between">
         <NavLink to="/">
           <h1 className="text-2xl font-medium cursor-pointer flex gap-2 items-center p-2">
@@ -24,9 +24,9 @@ const Navbar = () => {
               Add Trips
             </NavLink>
           </li>
-          <li>
+          <li className="hidden md:block">
             <a
-              href="https://github.com/sharif-22/cyberdude-challenges/tree/main/react/08-cart-actions"
+              href="https://github.com/sharif-22/cyberdude-challenges/tree/main/react-firebase/tourist-planner"
               target="_blank"
             >
               <FaGithub size={32} />

@@ -1,11 +1,16 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, doc, deleteDoc } from "firebase/firestore";
+import { db } from "../firebase/index";
 
-import db from "../firebase/index";
+import TripCard from "../components/uiComponents/TripCard";
 
 const Trips = () => {
+  const [pastTrips, setPastTrips] = useState([]);
+  const [render, reRender] = useState(false);
+
   useEffect(() => {
     const getFirebaseDatas = async () => {
       const querySnapshot = await getDocs(collection(db, "location"));
@@ -21,42 +26,57 @@ const Trips = () => {
       }
     };
     getFirebaseDatas();
-  }, []);
-
-  const [pastTrips, setPastTrips] = useState([]);
+  }, [render]);
 
   return (
     <>
-      <div className="max-w-7xl mx-auto">
-        {pastTrips.map((trips) => (
-          <div
-            key={trips.id}
-            id={trips.id}
-            className="my-2 bg-slate-100 p-5 rounded space-y-2"
-          >
-            <h2 className="text-2xl capitalize font-medium">
-              {trips.location}
-            </h2>
-            <p>Budget : {trips.budget}</p>
-            <div className="flex gap-4">
-              <p className="bg-slate-200 p-1 rounded">
-                Start Date : {trips.startDate}
-              </p>
-              <p className="bg-slate-200 p-1 rounded">
-                Return Date : {trips.returnDate}
-              </p>
-            </div>
-            <div className="flex gap-4">
-              <p className="bg-slate-200 p-1 rounded">
-                Num Of Travelers : {trips.numOfTravelers}
-              </p>
-              <p className="bg-slate-200 p-1 rounded">
-                Transpotation Preference : {trips.transpotationPref}
-              </p>
-            </div>
-            <p>Review : {trips.review}</p>
-          </div>
-        ))}
+      <div
+        className={`mx-auto max-w-7xl  py-4 ${
+          pastTrips.length > 4 ? "h-auto" : "h-[80dvh] "
+        }`}
+      >
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 justify-center items-center">
+          {pastTrips.map((trip) => {
+            const {
+              budget,
+              location,
+              startDate,
+              returnDate,
+              numOfTravelers,
+              transpotationPref,
+              review,
+              thumbnail,
+              id,
+            } = trip;
+            // delete date
+            const deleteData = async () => {
+              await deleteDoc(doc(db, "location", id));
+              reRender(!render);
+            };
+
+            return (
+              <TripCard
+                key={id}
+                thumbnail={thumbnail}
+                deleteData={deleteData}
+                budget={budget}
+                location={location}
+                startDate={startDate}
+                returnDate={returnDate}
+                numOfTravelers={numOfTravelers}
+                transpotationPref={transpotationPref}
+                review={review}
+                id={id}
+              />
+            );
+          })}
+        </div>
+        <Link
+          to="/addTrip"
+          className="block w-fit p-3 my-4 bg-secondary hover:shadow-lg duration-500 hover:bg-secondary/70 text-white mx-auto font-medium rounded px-6"
+        >
+          Plan trips
+        </Link>
       </div>
     </>
   );

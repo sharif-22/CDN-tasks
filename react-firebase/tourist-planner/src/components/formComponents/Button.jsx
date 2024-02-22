@@ -1,5 +1,6 @@
 const ButtonInput = ({
   textColor,
+  disabled,
   textColorHover,
   display,
   btnName,
@@ -12,7 +13,8 @@ const ButtonInput = ({
   return (
     <div className={`p-3 ${width}`}>
       <button
-        className={`p-2 rounded ${bgColor} ${width} ${bgColorHover} ${textColor} ${textColorHover} ${display} ${styles}  font-medium text-base duration-700`}
+        disabled={disabled}
+        className={`p-2 rounded ${bgColor} ${width} ${bgColorHover} ${textColor} ${textColorHover} ${display} ${styles} font-medium text-base duration-700`}
       >
         {children ? children : <>{btnName ? btnName : "Button"} </>}
       </button>
