@@ -1,17 +1,21 @@
 import React, { useState, useEffect } from "react";
 
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import z from "zod";
+
+import dayjs from "dayjs";
 
 import { collection, addDoc } from "firebase/firestore";
 import { db, storage } from "../firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 
+import { useNavigate } from "react-router-dom";
+import { DatePicker } from "antd";
+
 import Input from "../components/formComponents/Input";
 import Button from "../components/formComponents/Button";
 import TextArea from "../components/formComponents/TextArea";
-import { useNavigate } from "react-router-dom";
 
 const formSchema = z.object({
   location: z
@@ -21,8 +25,8 @@ const formSchema = z.object({
     .max(20, { message: "please provide valid location" }),
   budget: z.string(),
   numOfTravelers: z.string(),
-  returnDate: z.string(),
-  startDate: z.string(),
+  // returnDate: z.number(),
+  startDate: z.number().min(1, { message: "please provide start date" }),
   transpotationPref: z.string(),
   review: z.string(),
   thumbnail: z.any().refine((files) => files?.length >= 1, "File is required."),
@@ -31,9 +35,9 @@ const formSchema = z.object({
 const AddTrip = () => {
   const Navigate = useNavigate();
   const [data, setData] = useState({});
-  // const [per, setPerc] = useState(null);
   const [file, setFile] = useState(null);
   const [progress, setProgress] = useState(null);
+
   useEffect(() => {
     const uploadFile = () => {
       const name = new Date().getTime() + file.name;
@@ -77,10 +81,14 @@ const AddTrip = () => {
     register,
     handleSubmit,
     reset,
+    control,
+    watch,
     formState: { errors },
   } = useForm({ resolver: zodResolver(formSchema) });
 
   const sendInfoToDB = (value) => {
+    console.log(watch("startDate"));
+    console.log(value);
     const addFireStoreDoc = async () => {
       console.log({ ...value, thumbnail: data });
       await addDoc(collection(db, "location"), {
@@ -124,33 +132,71 @@ const AddTrip = () => {
               type="number"
               label={"Enter no of Travellers"}
               min={1}
+              value={1}
               register={register("numOfTravelers")}
               width="w-full"
               bgColor="bg-slate-50"
-              placeholder="Ex: 20,000"
+              placeholder="2 members"
               error={errors.numOfTravelers}
             />
           </div>
           <div className="flex lg:flex-row flex-col">
-            <Input
-              type="date"
-              label={"Enter Start Date"}
-              register={register("startDate")}
-              width="w-full"
-              bgColor="bg-slate-50"
-              placeholder="Ex: 20,000"
-              required={true}
-              error={errors.startDate}
-            />
-            <Input
-              type="date"
-              label={"Enter Return Date"}
-              register={register("returnDate")}
-              width="w-full"
-              bgColor="bg-slate-50"
-              placeholder="Ex: 20,000"
-              error={errors.returnDate}
-            />
+            <div className="flex flex-col p-3 w-full gap-2">
+              <label className="block font-medium " htmlFor="startDate">
+                Choose trip start date
+                <span className="text-pink-500 font-bold px-1">*</span>
+              </label>
+              <Controller
+                control={control}
+                name="startDate"
+                render={({ field }) => {
+                  return (
+                    <DatePicker
+                      id="startDate"
+                      className="w-full p-2 outline-none border-none"
+                      placeholder="Trip start date"
+                      name={field.name}
+                      ref={field.ref}
+                      onBlur={field.onBlur}
+                      value={field.value ? dayjs(field.value) : null}
+                      onChange={(date) => {
+                        field.onChange(date ? date.valueOf() : null);
+                      }}
+                    />
+                  );
+                }}
+              />
+              {errors && (
+                <small className="text-sm text-red-500">
+                  {errors?.startDate?.message}
+                </small>
+              )}
+            </div>
+            <div className="flex flex-col p-3 w-full gap-2 ">
+              <label className="block font-medium " htmlFor="returnDate">
+                Choose trip return date
+              </label>
+              <Controller
+                control={control}
+                name="returnDate"
+                render={({ field }) => {
+                  return (
+                    <DatePicker
+                      id="returnDate"
+                      className="w-full p-2 outline-none border-none"
+                      placeholder="Trip start date"
+                      name={field.name}
+                      ref={field.ref}
+                      onBlur={field.onBlur}
+                      value={field.value ? dayjs(field.value) : null}
+                      onChange={(date) => {
+                        field.onChange(date ? date.valueOf() : null);
+                      }}
+                    />
+                  );
+                }}
+              />
+            </div>
           </div>
 
           <Input

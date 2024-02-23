@@ -6,6 +6,10 @@ import { collection, getDocs, doc, deleteDoc } from "firebase/firestore";
 import { db } from "../firebase/index";
 
 import TripCard from "../components/uiComponents/TripCard";
+import {
+  AntSkeletonText,
+  AntSkeletonBtn,
+} from "../components/uiComponents/AntSkeleton";
 
 const Trips = () => {
   const [pastTrips, setPastTrips] = useState([]);
@@ -32,51 +36,61 @@ const Trips = () => {
     <>
       <div
         className={`mx-auto max-w-7xl  py-4 ${
-          pastTrips.length > 4 ? "h-auto" : "h-[80dvh] "
+          pastTrips.length > 3 ? "h-auto" : "h-[80dvh] "
         }`}
       >
-        <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 justify-center items-center">
-          {pastTrips.map((trip) => {
-            const {
-              budget,
-              location,
-              startDate,
-              returnDate,
-              numOfTravelers,
-              transpotationPref,
-              review,
-              thumbnail,
-              id,
-            } = trip;
-            // delete date
-            const deleteData = async () => {
-              await deleteDoc(doc(db, "location", id));
-              reRender(!render);
-            };
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 justify-center items-center">
+          {pastTrips.length <= 0 ? (
+            <AntSkeletonText />
+          ) : (
+            pastTrips.map((trip) => {
+              const {
+                budget,
+                location,
+                startDate,
+                returnDate,
+                numOfTravelers,
+                transpotationPref,
+                review,
+                thumbnail,
+                id,
+              } = trip;
+              // delete date
+              const deleteData = async () => {
+                await deleteDoc(doc(db, "location", id));
+                reRender(!render);
+              };
 
-            return (
-              <TripCard
-                key={id}
-                thumbnail={thumbnail}
-                deleteData={deleteData}
-                budget={budget}
-                location={location}
-                startDate={startDate}
-                returnDate={returnDate}
-                numOfTravelers={numOfTravelers}
-                transpotationPref={transpotationPref}
-                review={review}
-                id={id}
-              />
-            );
-          })}
+              return (
+                <TripCard
+                  key={id}
+                  thumbnail={thumbnail}
+                  deleteData={deleteData}
+                  budget={budget}
+                  location={location}
+                  startDate={startDate}
+                  returnDate={returnDate}
+                  numOfTravelers={numOfTravelers}
+                  transpotationPref={transpotationPref}
+                  review={review}
+                  id={id}
+                />
+              );
+            })
+          )}
         </div>
-        <Link
-          to="/addTrip"
-          className="block w-fit p-3 my-4 bg-secondary hover:shadow-lg duration-500 hover:bg-secondary/70 text-white mx-auto font-medium rounded px-6"
-        >
-          Plan trips
-        </Link>
+        {pastTrips.length <= 0 ? (
+          <div className="mx-auto w-fit my-7">
+            <AntSkeletonBtn />
+          </div>
+        ) : (
+          <Link
+            to="/addTrip"
+            className="block w-fit p-3 my-4 bg-secondary hover:shadow-lg duration-500 hover:bg-secondary/70 text-white mx-auto font-medium rounded px-6"
+          >
+            Plan trips
+          </Link>
+        )}
       </div>
     </>
   );

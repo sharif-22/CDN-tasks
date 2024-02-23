@@ -11,7 +11,7 @@ const Home = () => {
 
           <Link
             to="/addTrip"
-            className="block w-fit lg:p-3 lg:px-6 p-2 px-4 my-4 bg-secondary hover:shadow-lg duration-500 hover:bg-secondary/70 text-white font-medium rounded"
+            className="block w-fit lg:p-3 lg:px-6 p-2 px-4 my-6 text-lg bg-secondary hover:shadow-lg duration-500 hover:bg-secondary/70 text-white font-medium rounded"
           >
             Plan trips
           </Link>

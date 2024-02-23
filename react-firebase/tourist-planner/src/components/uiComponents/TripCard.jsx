@@ -2,6 +2,9 @@ import React from "react";
 import { useState } from "react";
 import { MdDeleteForever } from "react-icons/md";
 import { LuIndianRupee } from "react-icons/lu";
+
+import { formatDate, formatDateTimeStamp } from "../../utils/utils";
+
 const TripCard = ({
   budget,
   location,
@@ -27,11 +30,11 @@ const TripCard = ({
       onMouseOver={showBtn}
       onMouseOut={hideBtn}
       id={id}
-      className="my-2 w-[300px] h-fit mx-auto bg-slate-100 rounded hover:bg-slate-50 hover:shadow hover:cursor-pointer duration-300 relative"
+      className="my-2 w-[300px] lg:w-[380px] h-fit mx-auto bg-slate-100 rounded hover:bg-slate-50 hover:shadow hover:cursor-pointer duration-300 relative"
     >
       <div className="overflow-hidden">
         <img
-          className={`w-[300px] h-48 rounded-t object-cover ${
+          className={`w-[300px] lg:w-[380px] h-48 rounded-t object-cover ${
             onHover && "scale-110"
           } transition-all duration-1000`}
           src={thumbnail}
@@ -47,11 +50,11 @@ const TripCard = ({
         </p>
         <div className="flex gap-2">
           <p className="bg-slate-200 p-1 rounded text-xs cursor-pointer hover:bg-slate-300/90">
-            Start Date : {startDate}
+            Start Date : {formatDateTimeStamp(startDate)}
           </p>
-          {returnDate.length > 3 && (
+          {returnDate > 3 && (
             <p className="bg-slate-200 p-1 rounded text-xs cursor-pointer hover:bg-slate-300/90">
-              Return Date : {returnDate}
+              Return Date : {formatDateTimeStamp(returnDate)}
             </p>
           )}
         </div>
