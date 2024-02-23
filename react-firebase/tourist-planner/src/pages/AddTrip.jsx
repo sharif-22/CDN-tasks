@@ -95,108 +95,110 @@ const AddTrip = () => {
 
   return (
     <>
-      <form
-        onSubmit={handleSubmit(sendInfoToDB)}
-        className="max-w-xs md:max-w-4xl mx-auto bg-slate-200 my-5 rounded py-4 "
-      >
-        <Input
-          label={"Enter Trip Location"}
-          register={register("location")}
-          width="w-full"
-          bgColor="bg-slate-50"
-          placeholder="Ex: Thailand"
-          required={true}
-          error={errors.location}
-        />
-        <div className="flex lg:flex-row flex-col">
+      <div className="lg:h-screen ">
+        <form
+          onSubmit={handleSubmit(sendInfoToDB)}
+          className="max-w-xs md:max-w-4xl mx-auto bg-slate-200 my-5  rounded py-4 "
+        >
           <Input
-            type="number"
-            label={"Enter Trip Budget"}
-            register={register("budget")}
+            label={"Enter Trip Location"}
+            register={register("location")}
             width="w-full"
             bgColor="bg-slate-50"
-            placeholder="Ex: 20,000"
+            placeholder="Ex: Thailand"
             required={true}
-            error={errors.budget}
+            error={errors.location}
           />
-          <Input
-            type="number"
-            label={"Enter no of Travellers"}
-            min={1}
-            register={register("numOfTravelers")}
-            width="w-full"
-            bgColor="bg-slate-50"
-            placeholder="Ex: 20,000"
-            error={errors.numOfTravelers}
-          />
-        </div>
-        <div className="flex lg:flex-row flex-col">
-          <Input
-            type="date"
-            label={"Enter Start Date"}
-            register={register("startDate")}
-            width="w-full"
-            bgColor="bg-slate-50"
-            placeholder="Ex: 20,000"
-            required={true}
-            error={errors.startDate}
-          />
-          <Input
-            type="date"
-            label={"Enter Return Date"}
-            register={register("returnDate")}
-            width="w-full"
-            bgColor="bg-slate-50"
-            placeholder="Ex: 20,000"
-            error={errors.returnDate}
-          />
-        </div>
-
-        <Input
-          label={"Transpotation Preference"}
-          register={register("transpotationPref")}
-          width="w-full"
-          bgColor="bg-slate-50"
-          placeholder="Ex: Bus,Train,Car..."
-          required={true}
-          error={errors.transpotationPref}
-        />
-        <div className="flex flex-col p-3 gap-y-2">
-          <div>
-            <label htmlFor="file">Upload the thumbnail of the location</label>
-            <span className="text-pink-500 font-bold px-1">*</span>
-          </div>
-          <div className="flex flex-col gap-2">
-            <input
-              id="file"
-              type="file"
-              {...register("thumbnail")}
-              onChange={(e) => {
-                setFile(e.target.files[0]);
-              }}
+          <div className="flex lg:flex-row flex-col">
+            <Input
+              type="number"
+              label={"Enter Trip Budget"}
+              register={register("budget")}
+              width="w-full"
+              bgColor="bg-slate-50"
+              placeholder="Ex: 20,000"
+              required={true}
+              error={errors.budget}
             />
-            {errors && (
-              <small className="text-sm text-red-500">
-                {errors?.thumbnail?.message}
-              </small>
-            )}
+            <Input
+              type="number"
+              label={"Enter no of Travellers"}
+              min={1}
+              register={register("numOfTravelers")}
+              width="w-full"
+              bgColor="bg-slate-50"
+              placeholder="Ex: 20,000"
+              error={errors.numOfTravelers}
+            />
           </div>
-        </div>
-        <TextArea
-          register={register("review")}
-          label={"Take a note for trip"}
-          placeholder={"Take a note for trip"}
-        />
+          <div className="flex lg:flex-row flex-col">
+            <Input
+              type="date"
+              label={"Enter Start Date"}
+              register={register("startDate")}
+              width="w-full"
+              bgColor="bg-slate-50"
+              placeholder="Ex: 20,000"
+              required={true}
+              error={errors.startDate}
+            />
+            <Input
+              type="date"
+              label={"Enter Return Date"}
+              register={register("returnDate")}
+              width="w-full"
+              bgColor="bg-slate-50"
+              placeholder="Ex: 20,000"
+              error={errors.returnDate}
+            />
+          </div>
 
-        <Button
-          disabled={progress !== null && progress < 100}
-          btnName="Add Trip"
-          bgColor="bg-secondary"
-          textColor="text-white"
-          bgColorHover="hover:bg-secondary/70"
-          textColorHover="hover:text-black"
-        />
-      </form>
+          <Input
+            label={"Transpotation Preference"}
+            register={register("transpotationPref")}
+            width="w-full"
+            bgColor="bg-slate-50"
+            placeholder="Ex: Bus,Train,Car..."
+            required={true}
+            error={errors.transpotationPref}
+          />
+          <div className="flex flex-col p-3 gap-y-2">
+            <div>
+              <label htmlFor="file">Upload the thumbnail of the location</label>
+              <span className="text-pink-500 font-bold px-1">*</span>
+            </div>
+            <div className="flex flex-col gap-2">
+              <input
+                id="file"
+                type="file"
+                {...register("thumbnail")}
+                onChange={(e) => {
+                  setFile(e.target.files[0]);
+                }}
+              />
+              {errors && (
+                <small className="text-sm text-red-500">
+                  {errors?.thumbnail?.message}
+                </small>
+              )}
+            </div>
+          </div>
+          <TextArea
+            register={register("review")}
+            label={"Take a note for trip"}
+            placeholder={"Take a note for trip"}
+          />
+
+          <Button
+            disabled={progress !== null && progress < 100}
+            btnName="Add Trip"
+            bgColor="bg-secondary"
+            textColor="text-white"
+            bgColorHover="hover:bg-secondary/70"
+            textColorHover="hover:text-black"
+          />
+        </form>
+      </div>
     </>
   );
 };
