@@ -10,6 +10,22 @@ export default {
         danger2: "#F25E7A",
         warn: "#F26B1D",
       },
+      keyframes: {
+        slideDown: {
+          "0% , 100%": {
+            transform: "rotate(2deg)",
+          },
+          "50%": {
+            transform: "rotate(-2deg)",
+          },
+          "100%": {
+            transform: "rotate(2deg)",
+          },
+        },
+      },
+      animation: {
+        slideDown: "slideDown 1.5s ease-in-out infinite",
+      },
     },
   },
   plugins: [],

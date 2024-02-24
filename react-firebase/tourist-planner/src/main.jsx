@@ -9,6 +9,7 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom"; 
 import Home from "./pages/Home";
 import AddTrip from "./pages/AddTrip";
 import Trips from "./pages/Trips";
+import UpdateTrip from "./pages/UpdateTrip";
 
 const Template = () => {
   return (
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
       {
         path: "/addTrip",
         element: <AddTrip />,
+      },
+      {
+        path: "/updateTrip/:id",
+        element: <UpdateTrip />,
       },
     ],
   },

@@ -14,7 +14,7 @@ function formatDate(inputDateString = "2002-01-31") {
 function formatDateTimeStamp(timeStamp) {
   // Split the input date string into day, month, and year
   const date = new Date(timeStamp);
-  console.log(date);
+  // console.log(date);
   const dateString = date;
   const formattedDate = dayjs(dateString).format("DD-MMM-YYYY");
   return formattedDate;

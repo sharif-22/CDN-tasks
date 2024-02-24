@@ -10,12 +10,12 @@ const Footer = () => {
   return (
     <footer className="lg:p-12 p-5 bg-secondary text-white">
       <div className="max-w-7xl mx-auto space-y-4">
-        <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4 items-start">
+        <div className="md:grid lg:grid-cols-4 md:grid-cols-2 flex flex-wrap gap-7 md:gap-4 items-start">
           {/* RoamRover */}
           <div className="flex flex-col gap-2">
             <a
               href="#"
-              className="text-2xl font-medium cursor-pointer flex gap-2 items-center"
+              className="lg:text-2xl font-medium cursor-pointer flex gap-2 items-center"
             >
               RoamRover
             </a>
@@ -33,7 +33,7 @@ const Footer = () => {
           <div className="flex flex-col gap-2">
             <a
               href="#"
-              className="text-2xl font-medium cursor-pointer flex gap-2 items-center"
+              className="lg:text-2xl font-medium cursor-pointer flex gap-2 items-center"
             >
               Pricing
             </a>
@@ -51,7 +51,7 @@ const Footer = () => {
           <div className="flex flex-col gap-2">
             <a
               href="#"
-              className="text-2xl font-medium cursor-pointer flex gap-2 items-center"
+              className="lg:text-2xl font-medium cursor-pointer flex gap-2 items-center"
             >
               Company
             </a>
@@ -64,7 +64,7 @@ const Footer = () => {
           </div>
           {/* social */}
           <div className="flex flex-col gap-2">
-            <div className="text-2xl font-medium cursor-pointer flex gap-2 items-center">
+            <div className="lg:text-2xl font-medium cursor-pointer flex gap-2 items-center">
               Social
             </div>
             <div className="text-sm hover:underline duration-500 flex items-center gap-1">

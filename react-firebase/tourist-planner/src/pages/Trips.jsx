@@ -25,6 +25,7 @@ const Trips = () => {
         return finalData;
       });
       setPastTrips(data);
+      console.log(pastTrips);
       if (querySnapshot.docs.length === 0) {
         console.log("norecord exist");
       }
@@ -36,7 +37,7 @@ const Trips = () => {
     <>
       <div
         className={`mx-auto max-w-7xl  py-4 ${
-          pastTrips.length > 3 ? "h-auto" : "h-[80dvh] "
+          pastTrips.length > 3 ? "h-auto" : "lg:h-[80dvh] "
         }`}
       >
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 justify-center items-center">
@@ -50,7 +51,7 @@ const Trips = () => {
                 startDate,
                 returnDate,
                 numOfTravelers,
-                transpotationPref,
+                transportationPref,
                 review,
                 thumbnail,
                 id,
@@ -71,7 +72,7 @@ const Trips = () => {
                   startDate={startDate}
                   returnDate={returnDate}
                   numOfTravelers={numOfTravelers}
-                  transpotationPref={transpotationPref}
+                  transportationPref={transportationPref}
                   review={review}
                   id={id}
                 />

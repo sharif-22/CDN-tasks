@@ -15,12 +15,18 @@ const Navbar = () => {
 
         <ul className="flex justify-between gap-3 items-center">
           <li>
-            <NavLink to="/trips" className="text-lg font-medium p-2">
+            <NavLink
+              to="/trips"
+              className="text-base md:text-lg font-medium md:p-2"
+            >
               Trips
             </NavLink>
           </li>
           <li>
-            <NavLink to="/addTrip" className="text-lg font-medium p-2">
+            <NavLink
+              to="/addTrip"
+              className="text-base md:text-lg font-medium md:p-2"
+            >
               Add Trips
             </NavLink>
           </li>
