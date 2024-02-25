@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Priya Patel",
+    "age": 28,
+    "gender": "female",
+    "city": "Mumbai",
+    "role": "Full Stack Developer",
+    "experience": "5 years",
+    "skills": ["JavaScript", "React", "Node.js", "MongoDB"]
+  },
+  {
+    "name": "Rahul Sharma",
+    "age": 32,
+    "gender": "male",
+    "city": "Bangalore",
+    "role": "Frontend Developer",
+    "experience": "8 years",
+    "skills": ["HTML", "CSS", "JavaScript", "Vue.js"]
+  },
+  {
+    "name": "Neha Gupta",
+    "age": 26,
+    "gender": "female",
+    "city": "Delhi",
+    "role": "Backend Developer",
+    "experience": "4 years",
+    "skills": ["Java", "Spring Boot", "Hibernate", "MySQL"]
+  }
+]
