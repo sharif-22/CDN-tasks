@@ -1,8 +1,36 @@
-# React + Vite
+# Fake Chat Screen
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple Fake Chat Screen to recreate the dummy chat messages in UI
 
-Currently, two official plugins are available:
+## Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Project Title](#project-title)
+- [Description](#description)
+- [Demo](#demo)
+- [Internship](#internship)
+- [Technologies Used](#technologies-used)
+- [License](#license)
+
+## Description
+
+<!-- change description in future  after completion of this project -->
+
+I created a discord Chat Ui using reactjs
+
+## Demo
+
+[Live Preview](https://sharif-fake-chat-app.netlify.app/)
+
+## Internship
+
+This internship is provided by [CyberDude Networks Pvt. Ltd.](https://youtube.com/cyberdudenetworks) as part of the 6-Month Free Internship program, a skill development initiative organized to enhance participants' skills. Mentoring was provided by [Mr. Anbuselvan Rocky](https://instagram.com/anbuselvanrocky). For more information, [you can contact CyberDude Networks here](https://cyberdudenetworks.com).
+
+## Technologies Used
+
+- React js
+- TailwindCSS
+- Vite
+
+## License
+
+MIT

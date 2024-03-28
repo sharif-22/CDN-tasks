@@ -1,8 +1,35 @@
-# React + Vite
+# Blog App API
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Table of Contents
 
-Currently, two official plugins are available:
+- [Project Title](#project-title)
+- [Description](#description)
+- [Demo](#demo)
+- [Internship](#internship)
+- [Technologies Used](#technologies-used)
+- [License](#license)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Description
+
+<!-- change description in future  after completion of this project -->
+
+A simple Blog App using Real API from dev.to
+
+## Demo
+
+[Live Preview](https://sharif-blog-api.netlify.app/)
+
+## Internship
+
+This internship is provided by [CyberDude Networks Pvt. Ltd.](https://youtube.com/cyberdudenetworks) as part of the 6-Month Free Internship program, a skill development initiative organized to enhance participants' skills. Mentoring was provided by [Mr. Anbuselvan Rocky](https://instagram.com/anbuselvanrocky). For more information, [you can contact CyberDude Networks here](https://cyberdudenetworks.com).
+
+## Technologies Used
+
+- React js
+- react-router-dom
+- TailwindCSS
+- Vite
+
+## License
+
+MIT

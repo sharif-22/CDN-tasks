@@ -1,35 +1,15 @@
-import http from "http";
+import express, { json } from "express";
+
 import data from "./data/dummy.json" assert { type: "json" };
 
-const SERVER_PORT = 2020;
+const expressServer = express();
 
-// // basic Server Created and responding to user
-// const server = http.createServer((reqFromUser, resFromServer) => {
-//   resFromServer.write(JSON.stringify(data), () => {
-//     console.log("server listening t0 " + SERVER_PORT, reqFromUser);
-//   });
-//   resFromServer.end();
-// });
+const SERVER_PORT = 2024;
 
-// server.listen(SERVER_PORT);
-
-// respoding to user based on their route
-
-const routeServer = http.createServer((req, res) => {
-  // user route
-  if (req.url === "/users") {
-    res.write(JSON.stringify(data), () => {
-      console.log("your response reached to user");
-    });
-  }
-  // unkown route that user try to access
-  else {
-    res.write(JSON.stringify({ message: "welcome my server" }), () => {
-      console.log("your response reached to user");
-    });
-  }
-
-  res.end();
+expressServer.get("/", (req, res) => {
+  console.log(req, res);
 });
 
-routeServer.listen(SERVER_PORT);
+expressServer.listen(SERVER_PORT, () =>
+  console.log(`Listen to port ${SERVER_PORT}`)
+);

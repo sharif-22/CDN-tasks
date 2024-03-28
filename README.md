@@ -24,3 +24,6 @@ This internship is provided by [CyberDude Networks Pvt. Ltd.](https://youtube.co
 | :--- | -------------------------------------- |
 | 0    | [UI - challenges ](./UI-challenges.md) |
 | 01   | [Javascript](./javascript/)            |
+| 02   | [react js](./react/)                   |
+| 03   | [react & Firebase](./react-firebase/)  |
+| 04   | [node js](./nodejs/)                   |
